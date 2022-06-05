@@ -20,9 +20,5 @@ a {
   box-sizing: border-box;
 }
 
-.navbar {
-  background-color: color.adjust($body-background-color, $lightness: -5%);
-}
-
 // @import "../node_modules/bulma/bulma.sass";
 @import "../node_modules/bulma/sass/base/generic.sass";

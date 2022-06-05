@@ -1,0 +1,14 @@
+@use "sass:color";
+
+$bg: color.adjust(#323232, $lightness: -5%);
+
+.navbar {
+  background-color: $bg;
+  height: 5vh;
+  position: fixed;
+  width: 100%;
+}
+
+.navbar * {
+    color: white;
+}

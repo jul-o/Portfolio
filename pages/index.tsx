@@ -7,7 +7,7 @@ import Home from '../components/Home'
 import Navbar from '../components/Navbar';
 // import { Navbar } from 'react-bulma-components'
 
-export default () => {
+const Page = () => {
   return (
     <div className="dark">
       <Navbar />
@@ -15,3 +15,5 @@ export default () => {
     </div>
   )
 }
+
+export default Page;

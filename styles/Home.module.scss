@@ -1,0 +1,19 @@
+.home {
+    // take 70% width, centered, text-align left
+    height: 100vh;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contents {
+    // center vertically with flexbox
+    width: 50%;
+    // align-self: center;
+}
+
+#contents #text p {
+    margin: 30px 0;
+}
