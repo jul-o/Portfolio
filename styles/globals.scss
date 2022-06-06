@@ -11,6 +11,10 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+ul {
+  list-style: square;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -20,5 +24,43 @@ a {
   box-sizing: border-box;
 }
 
+.section {
+  height: 100vh;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1.title.is-1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h1.title.is-2 {
+  font-size: 2.3rem;
+  margin-bottom: 0;
+}
+
+// .progress.is-python {
+//   // set progress color to red
+//   color: #ff0000;
+// }
+
+.progress::-moz-progress-bar {
+  background-color: blue;
+}
+
+.progress::-webkit-progress-value {
+  background-color: blue;
+}
+
+.progress {
+  color: blue;
+}
+
 // @import "../node_modules/bulma/bulma.sass";
+// @import "../sass/utilities/derived-variables";
 @import "../node_modules/bulma/sass/base/generic.sass";

@@ -3,10 +3,10 @@ import styles from '../styles/Home.module.scss';
 
 const Home = () => {
     return (
-        <div className={styles.home}>
+        <div className='section'>
             <div id={styles.contents}>
                 <div id={styles.title}>
-                    <h1 className='title is-6'>Bonjour, moi c'est</h1>
+                    <h1 className='title is-6 mb-0'>Bonjour, moi c'est</h1>
                     <h1 className='title is-1'>
                         <p>Jules Sang</p>
                         <p>Développeur frontend</p>
