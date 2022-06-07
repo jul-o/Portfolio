@@ -1,26 +1,24 @@
-import { Navbar as Bar } from "react-bulma-components";
+import { Navbar as Bar } from 'react-bulma-components';
 import styles from '../styles/Navbar.module.scss';
 
 const Navbar = () => {
-    return (
-        <Bar className={styles.navbar}>
-            <Bar.Brand flexDirection="column" renderAs="a" href="#">
-                <h1 className="title">Jules Sang</h1>
-            </Bar.Brand>
-            <Bar.Item renderAs="a" href="#">
-                Compétences
-            </Bar.Item>
-            <Bar.Item renderAs="a" href="#">
-                Expériences professionnelles
-            </Bar.Item>
-            <Bar.Item renderAs="a" href="#">
-                Portfolio
-            </Bar.Item>
-            <Bar.Item renderAs="a" href="#">
-                Contact
-            </Bar.Item>
-        </Bar>
-    );
-}
+	// TODO: nice navbar
+	// TODO: navbar disappears when scrolling down, reappears when scrolling up
+	return (
+		<div>
+			<Bar id="navbar" fixed="top" className={styles.navbar}>
+				<Bar.Item renderAs="a" href="/#home">
+					Jules Sang
+				</Bar.Item>
+				<Bar.Item renderAs="a" href="/#experiences">
+					Expériences professionnelles
+				</Bar.Item>
+				<Bar.Item renderAs="a" href="/#contact">
+					Contact
+				</Bar.Item>
+			</Bar>
+		</div>
+	);
+};
 
 export default Navbar;

@@ -1,0 +1,35 @@
+@import './palette.scss';
+
+.root > * {
+	margin-bottom: 10px;
+}
+
+.button {
+	border: solid $secondary 2px;
+	color: $secondary;
+	background: linear-gradient(to right, $secondary 50%, $primary 50%);
+	transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+	background-size: 200% 100%;
+	background-position: right bottom;
+}
+
+// button on hover
+
+// animate color change when hovering a button
+.button:hover,
+.button:focus {
+	// animate fill left to right
+	background-position: left bottom;
+	color: white;
+	border-color: white;
+}
+
+// for .button elements animate on hover with background change sliding from left to right
+// @keyframes fill-left-to-right {
+// 	0% {
+// 		background-position: left bottom;
+// 	}
+// 	100% {
+// 		background-position: right bottom;
+// 	}
+// }

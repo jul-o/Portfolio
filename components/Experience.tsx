@@ -25,7 +25,6 @@ const Experience = ({ title, dates, technologies, tldr, body }: Props) => {
 				{technologies.map(({ name, percentage, color }) => (
 					<div className="technology" key={name}>
 						<h1 className="title is-5">{name}</h1>
-						{/* <div style={{ color: color && color }}>{percentage}%</div> */}
 						<div className={color && styles[color]}>
 							<Progress max={100} value={percentage} />
 						</div>

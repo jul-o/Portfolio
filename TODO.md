@@ -1,1 +1,3 @@
-- make sure every section takes at most 100vh
+- make sure every section takes at most 100vh?
+- implement dark mode toggle
+  - if possible, animate it
