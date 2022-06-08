@@ -1,3 +1,60 @@
+@import './palette.scss';
+
 .text {
-	width: 50%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.column {
+	max-width: 50%;
+	margin: auto;
+}
+
+.imageBorder {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	border-radius: 9999px;
+	border: solid $primary-lighterer 3px;
+	transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hover .imageBorder {
+	top: 0;
+	left: 0;
+}
+
+.imageWrapper {
+	position: relative;
+	border-radius: 9999px;
+}
+
+// tint the image
+.imageWrapper:after {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: scale-color($color: $primary-lighter, $alpha: -50%);
+	top: 0;
+	left: 0;
+	display: block;
+	content: '';
+	border-radius: 9999px;
+	transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hover.imageWrapper:after {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.image {
+	transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+	border-radius: 9999px;
+}
+
+#iam,
+#name,
+#job {
+	text-align: left;
 }

@@ -41,6 +41,7 @@ a {
 
 #root > * {
 	max-width: 70%;
+	min-height: 100vh;
 	margin: 0 auto;
 	text-align: left;
 	display: flex;
@@ -49,19 +50,24 @@ a {
 	flex-direction: column;
 }
 
-h1.title.is-1,
-h1.title.is-2 {
+.title.is-1,
+.title.is-2 {
 	text-align: center;
 }
 
-h1.title.is-1 {
+.title.is-1 {
 	font-size: 2.5vw;
 	margin-bottom: 0.5rem;
 }
 
-h1.title.is-2 {
+.title.is-2 {
 	font-size: 2.3vw;
 	margin-bottom: 0;
+}
+
+.is-256x256 {
+	width: 256px;
+	height: 256px;
 }
 
 @import '../node_modules/bulma/sass/base/generic.sass';

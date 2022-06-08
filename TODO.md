@@ -1,3 +1,4 @@
 - make sure every section takes at most 100vh?
 - implement dark mode toggle
   - if possible, animate it
+- Hobbies on the right side with icon toggling pictures
