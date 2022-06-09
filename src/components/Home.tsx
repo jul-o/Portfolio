@@ -12,7 +12,7 @@ const Home = () => {
 				<Columns.Column className={styles.column}>
 					<div className={styles.title}>
 						<h1 id={styles.iam} className="title is-6 mb-0">
-							Bonjour, moi c'est
+							Bonjour, moi c'estttt
 						</h1>
 						<h1 id={styles.name} className="title is-1">
 							Jules Sang
