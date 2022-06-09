@@ -1,1 +1,0 @@
-- Log link to project's github  in the console
