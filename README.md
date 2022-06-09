@@ -1,34 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# with Firebase Hosting example
 
-## Getting Started
+The goal is to host the Next.js app on Firebase Cloud Functions with Firebase Hosting rewrite rules so our app is served from our Firebase Hosting URL. Each individual `page` bundle is served in a new call to the Cloud Function which performs the initial server render.
 
-First, run the development server:
+If you are having issues, feel free to tag @jthegedus in the [issue you create on the next.js repo](https://github.com/vercel/next.js/issues/new)
+
+<details>
+<summary><b>Make sure that firebase is set up and you have the projectID</b></summary>
+
+- Install Firebase Tools: `npm i -g firebase-tools`
+- Create a project through the [firebase web console](https://console.firebase.google.com/)
+- Login to the Firebase CLI tool with `firebase login`
+- Grab the **projectID** from [`firebase projects:list`](https://firebase.google.com/docs/cli#admin-commands) or the web consoles URL: `https://console.firebase.google.com/project/<projectID>`
+  </details>
+
+## How to use
+
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
 
 ```bash
-npm run dev
+npx create-next-app --example with-firebase-hosting with-firebase-hosting-app
 # or
-yarn dev
+yarn create next-app --example with-firebase-hosting with-firebase-hosting-app
+# or
+pnpm create next-app --example with-firebase-hosting with-firebase-hosting-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Important:** Update `.firebaserc` and add your firebase project ID.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+To run Firebase locally for testing:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+npm run serve
+# or
+yarn serve
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To deploy it to the cloud with Firebase:
 
-## Learn More
+```bash
+npm run deploy
+# or
+yarn deploy
+```
 
-To learn more about Next.js, take a look at the following resources:
+## TypeScript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To use TypeScript, simply follow [TypeScript setup](https://nextjs.org/learn/excel/typescript/setup) as normal (package.json scripts are already set).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+i.e: `npm install --save-dev typescript @types/react @types/node`
 
-## Deploy on Vercel
+Then you can create components and pages in `.tsx` or `.ts`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Only `src/next.config.js` and `firebaseFunctions.js` must remain in `*.js` format.**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Good to know
+
+- [`firebase.json`](firebase.json:#L7) outlines the catchall rewrite rule for our Cloud Function.
+- The empty `public/.gitignore` file is to ensure `public/` dir exists as it is required for Firebase Hosting. It is [configured](firebase.json:#L4) (by [default](https://firebase.google.com/docs/hosting/full-config#ignore)) that dotfiles (`public/.*`) are ignored from being publicly served.
+- The Cloud Function is named `nextjsFunc` (changeable in [firebaseFunctions.js](firebaseFunctions.js#L16) and [firebase.json](firebase.json#L8)).
+- `public/*` files are statically served through [Firebase hosting](https://firebase.google.com/docs/hosting/full-config#public), not through [NextJs server](https://nextjs.org/docs/basic-features/static-file-serving).
+
+#### Customization
+
+Next App is in `src/` directory.
+
+The crucial files for the setup:
+
+- `.firebaserc`
+- `firebase.json`
+- `firebaseFunctions.js`
+- `src/next.config.js`
+- In `package.json`: `firebase-*` packages.
+
+## References
+
+- [geovanisouza92/serverless-firebase](https://github.com/geovanisouza92/serverless-firebase) repo
+- [jthegedus/firebase-functions-next-example](https://github.com/jthegedus/firebase-functions-next-example) repo
+- [this medium article](https://medium.com/@jthegedus/next-js-on-cloud-functions-for-firebase-with-firebase-hosting-7911465298f2)
+- [Crash Course: Node.js apps on Firebase Hosting](https://youtu.be/LOeioOKUKI8)
+- [Official documentation](https://firebase.google.com/docs/cli).
