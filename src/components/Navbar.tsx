@@ -1,5 +1,5 @@
 import { Navbar as Bar } from 'react-bulma-components';
-import styles from '../styles/Navbar.module.scss';
+import styles from '../styles/modules/Navbar.module.scss';
 
 const Navbar = () => {
 	// TODO: nice navbar

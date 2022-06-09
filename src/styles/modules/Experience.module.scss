@@ -1,0 +1,66 @@
+@import '../palette.scss';
+
+@mixin progress-bar($color) {
+	progress::-moz-progress-bar {
+		background-color: $color;
+		height: 0.5rem;
+	}
+
+	progress::-webkit-progress-value {
+		background-color: $color;
+	}
+
+	progress {
+		color: $color;
+		height: 0.5rem;
+	}
+}
+
+.root {
+	width: 75%;
+}
+
+.dates {
+	// font-weight: bold;
+	font-style: italic;
+	color: $medium-grey;
+}
+
+.tldr h3 {
+	margin-bottom: 0;
+	margin-top: 0;
+	color: $light-grey;
+}
+
+.tldr li {
+	font-weight: 600;
+	color: $light-grey;
+}
+
+.body p {
+	// color: $medium-grey;
+}
+
+.tldr,
+.technology {
+	h3 {
+		font-size: 1rem;
+	}
+}
+
+.tldr,
+.technologies {
+	padding-bottom: 2rem;
+}
+
+.python {
+	@include progress-bar(#f2c73eff);
+}
+
+.jee {
+	@include progress-bar(#e53127ff);
+}
+
+.mysql {
+	@include progress-bar(#00618aff);
+}

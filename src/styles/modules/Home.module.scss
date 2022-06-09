@@ -1,4 +1,4 @@
-@import './palette.scss';
+@import '../palette.scss';
 
 .text {
 	display: flex;
@@ -7,7 +7,6 @@
 }
 
 .column {
-	max-width: 50%;
 	margin: auto;
 }
 
@@ -17,7 +16,7 @@
 	left: 10px;
 	border-radius: 9999px;
 	border: solid $primary-lighterer 3px;
-	transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .hover .imageBorder {
@@ -51,6 +50,12 @@
 .image {
 	transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 	border-radius: 9999px;
+}
+
+div.title {
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: solid $light-grey 1px;
 }
 
 #iam,

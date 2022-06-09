@@ -7,7 +7,7 @@
 		"start": "next start src/",
 		"serve": "npm run build && firebase emulators:start --only functions,hosting",
 		"shell": "npm run build && firebase functions:shell",
-		"deploy": "firebase deploy --only functions,hosting",
+		"deploy": "npm run build && firebase deploy --only functions,hosting",
 		"logs": "firebase functions:log"
 	},
 	"dependencies": {
@@ -22,6 +22,7 @@
 		"react": "18.1.0",
 		"react-bulma-components": "^4.1.0",
 		"react-dom": "18.1.0",
+		"react-icons": "^4.4.0",
 		"sass": "^1.52.2"
 	},
 	"devDependencies": {

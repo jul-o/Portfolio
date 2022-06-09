@@ -1,16 +1,64 @@
-import styles from '../styles/Contact.module.scss';
+import { useState } from 'react';
 import { Button } from 'react-bulma-components';
+import { FaRegCopy } from 'react-icons/fa';
+import styles from '../styles/modules/Contact.module.scss';
 
 const Contact = () => {
+	const [copiedEmail, setCopiedEmail] = useState(false);
+	const [copiedPhone, setCopiedPhone] = useState(false);
+
+	const updateTooltipState = (setter: Function) => {
+		setCopiedEmail(false);
+		setCopiedPhone(false);
+		setter(true);
+		setTimeout(() => {
+			setter(false);
+		}, 2000);
+	};
+
 	return (
 		<div id="contact" className={styles.root}>
-			<h1 className="title is-1">Pour me contacter :</h1>
-			<div id="email">
-				<Button className={styles.button}>jules.sang@grenoble-inp.org</Button>
+			<h1>Pour me contacter :</h1>
+			<div className={styles.contacts}>
+				<div id="email" className={styles.contact}>
+					<a href="mailto:jules.sang@grenoble-inp.org">
+						<button className={styles.button}>
+							jules.sang@grenoble-inp.org
+						</button>
+					</a>
+					<button
+						className={styles.copy}
+						onClick={() => {
+							navigator.clipboard.writeText('jules.sang@grenoble-inp.org');
+							updateTooltipState(setCopiedEmail);
+						}}>
+						<FaRegCopy />
+					</button>
+				</div>
+				<div id="phone" className={styles.contact}>
+					<a href="tel:+33 6 51 77 14 97">
+						<button className={styles.button}>06 51 77 14 97</button>
+					</a>
+					<button
+						className={styles.copy}
+						onClick={() => {
+							navigator.clipboard.writeText('+33 6 51 77 14 97');
+							updateTooltipState(setCopiedPhone);
+						}}>
+						<FaRegCopy />
+					</button>
+				</div>
 			</div>
-			<div id="phone" className="is-justify-content-center is-flex">
-				<Button className={styles.button}>06 51 77 14 97</Button>
-			</div>
+			{copiedEmail && (
+				<span className={styles.copiedAlert}>
+					Email copié dans le presse-papier !
+				</span>
+			)}
+			{copiedPhone && (
+				<span className={styles.copiedAlert}>
+					Numéro de téléphone copié dans le presse-papier !
+				</span>
+			)}
 		</div>
 	);
 };

@@ -3,7 +3,7 @@ import Experience from './Experience';
 const Experiences = () => {
 	return (
 		<div id="experiences">
-			<h1 className="title is-1">Mes expériences de développeur</h1>
+			<h1>Mes expériences de développeur</h1>
 			{/* TODO: fetch data for experiences from a file */}
 			<Experience
 				title="Développeur logiciel en alternance"

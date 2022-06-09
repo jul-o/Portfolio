@@ -1,13 +1,14 @@
 @use 'sass:color';
-@import './palette.scss';
+@import '../palette.scss';
 
 // $bg: color.adjust(#323232, $lightness: -5%);
 
 .navbar {
-	height: 5vh;
 	position: fixed;
 	width: 100%;
 	background-color: $primary;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .navbar > a {
@@ -17,6 +18,6 @@
 
 .navbar > a:hover {
 	background-color: $primary;
-	color: white;
+	color: $secondary;
 	animation: forwards 0.5s ease-in;
 }

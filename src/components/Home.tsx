@@ -1,5 +1,5 @@
 // styles import
-import styles from '../styles/Home.module.scss';
+import styles from '../styles/modules/Home.module.scss';
 import { Columns } from 'react-bulma-components';
 import Image from 'next/image';
 import myPic from '../styles/assets/me.png';
@@ -8,18 +8,15 @@ import { useState } from 'react';
 const Home = () => {
 	return (
 		<div id="home">
+			<h1>Parlons un peu de moi</h1>
 			<Columns>
 				<Columns.Column className={styles.column}>
 					<div className={styles.title}>
-						<h1 id={styles.iam} className="title is-6 mb-0">
+						<h6 id={styles.iam} className="mb-0">
 							Bonjour, moi c'est
-						</h1>
-						<h1 id={styles.name} className="title is-1">
-							Jules Sang
-						</h1>
-						<h1 id={styles.job} className="title is-2">
-							Développeur frontend
-						</h1>
+						</h6>
+						<h2 id={styles.name}>Jules Sang.</h2>
+						<h3 id={styles.job}>Développeur frontend.</h3>
 					</div>
 					<div className={styles.text}>
 						<p>

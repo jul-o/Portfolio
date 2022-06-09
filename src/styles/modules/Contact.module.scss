@@ -1,0 +1,45 @@
+@import '../palette.scss';
+
+.root {
+	display: flex;
+	justify-content: center;
+}
+
+.contact {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	margin-bottom: 0.5em;
+}
+
+.button {
+	border: solid $secondary 2px;
+	color: $secondary;
+	background: linear-gradient(to right, $secondary 50%, $primary 50%);
+	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+	background-size: 200% 100%;
+	background-position: right bottom;
+
+	&:hover,
+	&:focus {
+		background-position: left bottom;
+		color: white;
+		border-color: white;
+	}
+}
+
+.copy {
+	@extend .button;
+	background: $primary;
+	margin-left: 0.5rem;
+}
+
+.copiedAlert {
+	position: fixed;
+	bottom: 1rem;
+	color: $light-grey;
+	background-color: $dark-grey;
+	padding: 0.5rem 1rem;
+	border: solid black 1px;
+	border-radius: 0.5rem;
+}
