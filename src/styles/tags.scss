@@ -59,17 +59,24 @@ h6 {
 	font-size: 1rem;
 }
 
-.button {
-	// background-color: $secondary;
+button {
 	background-color: $primary;
 	color: $secondary;
 	border: solid $secondary 2px;
-}
+	height: 2.5rem;
+	border-radius: 0.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 1rem;
 
-.button:hover,
-.button:focus {
-	color: $light-grey;
-	border-color: $light-grey;
+	&:hover {
+		color: $light-grey;
+		border-color: $light-grey;
+	}
+
+	&:focus {
+		@extend button;
+	}
 }
 
 ul {
@@ -83,12 +90,4 @@ a {
 
 p {
 	text-align: justify;
-}
-
-button {
-	height: 2.5rem;
-	border-radius: 0.5rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	font-size: 1rem;
 }
