@@ -1,5 +1,7 @@
 - make sure every section takes at most 100vh?
 - implement dark mode toggle
   - if possible, animate it
+  - sass-ffi might help
 - Hobbies on the right side with icon toggling pictures
 - Log link to project's github in the console
+- cursor = lil hand when hovering buttons

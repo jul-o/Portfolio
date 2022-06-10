@@ -3,27 +3,33 @@
 @mixin progress-bar($color) {
 	progress::-moz-progress-bar {
 		background-color: $color;
-		height: 0.5rem;
+		height: 0.2rem;
+		border-radius: 0.1rem;
 	}
 
 	progress::-webkit-progress-value {
 		background-color: $color;
+		height: 0.2rem;
+		border-radius: 0.1rem;
 	}
 
 	progress {
 		color: $color;
-		height: 0.5rem;
+		height: 0.2rem;
+		width: 100%;
+		border: none;
+		border-radius: 0.1rem;
 	}
-}
-
-.root {
-	width: 75%;
 }
 
 .dates {
 	// font-weight: bold;
 	font-style: italic;
 	color: $medium-grey;
+}
+
+.titles h2 {
+	font-size: 1.5rem;
 }
 
 .tldr h3 {
@@ -35,10 +41,6 @@
 .tldr li {
 	font-weight: 600;
 	color: $light-grey;
-}
-
-.body p {
-	// color: $medium-grey;
 }
 
 .tldr,
@@ -53,14 +55,34 @@
 	padding-bottom: 2rem;
 }
 
-.python {
-	@include progress-bar(#f2c73eff);
-}
+.progress {
+	display: flex;
 
-.jee {
-	@include progress-bar(#e53127ff);
-}
+	&.python {
+		@include progress-bar(#f2c73eff);
+	}
 
-.mysql {
-	@include progress-bar(#00618aff);
+	&.jee {
+		@include progress-bar(#e53127ff);
+	}
+
+	&.mysql {
+		@include progress-bar(#00618aff);
+	}
+
+	&.react {
+		@include progress-bar(#61dbfbff);
+	}
+
+	&.express {
+		@include progress-bar(#4f4f4f);
+	}
+
+	&.mongodb {
+		@include progress-bar(#4a9e47);
+	}
+
+	&.jest {
+		@include progress-bar(#bc3a13);
+	}
 }

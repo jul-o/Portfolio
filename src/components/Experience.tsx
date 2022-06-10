@@ -1,5 +1,4 @@
 import { ReactElement } from 'react';
-import { Progress } from 'react-bulma-components';
 import styles from '../styles/modules/Experience.module.scss';
 
 interface Props {
@@ -17,7 +16,7 @@ interface Props {
 const Experience = ({ title, dates, technologies, tldr, body }: Props) => {
 	return (
 		<div className={styles.root}>
-			<div id="titles">
+			<div className={styles.titles}>
 				<h2>{title}</h2>
 				<p className={styles.dates}>{dates}</p>
 			</div>
@@ -25,8 +24,8 @@ const Experience = ({ title, dates, technologies, tldr, body }: Props) => {
 				{technologies.map(({ name, percentage, color }) => (
 					<div className={styles.technology} key={name}>
 						<h3>{name}</h3>
-						<div className={color && styles[color]}>
-							<Progress max={100} value={percentage} />
+						<div className={`${styles.progress} ${color && styles[color]}`}>
+							<progress max={100} value={percentage} />
 						</div>
 					</div>
 				))}
