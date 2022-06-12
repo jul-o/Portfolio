@@ -29,8 +29,14 @@
 
 .copy {
 	@extend .button;
+	border: 0;
 	background: $primary;
 	margin-left: 0.5rem;
+	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+	&:hover {
+		padding-bottom: 0.5rem;
+	}
 }
 
 .copiedAlert {

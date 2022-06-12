@@ -33,7 +33,8 @@ $selector-item-height: 2.5rem;
 
 		white-space: nowrap;
 
-		&.selected {
+		&.selected,
+		&:hover {
 			// border-left: solid 3px $secondary;
 			background-color: $primary-light;
 		}

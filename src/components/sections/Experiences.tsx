@@ -1,7 +1,7 @@
-import Experience from './Experience';
+import Experience from 'components/Experience';
 import { useState } from 'react';
-import styles from '../styles/modules/Experiences.module.scss';
-import experiences from '../data_frontend/experiences.json';
+import styles from 'styles/modules/Experiences.module.scss';
+import experiences from 'data_frontend/experiences.json';
 
 const Experiences = () => {
 	const [selectedIndex, setSelectedIndex] = useState(0);
