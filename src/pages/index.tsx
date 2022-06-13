@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Contact from 'components/sections/Contact';
-import Experiences from 'components/sections/Experiences';
-import Home from 'components/sections/Home';
-import Navbar from 'components/Navbar';
+import Contact from 'components/elements/Contact';
+import Experiences from 'components/elements/Experiences';
+import Home from 'components/elements/Home';
+import Navbar from 'components/elements/Navbar';
 
 const Page = () => {
 	return (

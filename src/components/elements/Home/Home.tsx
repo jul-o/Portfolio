@@ -3,13 +3,13 @@ import { Columns } from 'react-bulma-components';
 import Image from 'next/image';
 import myPic from 'styles/assets/me.png';
 import { useEffect, useState } from 'react';
-import styles from 'styles/modules/Home.module.scss';
+import styles from './Home.module.scss';
 import aboutMe from 'data_frontend/me.json';
 import Hobbies from './Hobbies';
 import Portrait from './Portrait';
-import ParaglidingModal from './ParaglidingModal';
-import WindsurfingModal from './WindsurfingModal';
-import ClibingModal from './ClimbingModal';
+import ParaglidingModal from './Modals/ParaglidingModal';
+import WindsurfingModal from './Modals/WindsurfingModal';
+import ClibingModal from './Modals/ClimbingModal';
 
 const Home = () => {
 	const {

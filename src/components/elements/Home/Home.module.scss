@@ -1,0 +1,41 @@
+@import 'styles/palette';
+
+.text {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.columns {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+div.title {
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: solid $light-grey 1px;
+}
+
+.iam,
+.name,
+.job {
+	text-align: left;
+}
+
+.iam {
+	font-size: 1rem;
+	color: $primary-lightererer;
+	font-weight: normal;
+}
+
+.job {
+	color: $medium-grey;
+}
+
+.hobbies_title {
+	font-size: 1.25rem;
+	white-space: nowrap;
+}

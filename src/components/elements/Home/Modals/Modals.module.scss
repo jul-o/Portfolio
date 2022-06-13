@@ -1,0 +1,11 @@
+.modal_body {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+
+	.modal_image {
+		display: flex;
+		align-items: center;
+		flex-grow: 4;
+	}
+}

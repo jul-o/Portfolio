@@ -1,13 +1,17 @@
 import Image from 'next/image';
 import Modal from 'components/elements/Modal';
-import styles from 'styles/modules/Home.module.scss';
+import styles from '../Modals.module.scss';
 import paraglidingImage from 'styles/assets/paragliding.png';
+import { useEffect } from 'react';
 
 interface Props {
 	onClose: () => void;
 }
 
 const ParaglidingModal = ({ onClose }: Props) => {
+	useEffect(() => {
+		console.log({ styles });
+	});
 	return (
 		<Modal onClose={onClose} header={<h1>Le parapente</h1>}>
 			<div className={styles.modal_body}>

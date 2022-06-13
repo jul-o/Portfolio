@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from 'react-bulma-components';
 import { FaRegCopy } from 'react-icons/fa';
-import styles from 'styles/modules/Contact.module.scss';
+import styles from './Contact.module.scss';
 
 const Contact = () => {
 	const [copiedEmail, setCopiedEmail] = useState(false);
