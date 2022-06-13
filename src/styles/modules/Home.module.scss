@@ -1,4 +1,4 @@
-@import '../palette.scss';
+@import '../palette';
 
 .text {
 	display: flex;
@@ -93,9 +93,27 @@ div.title {
 
 .iam {
 	font-size: 1rem;
+	color: $primary-lightererer;
+	font-weight: normal;
+}
+
+.job {
+	color: $medium-grey;
 }
 
 .hobbies_title {
 	font-size: 1.25rem;
 	white-space: nowrap;
+}
+
+.modal_body {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+
+	.modal_image {
+		display: flex;
+		align-items: center;
+		flex-grow: 4;
+	}
 }

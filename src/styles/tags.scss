@@ -1,4 +1,4 @@
-@import './palette.scss';
+@import './palette';
 
 html,
 body {
@@ -25,15 +25,9 @@ h3,
 h4,
 h5,
 h6,
+p,
 li {
 	color: $light-grey;
-}
-
-p {
-	color: $medium-grey;
-	&:hover {
-		color: $light-grey;
-	}
 }
 
 h1,
@@ -78,6 +72,12 @@ button {
 	padding-left: 1rem;
 	padding-right: 1rem;
 	font-size: 1rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 	&:hover {
 		color: $light-grey;
