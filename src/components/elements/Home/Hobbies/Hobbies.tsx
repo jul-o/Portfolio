@@ -14,15 +14,17 @@ const Hobbies = ({ openParagliding, openClimbing, openWindsurfing }: Props) => {
 	return (
 		<div className={styles.hobbies}>
 			<h2 className={styles.hobbies_title}>Mes passions</h2>
-			<button onClick={openParagliding}>
-				<MdOutlineParagliding />
-			</button>
-			<button onClick={openClimbing}>
-				<GiMountainClimbing />
-			</button>
-			<button onClick={openWindsurfing}>
-				<RiSailboatLine />
-			</button>
+			<div className={styles.buttons}>
+				<button onClick={openParagliding}>
+					<MdOutlineParagliding />
+				</button>
+				<button onClick={openClimbing}>
+					<GiMountainClimbing />
+				</button>
+				<button onClick={openWindsurfing}>
+					<RiSailboatLine />
+				</button>
+			</div>
 		</div>
 	);
 };
