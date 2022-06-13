@@ -1,22 +1,19 @@
 import { Navbar as Bar } from 'react-bulma-components';
-import styles from '../styles/modules/Navbar.module.scss';
+import styles from 'styles/modules/Navbar.module.scss';
 
 const Navbar = () => {
-	// TODO: nice navbar
 	// TODO: navbar disappears when scrolling down, reappears when scrolling up
 	return (
-		<div>
-			<Bar id="navbar" fixed="top" className={styles.navbar}>
-				<Bar.Item renderAs="a" href="/#home">
-					Jules Sang
-				</Bar.Item>
-				<Bar.Item renderAs="a" href="/#experiences">
-					Expériences professionnelles
-				</Bar.Item>
-				<Bar.Item renderAs="a" href="/#contact">
-					Contact
-				</Bar.Item>
-			</Bar>
+		<div id="navbar" className={styles.navbar}>
+			<a href="/#home">
+				<span>Jules Sang</span>
+			</a>
+			<a href="/#experiences">
+				<span>Expériences professionnelles</span>
+			</a>
+			<a href="/#contact">
+				<span>Contact</span>
+			</a>
 		</div>
 	);
 };

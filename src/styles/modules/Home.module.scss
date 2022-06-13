@@ -1,4 +1,4 @@
-@import '../palette.scss';
+@import '../palette';
 
 .text {
 	display: flex;
@@ -6,8 +6,11 @@
 	flex-direction: column;
 }
 
-.column {
-	margin: auto;
+.columns {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 
 .imageBorder {
@@ -25,6 +28,8 @@
 }
 
 .imageWrapper {
+	margin-left: 3rem;
+	margin-right: 3rem;
 	position: relative;
 	border-radius: 9999px;
 }
@@ -58,8 +63,57 @@ div.title {
 	border-bottom: solid $light-grey 1px;
 }
 
-#iam,
-#name,
-#job {
+.hobbies {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.hobbies button {
+	border-radius: 9999px;
+	border: 0;
+
+	* {
+		width: 1.5rem;
+		height: 1.5rem;
+		transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+
+	&:hover * {
+		margin-bottom: 0.5rem;
+	}
+}
+
+.iam,
+.name,
+.job {
 	text-align: left;
+}
+
+.iam {
+	font-size: 1rem;
+	color: $primary-lightererer;
+	font-weight: normal;
+}
+
+.job {
+	color: $medium-grey;
+}
+
+.hobbies_title {
+	font-size: 1.25rem;
+	white-space: nowrap;
+}
+
+.modal_body {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+
+	.modal_image {
+		display: flex;
+		align-items: center;
+		flex-grow: 4;
+	}
 }

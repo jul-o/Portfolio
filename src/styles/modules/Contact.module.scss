@@ -1,4 +1,4 @@
-@import '../palette.scss';
+@import '../palette';
 
 .root {
 	display: flex;
@@ -16,7 +16,6 @@
 	border: solid $secondary 2px;
 	color: $secondary;
 	background: linear-gradient(to right, $secondary 50%, $primary 50%);
-	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 	background-size: 200% 100%;
 	background-position: right bottom;
 
@@ -29,8 +28,13 @@
 
 .copy {
 	@extend .button;
+	border: 0;
 	background: $primary;
 	margin-left: 0.5rem;
+
+	&:hover {
+		padding-bottom: 0.5rem;
+	}
 }
 
 .copiedAlert {

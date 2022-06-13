@@ -1,13 +1,8 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
 import React, { useState } from 'react';
-import Contact from '../components/Contact';
-import Experiences from '../components/Experiences';
-import Home from '../components/Home';
-import Navbar from '../components/Navbar';
-// import { Navbar } from 'react-bulma-components'
+import Contact from 'components/sections/Contact';
+import Experiences from 'components/sections/Experiences';
+import Home from 'components/sections/Home';
+import Navbar from 'components/Navbar';
 
 const Page = () => {
 	return (

@@ -1,5 +1,5 @@
 @use 'sass:color';
-@import '../palette.scss';
+@import '../palette';
 
 // $bg: color.adjust(#323232, $lightness: -5%);
 
@@ -9,15 +9,22 @@
 	background-color: $primary;
 	display: flex;
 	justify-content: flex-end;
+	align-items: center;
+	height: 3.5rem;
 }
 
-.navbar > a {
+.navbar a {
+	height: 100%;
 	color: $light-grey;
 	transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
+	display: flex;
+	align-items: center;
 
-.navbar > a:hover {
-	background-color: $primary;
-	color: $secondary;
-	animation: forwards 0.5s ease-in;
+	margin-right: 1rem;
+
+	&:hover {
+		background-color: $primary;
+		color: $secondary;
+		animation: forwards 0.5s ease-in;
+	}
 }

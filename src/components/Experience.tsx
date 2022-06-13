@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import styles from '../styles/modules/Experience.module.scss';
+import styles from 'styles/modules/Experience.module.scss';
 
 interface Props {
 	title: string;
