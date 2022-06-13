@@ -1,13 +1,13 @@
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 import styles from './Modal.module.scss';
 import { AiOutlineClose } from 'react-icons/ai';
 
 interface Props {
 	onClose: () => void;
-	header?: ReactElement;
-	children: ReactElement;
-	footer?: ReactElement;
+	header?: ReactNode;
+	children: ReactNode;
+	footer?: ReactNode;
 }
 
 const Modal = ({ onClose, header, children, footer }: Props) => {

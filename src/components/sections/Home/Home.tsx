@@ -8,6 +8,8 @@ import aboutMe from 'data_frontend/me.json';
 import Hobbies from './Hobbies';
 import Portrait from './Portrait';
 import ParaglidingModal from './ParaglidingModal';
+import WindsurfingModal from './WindsurfingModal';
+import ClibingModal from './ClimbingModal';
 
 const Home = () => {
 	const {
@@ -48,6 +50,8 @@ const Home = () => {
 				</div>
 			</div>
 			{paragliding && <ParaglidingModal onClose={closeModal} />}
+			{climbing && <ClibingModal onClose={closeModal} />}
+			{windsurfing && <WindsurfingModal onClose={closeModal} />}
 		</div>
 	);
 };
