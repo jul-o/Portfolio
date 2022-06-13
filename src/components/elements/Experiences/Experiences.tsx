@@ -1,6 +1,6 @@
-import Experience from 'components/Experience';
+import Experience from 'components/elements/Experiences/Experience';
 import { useState } from 'react';
-import styles from 'styles/modules/Experiences.module.scss';
+import styles from './Experiences.module.scss';
 import experiences from 'data_frontend/experiences.json';
 
 const Experiences = () => {

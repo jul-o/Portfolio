@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from 'styles/modules/Home.module.scss';
+import styles from './Hobbies.module.scss';
 import { GiMountainClimbing } from 'react-icons/gi';
 import { RiSailboatLine } from 'react-icons/ri';
 import { MdOutlineParagliding } from 'react-icons/md';

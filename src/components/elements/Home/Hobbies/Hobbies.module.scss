@@ -1,0 +1,21 @@
+.hobbies {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.hobbies button {
+	border-radius: 9999px;
+	border: 0;
+
+	* {
+		width: 1.5rem;
+		height: 1.5rem;
+		transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+
+	&:hover * {
+		margin-bottom: 0.5rem;
+	}
+}

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
-import styles from 'styles/modules/Home.module.scss';
+import styles from './Portrait.module.scss';
 import myPic from 'styles/assets/me.png';
 
 const Portrait = () => {

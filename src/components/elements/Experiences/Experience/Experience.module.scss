@@ -1,4 +1,4 @@
-@import '../palette';
+@import 'styles/palette';
 
 @mixin progress-bar($color) {
 	progress::-moz-progress-bar {

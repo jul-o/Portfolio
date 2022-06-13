@@ -1,5 +1,5 @@
 import { Navbar as Bar } from 'react-bulma-components';
-import styles from 'styles/modules/Navbar.module.scss';
+import styles from './Navbar.module.scss';
 
 const Navbar = () => {
 	// TODO: navbar disappears when scrolling down, reappears when scrolling up
