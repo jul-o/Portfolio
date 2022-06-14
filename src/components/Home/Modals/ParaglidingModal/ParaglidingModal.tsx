@@ -2,16 +2,12 @@ import Image from 'next/image';
 import Modal from 'components/Modal';
 import styles from '../Modals.module.scss';
 import paraglidingImage from 'styles/assets/paragliding.png';
-import { useEffect } from 'react';
 
 interface Props {
 	onClose: () => void;
 }
 
 const ParaglidingModal = ({ onClose }: Props) => {
-	useEffect(() => {
-		console.log({ styles });
-	});
 	return (
 		<Modal onClose={onClose} header={<h1>Le parapente</h1>}>
 			<div className={styles.modal_body}>
@@ -39,16 +35,5 @@ const ParaglidingModal = ({ onClose }: Props) => {
 		</Modal>
 	);
 };
-
-// const ParaglidingModal = ({ onClose }) => {
-// 	return (
-// 		<Modal show onClose={onClose}>
-// 			<Modal.Content>PARAAAAAA</Modal.Content>
-// 			<Modal.Card>
-// 				<Modal.Card.Body>UWUUUUU</Modal.Card.Body>
-// 			</Modal.Card>
-// 		</Modal>
-// 	);
-// };
 
 export default ParaglidingModal;

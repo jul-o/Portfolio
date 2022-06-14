@@ -42,3 +42,7 @@ div.title {
 	font-size: 1.25rem;
 	white-space: nowrap;
 }
+
+.column:not(:first-child) {
+	margin-top: 1rem;
+}

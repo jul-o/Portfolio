@@ -8,20 +8,24 @@ interface Props {
 	header?: ReactNode;
 	children: ReactNode;
 	footer?: ReactNode;
+	style?: React.CSSProperties;
 }
 
-const Modal = ({ onClose, header, children, footer }: Props) => {
+const Modal = ({ onClose, header, children, footer, style }: Props) => {
 	useEffect(() => {
-		const html = document.getElementsByTagName('html');
-		html.item(0).style.overflowY = 'hidden';
+		// const html = document.getElementsByTagName('html');
+		const html = document.querySelector('html');
+
+		const previousOverflowY = html.style.overflowY;
+		html.style.overflowY = 'hidden';
 
 		return () => {
-			html.item(0).style.overflowY = '';
+			html.style.overflowY = previousOverflowY;
 		};
 	}, []);
 
 	return ReactDOM.createPortal(
-		<div className={styles.root} onClick={onClose}>
+		<div className={styles.root} onClick={onClose} style={style}>
 			<div
 				className={styles.modal}
 				onClick={(e) => {
