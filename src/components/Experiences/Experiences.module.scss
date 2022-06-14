@@ -17,15 +17,14 @@ $selector-item-height: 2.5rem;
 	height: fit-content;
 
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
+	border-left: solid 1px $medium-grey;
 
 	position: relative;
 
 	@media (min-width: 768px) {
-		flex-direction: column;
 		margin-right: 4rem;
-		border-left: solid 1px $medium-grey;
 	}
 
 	.button {
@@ -33,7 +32,7 @@ $selector-item-height: 2.5rem;
 		border-radius: 0;
 
 		justify-content: flex-start;
-		flex: 1;
+		// flex: 1;
 
 		height: $selector-item-height;
 
@@ -45,29 +44,25 @@ $selector-item-height: 2.5rem;
 			background-color: $primary-light;
 		}
 
-		@media (min-width: 768px) {
-			flex: auto;
-		}
+		// @media (min-width: 768px) {
+		// flex: auto;
+		// }
 	}
 
 	@for $i from 0 through 1 {
 		.selected_margin--#{$i} {
-			position: absolute;
-			width: 50%;
-			// TODO: find a better way to express this
-			left: 50% * $i;
+			height: $selector-item-height;
+			width: 0;
+			top: #{2.5 * $i}rem;
+			left: 0;
 
-			border-top: solid 3px $secondary;
+			position: absolute;
+
+			border-left: solid 3px $secondary;
 
 			transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 			@media (min-width: 768px) {
-				height: $selector-item-height;
-				width: 0;
-				top: #{2.5 * $i}rem;
-				left: 0;
-
-				border-left: solid 3px $secondary;
 				border-top: 0;
 			}
 		}
