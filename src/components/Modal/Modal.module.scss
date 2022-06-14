@@ -19,10 +19,12 @@ $global-border-radius: 0.5rem;
 .modal {
 	background-color: $primary;
 	border-radius: $global-border-radius;
-	max-width: 80%;
-	max-height: 80%;
 	display: inline-block;
 	overflow: auto;
+	@media (min-width: 768px) {
+		max-width: 80%;
+		max-height: 80%;
+	}
 }
 
 .header,

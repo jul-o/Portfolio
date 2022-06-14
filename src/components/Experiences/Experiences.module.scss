@@ -1,0 +1,75 @@
+@import 'styles/palette';
+$selector-item-height: 2.5rem;
+
+.experiences_wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+	min-height: 100vh;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+	}
+}
+
+.experience_selector {
+	height: fit-content;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	position: relative;
+
+	@media (min-width: 768px) {
+		flex-direction: column;
+		margin-right: 4rem;
+		border-left: solid 1px $medium-grey;
+	}
+
+	.button {
+		border: 0;
+		border-radius: 0;
+
+		justify-content: flex-start;
+		flex: 1;
+
+		height: $selector-item-height;
+
+		white-space: nowrap;
+
+		&.selected,
+		&:hover {
+			// border-left: solid 3px $secondary;
+			background-color: $primary-light;
+		}
+
+		@media (min-width: 768px) {
+			flex: auto;
+		}
+	}
+
+	@for $i from 0 through 1 {
+		.selected_margin--#{$i} {
+			position: absolute;
+			width: 50%;
+			// TODO: find a better way to express this
+			left: 50% * $i;
+
+			border-top: solid 3px $secondary;
+
+			transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+			@media (min-width: 768px) {
+				height: $selector-item-height;
+				width: 0;
+				top: #{2.5 * $i}rem;
+				left: 0;
+
+				border-left: solid 3px $secondary;
+				border-top: 0;
+			}
+		}
+	}
+}

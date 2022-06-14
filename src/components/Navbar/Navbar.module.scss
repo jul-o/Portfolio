@@ -11,6 +11,7 @@
 	justify-content: flex-end;
 	align-items: center;
 	height: 3.5rem;
+	z-index: 1;
 }
 
 .navbar a {
@@ -26,5 +27,9 @@
 		background-color: $primary;
 		color: $secondary;
 		animation: forwards 0.5s ease-in;
+	}
+
+	span {
+		font-size: clamp(0.5rem, 0.5rem + 1.5vw, 1rem);
 	}
 }

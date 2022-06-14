@@ -8,16 +8,9 @@ const Portrait = () => {
 
 	return (
 		<figure
-			className={`image is-256x256 ${styles.imageWrapper} ${
-				hover && styles.hover
-			}`}
-			onMouseEnter={() => {
-				setHover(true);
-			}}
-			onMouseLeave={() => {
-				setHover(false);
-			}}>
-			<div className={`${styles.imageBorder} is-256x256`} />
+			tabIndex={0}
+			className={`${styles.imageWrapper} ${hover && styles.hover}`}>
+			<div className={styles.imageBorder} />
 			<Image src={myPic} width={256} height={256} className={styles.image} />
 		</figure>
 	);
