@@ -1,20 +1,21 @@
 import Experience from 'components/elements/Experiences/Experience';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Experiences.module.scss';
 import experiences from 'data_frontend/experiences.json';
 
 const Experiences = () => {
 	const [selectedIndex, setSelectedIndex] = useState(0);
+	// useEffect(() => {
+	// 	console.log(styles);
+	// 	console.log(styles['selected_margin--0']);
+	// });
 
 	return (
 		<div id="experiences">
 			<h1>Mes expériences de développeur</h1>
 			<div className={styles.experiences_wrapper}>
 				<div className={styles.experience_selector} id="experience-selector">
-					<div
-						className={`${styles.selected_margin}`}
-						style={{ top: `${2.5 * selectedIndex}rem` }}
-					/>
+					<div className={styles[`selected_margin--${selectedIndex}`]} />
 
 					{experiences.map((experience, index) => (
 						<button
