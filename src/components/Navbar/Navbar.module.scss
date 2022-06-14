@@ -28,4 +28,8 @@
 		color: $secondary;
 		animation: forwards 0.5s ease-in;
 	}
+
+	span {
+		font-size: clamp(0.5rem, 0.5rem + 1.5vw, 1rem);
+	}
 }

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import styles from './Modal.module.scss';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -11,6 +11,15 @@ interface Props {
 }
 
 const Modal = ({ onClose, header, children, footer }: Props) => {
+	useEffect(() => {
+		const html = document.getElementsByTagName('html');
+		html.item(0).style.overflowY = 'hidden';
+
+		return () => {
+			html.item(0).style.overflowY = '';
+		};
+	}, []);
+
 	return ReactDOM.createPortal(
 		<div className={styles.root} onClick={onClose}>
 			<div

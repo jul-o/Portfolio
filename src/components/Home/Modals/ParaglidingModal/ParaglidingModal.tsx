@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Modal from 'components/elements/Modal';
+import Modal from 'components/Modal';
 import styles from '../Modals.module.scss';
 import paraglidingImage from 'styles/assets/paragliding.png';
 import { useEffect } from 'react';

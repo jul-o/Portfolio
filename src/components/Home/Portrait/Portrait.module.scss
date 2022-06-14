@@ -1,0 +1,53 @@
+@import 'styles/palette';
+
+.imageWrapper {
+	margin-left: 3rem;
+	margin-right: 3rem;
+	position: relative;
+	border-radius: 9999px;
+
+	width: 256px;
+	height: 256px;
+
+	&:after {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: scale-color($color: $primary-lighter, $alpha: -50%);
+		top: 0;
+		left: 0;
+		display: block;
+		content: '';
+		border-radius: 9999px;
+		transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+
+	&:hover,
+	&:focus {
+		&:after {
+			background-color: rgba(0, 0, 0, 0);
+		}
+
+		.imageBorder {
+			top: 0;
+			left: 0;
+		}
+	}
+
+	.imageBorder {
+		position: absolute;
+		width: 256px;
+		height: 256px;
+		top: 10px;
+		left: 10px;
+
+		border-radius: 9999px;
+		border: solid $primary-lighterer 3px;
+		transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+	}
+
+	.image {
+		transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+		border-radius: 9999px;
+	}
+}
