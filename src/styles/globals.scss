@@ -6,18 +6,18 @@
 }
 
 #root > * {
-	max-width: 95%;
+	max-width: 95vw;
 	min-height: 100vh;
 	margin: 0 auto;
-	text-align: left;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	// flex-direction: column;
 	padding-top: 3.5rem;
 
-	@media (min-width: 768px) {
-		max-width: 70%;
+	@media (min-with: 768px) {
+		max-width: 70vw;
+		margin: 0 auto;
 	}
 }
 

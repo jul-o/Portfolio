@@ -32,7 +32,6 @@ $selector-item-height: 2.5rem;
 		border-radius: 0;
 
 		justify-content: flex-start;
-		// flex: 1;
 
 		height: $selector-item-height;
 
@@ -40,13 +39,8 @@ $selector-item-height: 2.5rem;
 
 		&.selected,
 		&:hover {
-			// border-left: solid 3px $secondary;
 			background-color: $primary-light;
 		}
-
-		// @media (min-width: 768px) {
-		// flex: auto;
-		// }
 	}
 
 	@for $i from 0 through 1 {
