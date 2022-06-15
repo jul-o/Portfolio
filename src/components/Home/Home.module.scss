@@ -1,5 +1,13 @@
 @import 'styles/palette';
 
+.root {
+	max-width: 95vw;
+
+	@media (min-width: 768px) {
+		max-width: 70vw;
+	}
+}
+
 .text {
 	display: flex;
 	align-items: center;
@@ -44,5 +52,9 @@ div.title {
 }
 
 .column:not(:first-child) {
+	margin-top: 1rem;
+}
+
+.hobbies {
 	margin-top: 1rem;
 }

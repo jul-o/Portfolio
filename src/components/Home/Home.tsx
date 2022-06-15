@@ -23,15 +23,16 @@ const Home = () => {
 	} = useLogic();
 
 	return (
-		<div id="home">
+		<div id="home" className={styles.root}>
 			<h1>Parlons un peu de moi</h1>
+			<div className={styles.title}>
+				<h2 className={styles.iam}>Bonjour, moi c'est</h2>
+				<h2 className={styles.name}>Jules Sang.</h2>
+				<h3 className={styles.job}>Développeur frontend.</h3>
+			</div>
+
 			<div className={styles.columns}>
 				<div className={styles.column}>
-					<div className={styles.title}>
-						<h2 className={styles.iam}>Bonjour, moi c'est</h2>
-						<h2 className={styles.name}>Jules Sang.</h2>
-						<h3 className={styles.job}>Développeur frontend.</h3>
-					</div>
 					<div className={styles.text}>
 						{aboutMe.map((item, index) => (
 							<p key={index}>{item}</p>
@@ -40,9 +41,8 @@ const Home = () => {
 				</div>
 				<div className={styles.column}>
 					<Portrait />
-				</div>
-				<div className={styles.column}>
 					<Hobbies
+						className={styles.hobbies}
 						openParagliding={openParagliding}
 						openClimbing={openClimbing}
 						openWindsurfing={openWindsurfing}

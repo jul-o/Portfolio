@@ -2,6 +2,7 @@ import Experience from 'components/Experiences/Experience';
 import { useEffect, useState } from 'react';
 import styles from './Experiences.module.scss';
 import experiences from 'data_frontend/experiences.json';
+import classNames from 'utils/classNames';
 
 const Experiences = () => {
 	const [selectedIndex, setSelectedIndex] = useState(0);
@@ -11,7 +12,7 @@ const Experiences = () => {
 	// });
 
 	return (
-		<div id="experiences">
+		<div id="experiences" className={styles.root}>
 			<h1>Mes expériences de développeur</h1>
 			<div className={styles.experiences_wrapper}>
 				<div className={styles.experience_selector} id="experience-selector">
@@ -19,9 +20,10 @@ const Experiences = () => {
 
 					{experiences.map((experience, index) => (
 						<button
-							className={`${styles.button} ${
+							className={classNames(
+								styles.button,
 								index === selectedIndex && styles.selected
-							}`}
+							)}
 							key={experience.title}
 							onClick={(e) => {
 								setSelectedIndex(index);

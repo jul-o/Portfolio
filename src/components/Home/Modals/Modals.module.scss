@@ -11,7 +11,6 @@
 		display: flex;
 		justify-content: center;
 		margin: 0 auto;
-		// width: clamp(100vw, 100vw, 50vw);
 		width: clamp(200px, 200px + 35vw, 100vw);
 
 		@media (min-width: 768px) {

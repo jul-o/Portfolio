@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import classNames from 'utils/classNames';
 import styles from './Experience.module.scss';
 
 interface Props {
@@ -24,7 +25,8 @@ const Experience = ({ title, dates, technologies, tldr, body }: Props) => {
 				{technologies.map(({ name, percentage, color }) => (
 					<div className={styles.technology} key={name}>
 						<h3>{name}</h3>
-						<div className={`${styles.progress} ${color && styles[color]}`}>
+						<div
+							className={classNames(styles.progress, color && styles[color])}>
 							<progress max={100} value={percentage} />
 						</div>
 					</div>

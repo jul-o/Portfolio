@@ -6,15 +6,10 @@
 }
 
 #root > * {
-	max-width: 95vw;
+	/* max-width: 95vw; */
 	min-height: 100vh;
 	margin: 0 auto;
 	padding-top: 3.5rem;
-
-	@media (min-with: 768px) {
-		max-width: 70vw;
-		margin: 0 auto;
-	}
 }
 
 @import '../../node_modules/bulma/sass/base/generic.sass';

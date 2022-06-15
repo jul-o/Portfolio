@@ -1,6 +1,10 @@
 @import 'styles/palette';
 $selector-item-height: 2.5rem;
 
+.root {
+	max-width: 95vw;
+}
+
 .experiences_wrapper {
 	display: flex;
 	flex-direction: column;
