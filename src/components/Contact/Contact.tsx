@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Button } from 'react-bulma-components';
 import { FaRegCopy } from 'react-icons/fa';
+import Links from './Links';
 import styles from './Contact.module.scss';
 
 const Contact = () => {
@@ -59,6 +59,7 @@ const Contact = () => {
 					Numéro de téléphone copié dans le presse-papier !
 				</span>
 			)}
+			<Links className={styles.links} />
 		</div>
 	);
 };
