@@ -1,5 +1,9 @@
 const classNames = (...classes) => {
-	return classes.reduce((acc, v) => acc + ` ${v}`, '');
+	const filteredClasses = classes.filter((v) => {
+		return v !== undefined && v !== null && v !== '';
+	});
+
+	return filteredClasses.reduce((acc, v) => acc + ` ${v}`, '');
 };
 
 export default classNames;
