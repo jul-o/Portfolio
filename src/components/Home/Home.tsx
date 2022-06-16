@@ -1,5 +1,4 @@
 // styles import
-import { Columns } from 'react-bulma-components';
 import Image from 'next/image';
 import myPic from 'styles/assets/me.png';
 import { useEffect, useState } from 'react';

@@ -1,4 +1,3 @@
-import { Navbar as Bar } from 'react-bulma-components';
 import styles from './Navbar.module.scss';
 
 const Navbar = () => {
