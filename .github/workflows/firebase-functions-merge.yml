@@ -6,10 +6,6 @@ name: Deploy
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
-
 jobs:
   deploy_to_production:
     runs-on: ubuntu-latest
