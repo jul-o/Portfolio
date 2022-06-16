@@ -16,12 +16,18 @@ const Links = ({ className }: Props) => {
 					<HiOutlineDocument />
 				</button>
 			</a>
-			<button>
-				<AiOutlineGithub />
-			</button>
-			<button>
-				<FaLinkedin />
-			</button>
+			<a href="https://github.com/jul-o" target="_blank">
+				<button>
+					<AiOutlineGithub />
+				</button>
+			</a>
+			<a
+				href="https://www.linkedin.com/in/jules-sang-bb632913b"
+				target="_blank">
+				<button>
+					<FaLinkedin />
+				</button>
+			</a>
 		</div>
 	);
 };
