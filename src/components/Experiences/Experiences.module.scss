@@ -3,6 +3,10 @@ $selector-item-height: 2.5rem;
 
 .root {
 	max-width: 95vw;
+
+	@media (min-width: 768px) {
+		max-width: 85vw;
+	}
 }
 
 .experiences_wrapper {
