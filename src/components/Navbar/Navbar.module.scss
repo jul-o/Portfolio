@@ -1,35 +1,70 @@
 @use 'sass:color';
 @import 'styles/palette';
 
-// $bg: color.adjust(#323232, $lightness: -5%);
+$height: 3.5rem;
+
+@keyframes slideOut {
+	from {
+		top: 0;
+	}
+	to {
+		top: -$height;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		top: -$height;
+	}
+	to {
+		top: 0;
+	}
+}
 
 .navbar {
+	background-color: rgba($primary, 0.7);
+	box-shadow: 0 10px 30px -10px $primary;
+
 	position: fixed;
 	width: 100%;
-	background-color: $primary;
+	height: $height;
+	z-index: 1;
+
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	height: 3.5rem;
-	z-index: 1;
-}
 
-.navbar a {
-	height: 100%;
-	color: $light-grey;
-	transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-	display: flex;
-	align-items: center;
+	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
-	margin-right: 1rem;
-
-	&:hover {
-		background-color: $primary;
-		color: $secondary;
-		animation: forwards 0.5s ease-in;
+	&.navbar_scroll_down {
+		top: -$height;
+		animation-duration: 0.5s;
+		animation-name: slideOut;
 	}
 
-	span {
-		font-size: clamp(0.5rem, 0.5rem + 1.5vw, 1rem);
+	&:not(.navbar_scroll_down) {
+		top: 0;
+		animation-duration: 0.5s;
+		animation-name: slideIn;
+	}
+
+	a {
+		height: 100%;
+		color: $light-grey;
+		transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+		display: flex;
+		align-items: center;
+
+		margin-right: 1rem;
+
+		&:hover {
+			background-color: $primary;
+			color: $secondary;
+			animation: forwards 0.5s ease-in;
+		}
+
+		span {
+			font-size: clamp(0.5rem, 0.5rem + 1.5vw, 1rem);
+		}
 	}
 }
