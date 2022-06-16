@@ -5,9 +5,9 @@
 		"dev": "next src/",
 		"build": "next build src/",
 		"start": "next start src/",
-		"serve": "npm run build && firebase emulators:start --only functions,hosting",
-		"shell": "npm run build && firebase functions:shell",
-		"deploy": "npm run build && firebase deploy --only functions,hosting",
+		"serve": "yarn run build && firebase emulators:start --only functions,hosting",
+		"shell": "yarn run build && firebase functions:shell",
+		"deploy": "yarn run build && firebase deploy --only functions,hosting",
 		"logs": "firebase functions:log"
 	},
 	"dependencies": {
