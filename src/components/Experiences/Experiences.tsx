@@ -33,7 +33,20 @@ const Experiences = () => {
 					))}
 				</div>
 				<div id="display-experience">
-					<Experience
+					{experiences.map((experience, index) => (
+						<Experience
+							{...experience}
+							isShown={index === selectedIndex}
+							body={
+								<div>
+									{experience.body.map((item, index) => (
+										<p key={index}>{item}</p>
+									))}
+								</div>
+							}
+						/>
+					))}
+					{/* <Experience
 						{...experiences[selectedIndex]}
 						body={
 							<div>
@@ -42,7 +55,7 @@ const Experiences = () => {
 								))}
 							</div>
 						}
-					/>
+					/> */}
 				</div>
 			</div>
 		</div>
