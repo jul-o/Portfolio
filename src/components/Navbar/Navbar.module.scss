@@ -4,8 +4,7 @@
 $height: 3.5rem;
 
 .navbar {
-	background-color: rgba($primary, 0.7);
-	// box-shadow: 0 10px 30px -10px $primary;
+	background-color: rgba($primary, 0.9);
 	border-bottom: solid 2px $primary-lightererer;
 
 	position: fixed;
@@ -39,7 +38,6 @@ $height: 3.5rem;
 		}
 
 		&:hover {
-			background-color: $primary;
 			color: $secondary;
 			animation: forwards 0.5s ease-in;
 		}
