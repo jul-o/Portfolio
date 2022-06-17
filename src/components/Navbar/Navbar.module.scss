@@ -17,7 +17,7 @@ $height: 3.5rem;
 	justify-content: center;
 	align-items: center;
 
-	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 	&.navbar_scroll_down {
 		top: -$height;
@@ -30,7 +30,7 @@ $height: 3.5rem;
 	a {
 		height: 100%;
 		color: $light-grey;
-		transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+		transition: color 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 		display: flex;
 		align-items: center;
 

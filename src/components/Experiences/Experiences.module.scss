@@ -62,7 +62,7 @@ $selector-item-height: 2.5rem;
 
 			border-left: solid 3px $secondary;
 
-			transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+			transition: top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 			@media (min-width: 768px) {
 				border-top: 0;

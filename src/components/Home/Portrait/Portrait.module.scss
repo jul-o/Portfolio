@@ -19,13 +19,13 @@
 		display: block;
 		content: '';
 		border-radius: 9999px;
-		transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition: background-color 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 
 	&:hover,
 	&:focus {
 		&:after {
-			background-color: rgba(0, 0, 0, 0);
+			background: none;
 		}
 
 		.imageBorder {
@@ -47,7 +47,6 @@
 	}
 
 	.image {
-		transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 		border-radius: 9999px;
 	}
 }
