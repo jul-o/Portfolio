@@ -3,24 +3,6 @@
 
 $height: 3.5rem;
 
-@keyframes slideOut {
-	from {
-		top: 0;
-	}
-	to {
-		top: -$height;
-	}
-}
-
-@keyframes slideIn {
-	from {
-		top: -$height;
-	}
-	to {
-		top: 0;
-	}
-}
-
 .navbar {
 	background-color: rgba($primary, 0.7);
 	box-shadow: 0 10px 30px -10px $primary;
@@ -38,14 +20,10 @@ $height: 3.5rem;
 
 	&.navbar_scroll_down {
 		top: -$height;
-		animation-duration: 0.5s;
-		animation-name: slideOut;
 	}
 
 	&:not(.navbar_scroll_down) {
 		top: 0;
-		animation-duration: 0.5s;
-		animation-name: slideIn;
 	}
 
 	a {
