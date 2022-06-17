@@ -1,8 +1,9 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
 import classNames from 'utils/classNames';
 import styles from './Experience.module.scss';
 
 interface Props {
+	isShown: boolean;
 	title: string;
 	dates: string;
 	technologies: Array<{
@@ -14,9 +15,16 @@ interface Props {
 	body?: ReactElement;
 }
 
-const Experience = ({ title, dates, technologies, tldr, body }: Props) => {
+const Experience = ({
+	title,
+	dates,
+	technologies,
+	tldr,
+	body,
+	isShown,
+}: Props) => {
 	return (
-		<div className={styles.root}>
+		<div className={classNames(styles.root, isShown && styles.is_shown)}>
 			<div className={styles.titles}>
 				<h2>{title}</h2>
 				<p className={styles.dates}>{dates}</p>

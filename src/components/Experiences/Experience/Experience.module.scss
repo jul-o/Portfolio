@@ -22,6 +22,26 @@
 	}
 }
 
+@keyframes blink-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.root {
+	display: none;
+
+	&.is_shown {
+		display: inherit;
+		animation-name: blink-in;
+		animation-duration: 0.5s;
+		animation-timing-function: ease-out;
+	}
+}
+
 .dates {
 	// font-weight: bold;
 	font-style: italic;
