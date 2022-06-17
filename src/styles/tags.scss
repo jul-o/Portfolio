@@ -69,6 +69,8 @@ h6 {
 button {
 	background-color: $primary;
 	color: $secondary;
+	cursor: pointer;
+
 	border: solid $secondary 2px;
 	height: 2.5rem;
 	border-radius: 0.5rem;
