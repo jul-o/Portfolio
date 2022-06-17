@@ -5,7 +5,8 @@ $height: 3.5rem;
 
 .navbar {
 	background-color: rgba($primary, 0.7);
-	box-shadow: 0 10px 30px -10px $primary;
+	// box-shadow: 0 10px 30px -10px $primary;
+	border-bottom: solid 2px $primary-lightererer;
 
 	position: fixed;
 	width: 100%;
@@ -13,7 +14,7 @@ $height: 3.5rem;
 	z-index: 1;
 
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: center;
 
 	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -33,7 +34,9 @@ $height: 3.5rem;
 		display: flex;
 		align-items: center;
 
-		margin-right: 1rem;
+		&:not(:last-child) {
+			margin-right: 1rem;
+		}
 
 		&:hover {
 			background-color: $primary;
