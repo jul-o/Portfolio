@@ -3,8 +3,6 @@ import classNames from 'utils/classNames';
 import styles from './Navbar.module.scss';
 
 const Navbar = () => {
-	const [scrollingDown, setScrollingDown] = useState(false);
-
 	useEffect(() => {
 		let previousScrollValue = window.scrollY;
 		const onScroll = () => {
@@ -20,6 +18,15 @@ const Navbar = () => {
 		};
 	});
 
+	const scrollTo = (target: string) => {
+		window.history.pushState(null, null, `/${target}`);
+		document.querySelector(target).scrollIntoView({
+			behavior: 'smooth',
+		});
+	};
+
+	const [scrollingDown, setScrollingDown] = useState(false);
+
 	// TODO: navbar disappears when scrolling down, reappears when scrolling up
 	return (
 		<div
@@ -28,15 +35,27 @@ const Navbar = () => {
 				styles.navbar,
 				scrollingDown && styles.navbar_scroll_down
 			)}>
-			<a href="/#home">
+			{/* <a href="/#home"> */}
+			<button
+				onClick={() => {
+					scrollTo('#home');
+				}}>
 				<span>Jules Sang</span>
-			</a>
-			<a href="/#experiences">
+			</button>
+			{/* <a href="/#experiences"> */}
+			<button
+				onClick={() => {
+					scrollTo('#experiences');
+				}}>
 				<span>Expériences professionnelles</span>
-			</a>
-			<a href="/#contact">
+			</button>
+			{/* <a href="/#contact"> */}
+			<button
+				onClick={() => {
+					scrollTo('#contact');
+				}}>
 				<span>Contact</span>
-			</a>
+			</button>
 		</div>
 	);
 };
