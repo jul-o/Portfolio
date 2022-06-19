@@ -14,9 +14,12 @@ const UpButton = () => {
 	}, []);
 
 	const [isScrollTop, setIsScrollTop] = useState(false);
+	const updateIsScrollTop = useUpdateIsScrollTop(setIsScrollTop);
+
+	useEffect(() => updateIsScrollTop(window.scrollY), []);
 
 	const onScroll = () => {
-		setIsScrollTop(window.scrollY === 0);
+		updateIsScrollTop(window.scrollY);
 	};
 
 	const scrollTop = () => {
@@ -30,6 +33,11 @@ const UpButton = () => {
 			<FaArrowUp />
 		</button>
 	);
+};
+
+const useUpdateIsScrollTop = (setIsScrollTop: Function) => {
+	// not === 0 because the value is .6666667 on firefox android
+	return (y: number) => setIsScrollTop(y < 1);
 };
 
 export default UpButton;
