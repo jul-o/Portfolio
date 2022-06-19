@@ -8,7 +8,7 @@ const ClibingModal = ({ onClose }: Props) => {
 	return (
 		<Modal onClose={onClose} header={<h1>L'escalade</h1>}>
 			<div>
-				<p>UWU la grimpe</p>
+				<p>La grimpe</p>
 			</div>
 		</Modal>
 	);
