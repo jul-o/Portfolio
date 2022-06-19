@@ -11,8 +11,11 @@
 		&:after {
 			height: 4rem;
 			width: 0;
-			border-left: solid $light-grey 1px;
 			content: '';
+			border-left: solid $light-grey 1px;
+			[data-theme='light'] & {
+				border-color: $light-grey--light;
+			}
 		}
 	}
 

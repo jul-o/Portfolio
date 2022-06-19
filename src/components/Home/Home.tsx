@@ -9,6 +9,7 @@ import Portrait from './Portrait';
 import ParaglidingModal from './Modals/ParaglidingModal';
 import WindsurfingModal from './Modals/WindsurfingModal';
 import ClibingModal from './Modals/ClimbingModal';
+import { useTheme } from 'next-themes';
 
 const Home = () => {
 	const {

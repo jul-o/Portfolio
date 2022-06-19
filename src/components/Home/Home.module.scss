@@ -28,6 +28,9 @@ div.title {
 	margin-bottom: 0.5rem;
 	padding-bottom: 0.5rem;
 	border-bottom: solid $light-grey 1px;
+	[data-theme='light'] & {
+		border-color: $light-grey--light;
+	}
 }
 
 .iam,
@@ -38,12 +41,18 @@ div.title {
 
 .iam {
 	font-size: 1rem;
-	color: $primary-lightererer;
 	font-weight: normal;
+	color: $primary-lightererer;
+	[data-theme='light'] & {
+		color: $primary-lightererer--light;
+	}
 }
 
 .job {
 	color: $medium-grey;
+	[data-theme='light'] & {
+		color: $medium-grey--light;
+	}
 }
 
 .hobbies_title {

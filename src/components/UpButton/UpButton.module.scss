@@ -6,7 +6,12 @@ $bottom-position: 1rem;
 	position: fixed;
 	bottom: $bottom-position;
 	right: 1rem;
+	width: 3rem;
+
 	background-color: rgba($primary, 0.8);
+	[data-theme='light'] & {
+		background-color: rgba($primary--light, 0.8);
+	}
 
 	&.top {
 		bottom: -$height;

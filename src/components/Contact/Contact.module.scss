@@ -25,18 +25,39 @@
 	background-size: 200% 100%;
 	background-position: right bottom;
 
+	[data-theme='light'] & {
+		border: solid $secondary--light 2px;
+		color: $secondary--light;
+		background: linear-gradient(
+			to right,
+			$secondary--light 50%,
+			$primary--light 50%
+		);
+		background-size: 200% 100%;
+		background-position: right bottom;
+	}
+
 	&:hover {
 		background-position: left bottom;
-		color: white;
-		border-color: white;
+		color: $light-grey;
+		border-color: $light-grey;
+		[data-theme='light'] & {
+			color: $light-grey--light;
+			border-color: $light-grey--light;
+		}
 	}
 }
 
 .copy {
 	@extend .button;
 	border: 0;
-	background: $primary;
 	margin-left: 0.5rem;
+
+	background: $primary;
+	[data-theme='light'] & {
+		background: $primary--light;
+		border: 0;
+	}
 
 	&:hover {
 		padding-bottom: 0.5rem;
@@ -46,11 +67,20 @@
 .copiedAlert {
 	position: fixed;
 	bottom: 1rem;
+	left: 0;
+	right: 0;
+	width: fit-content;
+
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+
 	color: $light-grey;
 	background-color: $dark-grey;
-	padding: 0.5rem 1rem;
 	border: solid black 1px;
-	border-radius: 0.5rem;
+	[data-theme='light'] & {
+		color: $light-grey--light;
+		background-color: $dark-grey--light;
+	}
 }
 
 .links {
