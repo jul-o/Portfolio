@@ -10,7 +10,7 @@
 		],
 		"tldr": [
 			"Conception et développement d'une suite d'outils d'analyse de tests hydrauliques",
-			"Migration de l'ensemble de la base de code de l'équipe de SVN ver Git"
+			"Migration de l'ensemble de la base de code de l'équipe de SVN vers Git"
 		],
 		"body": [
 			"Dans le cadre de la conception de turbines hydroélectriques, j'ai rejoint une équipe d'une dizaine développeurs, avec pour mission la conception et le développement d'une suite d'outils d'analyse des résultats de tests effectués sur des modèles à échelle réduite de turbines.",
