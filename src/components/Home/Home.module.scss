@@ -42,13 +42,22 @@ div.title {
 .iam {
 	font-size: 1rem;
 	font-weight: normal;
+	margin-bottom: 0;
+
 	color: $primary-lightererer;
 	[data-theme='light'] & {
 		color: $primary-lightererer--light;
 	}
 }
 
+.name {
+	margin-top: 0.5rem;
+	margin-bottom: 0.2rem;
+}
+
 .job {
+	margin-top: 0;
+
 	color: $medium-grey;
 	[data-theme='light'] & {
 		color: $medium-grey--light;
