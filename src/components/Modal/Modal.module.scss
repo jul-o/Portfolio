@@ -12,16 +12,23 @@ $global-border-radius: 0.5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: color.adjust($dark-grey, $alpha: -0.4);
 	z-index: 1;
+	background-color: color.adjust($dark-grey, $alpha: -0.4);
+	[data-theme='light'] & {
+		background-color: color.adjust($dark-grey--light, $alpha: -0.4);
+	}
 }
 
 .modal {
-	background-color: $primary;
 	border-radius: $global-border-radius;
 	display: inline-block;
 	overflow: auto;
 	max-height: 80%;
+	background-color: $primary;
+	[data-theme='light'] & {
+		background-color: $primary--light;
+	}
+
 	@media (min-width: 768px) {
 		max-width: 80%;
 	}
@@ -36,6 +43,9 @@ $global-border-radius: 0.5rem;
 .header,
 .footer {
 	background-color: $primary-light;
+	[data-theme='light'] & {
+		background-color: $primary-light--light;
+	}
 }
 
 .body {
@@ -63,10 +73,19 @@ $global-border-radius: 0.5rem;
 		border: solid $light-grey 2px;
 		background-color: $dark-grey;
 		color: $light-grey;
+		[data-theme='light'] & {
+			border-color: $light-grey--light;
+			background-color: $dark-grey--light;
+			color: $light-grey--light;
+		}
 
 		&:hover {
 			border: solid $secondary 2px;
 			color: $secondary;
+			[data-theme='light'] & {
+				border-color: $secondary--light;
+				color: $secondary--light;
+			}
 		}
 	}
 }

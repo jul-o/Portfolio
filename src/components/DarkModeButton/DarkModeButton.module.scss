@@ -1,23 +1,15 @@
 @import 'styles/palette';
-$height: 2.5rem;
-$bottom-position: 1rem;
+$bottom-position: 2rem + 2.5rem;
 
 .root {
 	position: fixed;
 	bottom: $bottom-position;
 	right: 1rem;
+
 	width: 3rem;
 
 	background-color: rgba($primary, 0.8);
 	[data-theme='light'] & {
 		background-color: rgba($primary--light, 0.8);
-	}
-
-	&.top {
-		bottom: -$height;
-	}
-
-	&:focus {
-		@extend .root;
 	}
 }

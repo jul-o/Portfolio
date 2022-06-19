@@ -4,21 +4,22 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	// font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-	// 	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-family: 'Inter', sans-serif;
+
 	background-color: $primary;
+	&[data-theme='light'],
+	[data-theme='light'] & {
+		background-color: $primary--light;
+	}
+
+	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 // html {
 // 	scroll-behavior: smooth;
 // }
-
-@media screen and (prefers-reduced-motion: reduce) {
-	html {
-		scroll-behavior: auto;
-	}
-}
 
 h1,
 h2,
@@ -29,6 +30,9 @@ h6,
 p,
 li {
 	color: $light-grey;
+	[data-theme='light'] & {
+		color: $light-grey--light;
+	}
 }
 
 h1,
@@ -69,9 +73,15 @@ h6 {
 button {
 	background-color: $primary;
 	color: $secondary;
+	border: solid $secondary 2px;
+	[data-theme='light'] & {
+		background-color: $primary--light;
+		color: $secondary--light;
+		border: solid $secondary--light 2px;
+	}
+
 	cursor: pointer;
 
-	border: solid $secondary 2px;
 	height: 2.5rem;
 	border-radius: 0.5rem;
 	padding-left: 1rem;
@@ -87,6 +97,10 @@ button {
 	&:hover {
 		color: $light-grey;
 		border-color: $light-grey;
+		[data-theme='light'] & {
+			color: $light-grey--light;
+			border-color: $light-grey--light;
+		}
 	}
 
 	&:focus {

@@ -5,9 +5,11 @@
 	box-sizing: border-box;
 }
 
-#root > * {
-	/* max-width: 95vw; */
-	min-height: 100vh;
-	margin: 0 auto;
-	padding-top: 3.5rem;
+#root {
+	& > * {
+		/* max-width: 95vw; */
+		min-height: 100vh;
+		margin: 0 auto;
+		padding-top: 3.5rem;
+	}
 }
