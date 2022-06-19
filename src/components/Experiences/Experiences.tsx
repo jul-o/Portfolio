@@ -44,6 +44,7 @@ const Experiences = () => {
 									))}
 								</div>
 							}
+							key={experience.title}
 						/>
 					))}
 					{/* <Experience
