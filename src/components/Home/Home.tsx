@@ -4,7 +4,6 @@ import styles from './Home.module.scss';
 const Home = () => {
 	return (
 		<div id="home" className={styles.root}>
-			<h1>Parlons un peu de moi</h1>
 			<div className={styles.title}>
 				<h2 className={styles.iam}>Bonjour, moi c'est</h2>
 				<h2 className={styles.name}>Jules Sang.</h2>

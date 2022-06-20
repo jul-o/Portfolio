@@ -20,6 +20,7 @@ const About = () => {
 
 	return (
 		<div id="about" className={styles.root}>
+			<h1>Parlons un peu de moi</h1>
 			<div className={styles.columns}>
 				<div className={styles.column}>
 					<div className={styles.text}>

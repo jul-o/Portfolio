@@ -71,11 +71,10 @@ h6 {
 }
 
 button {
-	background-color: $primary;
+	background: none;
 	color: $secondary;
 	border: solid $secondary 2px;
 	[data-theme='light'] & {
-		background-color: $primary--light;
 		color: $secondary--light;
 		border: solid $secondary--light 2px;
 	}

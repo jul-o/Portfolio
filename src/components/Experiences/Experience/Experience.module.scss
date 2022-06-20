@@ -87,11 +87,6 @@
 .progress {
 	display: flex;
 
-	[data-theme='light'] & {
-		border: solid 1px $medium-grey--light;
-		border-radius: 9999px;
-	}
-
 	&.python {
 		@include progress-bar(#f2c73eff);
 	}

@@ -1,12 +1,15 @@
 @import 'styles/palette';
 
-div.title {
+.root {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.title {
 	margin-bottom: 0.5rem;
 	padding-bottom: 0.5rem;
-	border-bottom: solid $light-grey 1px;
-	[data-theme='light'] & {
-		border-color: $light-grey--light;
-	}
 }
 
 .iam,

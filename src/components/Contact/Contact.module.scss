@@ -53,9 +53,9 @@
 	border: 0;
 	margin-left: 0.5rem;
 
-	background: $primary;
+	background: none;
 	[data-theme='light'] & {
-		background: $primary--light;
+		background: none;
 		border: 0;
 	}
 
