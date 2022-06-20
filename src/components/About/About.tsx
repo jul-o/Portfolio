@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './About.module.scss';
 import aboutMe from 'data_frontend/me.json';
 import Hobbies from './Hobbies';
@@ -6,6 +6,8 @@ import Portrait from './Portrait';
 import ParaglidingModal from './Modals/ParaglidingModal';
 import WindsurfingModal from './Modals/WindsurfingModal';
 import ClibingModal from './Modals/ClimbingModal';
+import classNames from 'utils/classNames';
+import useViewportObserver from 'utils/hooks/useViewportObserver';
 
 const About = () => {
 	const {
@@ -16,11 +18,20 @@ const About = () => {
 		openClimbing,
 		openWindsurfing,
 		closeModal,
+		rootRef,
+		isInViewport,
 	} = useLogic();
 
 	return (
-		<div id="about" className={styles.root}>
-			<h1>Parlons un peu de moi</h1>
+		<div
+			id="about"
+			className={classNames(
+				styles.root,
+				styles.animated,
+				isInViewport && styles.in_viewport
+			)}
+			ref={rootRef}>
+			<h1 className={styles.title}>Parlons un peu de moi</h1>
 			<div className={styles.columns}>
 				<div className={styles.column}>
 					<div className={styles.text}>
@@ -75,6 +86,10 @@ const useLogic = () => {
 		setWindsurfing(false);
 	};
 
+	const rootRef = React.createRef<HTMLDivElement>();
+	const [isInViewport, setIsInViewport] = useState(false);
+	useViewportObserver(setIsInViewport, rootRef);
+
 	return {
 		paragliding,
 		climbing,
@@ -83,6 +98,8 @@ const useLogic = () => {
 		openClimbing,
 		openWindsurfing,
 		closeModal,
+		rootRef,
+		isInViewport,
 	};
 };
 

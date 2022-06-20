@@ -2,12 +2,41 @@
 
 .root {
 	max-width: 95vw;
+	position: relative;
 
 	@media (min-width: 768px) {
 		max-width: 70vw;
 	}
-}
 
+	& > * {
+		transform: translateY(50vh);
+		opacity: 0;
+	}
+
+	&.in_viewport > * {
+		transform: translateY(0);
+		opacity: 1;
+
+		animation-name: slideIn;
+		animation-duration: 0.5s;
+		animation-timing-function: ease-in;
+
+		&.columns {
+			animation-duration: 0.7s;
+		}
+
+		@keyframes slideIn {
+			from {
+				transform: translateY(50vh);
+				opacity: 0;
+			}
+			to {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	}
+}
 .text {
 	display: flex;
 	align-items: center;
