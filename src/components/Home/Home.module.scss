@@ -1,29 +1,5 @@
 @import 'styles/palette';
 
-.root {
-	max-width: 95vw;
-
-	@media (min-width: 768px) {
-		max-width: 70vw;
-	}
-}
-
-.text {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-}
-
-.columns {
-	display: flex;
-	@media (min-width: 768px) {
-		flex-direction: row;
-	}
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
 div.title {
 	margin-bottom: 0.5rem;
 	padding-bottom: 0.5rem;
@@ -62,17 +38,4 @@ div.title {
 	[data-theme='light'] & {
 		color: $medium-grey--light;
 	}
-}
-
-.hobbies_title {
-	font-size: 1.25rem;
-	white-space: nowrap;
-}
-
-.column:not(:first-child) {
-	margin-top: 1rem;
-}
-
-.hobbies {
-	margin-top: 1rem;
 }
