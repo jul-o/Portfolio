@@ -1,5 +1,8 @@
 @import 'styles/palette';
 
+$wave-duration: 1s;
+$slide-in-duration: 1s;
+
 .root {
 	display: flex;
 	flex-direction: column;
@@ -13,12 +16,14 @@
 }
 
 .iam,
-.name,
 .job {
 	text-align: left;
 }
 
 .iam {
+	display: flex;
+	align-items: center;
+
 	font-size: 1rem;
 	font-weight: normal;
 	margin-bottom: 0;
@@ -27,11 +32,14 @@
 	[data-theme='light'] & {
 		color: $primary-lightererer--light;
 	}
-}
 
-.name {
-	margin-top: 0.5rem;
-	margin-bottom: 0.2rem;
+	.wave {
+		margin-left: 0.5rem;
+		animation-name: wave;
+		animation-duration: $wave-duration;
+		animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+		transform-origin: 75% 75%;
+	}
 }
 
 .job {
@@ -40,5 +48,38 @@
 	color: $medium-grey;
 	[data-theme='light'] & {
 		color: $medium-grey--light;
+	}
+
+	animation: slideIn $wave-duration + $slide-in-duration
+		cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slideIn {
+	0% {
+		transform: translateX(200vw);
+	}
+	50% {
+		transform: translateX(200vw);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes wave {
+	from {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(20deg);
+	}
+	50% {
+		transform: rotate(-15deg);
+	}
+	75% {
+		transform: rotate(15deg);
+	}
+	to {
+		transform: rotate(0deg);
 	}
 }
