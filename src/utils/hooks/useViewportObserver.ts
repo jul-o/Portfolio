@@ -7,8 +7,11 @@ import { useEffect } from 'react';
  */
 const useViewportObserver = (
 	setIsInViewport: React.Dispatch<React.SetStateAction<boolean>>,
-	rootRef: React.RefObject<Element>
+	rootRef: React.RefObject<Element>,
+	options?: { root?: Element; rootMargin?: string; treshold?: number }
 ) => {
+	const { root, rootMargin, treshold } = options || {};
+
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			([entry]) => {
@@ -18,9 +21,9 @@ const useViewportObserver = (
 				}
 			},
 			{
-				root: null,
-				rootMargin: '-40%',
-				threshold: 0,
+				root: root ? root : null,
+				rootMargin: rootMargin ? rootMargin : '-40%',
+				threshold: treshold ? treshold : 0,
 			}
 		);
 

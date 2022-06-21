@@ -1,12 +1,12 @@
+import React from 'react';
+import useViewportObserver from 'utils/hooks/useViewportObserver';
 import { useState } from 'react';
 import { FaRegCopy } from 'react-icons/fa';
 import Links from './Links';
 import styles from './Contact.module.scss';
+import classNames from 'utils/classNames';
 
 const Contact = () => {
-	const [copiedEmail, setCopiedEmail] = useState(false);
-	const [copiedPhone, setCopiedPhone] = useState(false);
-
 	const updateTooltipState = (setter: Function) => {
 		setCopiedEmail(false);
 		setCopiedPhone(false);
@@ -16,9 +16,12 @@ const Contact = () => {
 		}, 2000);
 	};
 
+	const [copiedEmail, setCopiedEmail] = useState(false);
+	const [copiedPhone, setCopiedPhone] = useState(false);
+
 	return (
 		<div id="contact" className={styles.root}>
-			<h1>Pour me contacter :</h1>
+			<h1>Envie de discuter ?</h1>
 			<div className={styles.contacts}>
 				<div id="email" className={styles.contact}>
 					<a href="mailto:jules.sang@grenoble-inp.org">

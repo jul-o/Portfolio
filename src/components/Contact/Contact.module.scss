@@ -1,3 +1,4 @@
+@import 'styles/mixins/animateOnScroll';
 @import 'styles/palette';
 
 .root {
@@ -6,7 +7,12 @@
 	flex-direction: column;
 	justify-content: center;
 
-	& > * {
+	h1 {
+		font-size: clamp(1.5rem, 5vw, 3rem);
+		margin-bottom: 3rem;
+	}
+
+	> * {
 		margin: 0 auto;
 	}
 }
