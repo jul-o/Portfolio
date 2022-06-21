@@ -25,11 +25,7 @@ const About = () => {
 	return (
 		<div
 			id="about"
-			className={classNames(
-				styles.root,
-				styles.animated,
-				isInViewport && styles.in_viewport
-			)}
+			className={classNames(styles.root, isInViewport && styles.in_viewport)}
 			ref={rootRef}>
 			<h1 className={styles.title}>Parlons un peu de moi</h1>
 			<div className={styles.columns}>
