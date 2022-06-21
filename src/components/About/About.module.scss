@@ -1,0 +1,42 @@
+@import 'styles/palette';
+@import 'styles/mixins/animateOnScroll';
+
+.root {
+	max-width: 95vw;
+	position: relative;
+
+	@media (min-width: 768px) {
+		max-width: 70vw;
+	}
+
+	@include animateOnScroll('in_viewport', 2);
+}
+
+.text {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.columns {
+	display: flex;
+	@media (min-width: 768px) {
+		flex-direction: row;
+	}
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	.column:not(:first-child) {
+		margin-top: 1rem;
+	}
+}
+
+.hobbies_title {
+	font-size: 1.25rem;
+	white-space: nowrap;
+}
+
+.hobbies {
+	margin-top: 1rem;
+}

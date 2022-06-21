@@ -13,7 +13,7 @@ const UpButton = () => {
 		};
 	}, []);
 
-	const [isScrollTop, setIsScrollTop] = useState(false);
+	const [isScrollTop, setIsScrollTop] = useState(true);
 	const updateIsScrollTop = useUpdateIsScrollTop(setIsScrollTop);
 
 	useEffect(() => updateIsScrollTop(window.scrollY), []);

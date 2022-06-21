@@ -1,4 +1,5 @@
 @import 'styles/palette';
+@import 'styles/mixins/animateOnScroll';
 $selector-item-height: 2.5rem;
 
 .root {
@@ -7,6 +8,8 @@ $selector-item-height: 2.5rem;
 	@media (min-width: 768px) {
 		max-width: 85vw;
 	}
+
+	@include animateOnScroll('in_viewport', 2);
 }
 
 .experiences_wrapper {
@@ -50,10 +53,6 @@ $selector-item-height: 2.5rem;
 
 		&.selected,
 		&:hover {
-			// background-color: $primary-light;
-			// [data-theme='light'] & {
-			// 	background-color: $primary-lighter--light;
-			// }
 			color: $light-grey;
 			background-color: rgba($secondary, 0.4);
 			[data-theme='light'] & {

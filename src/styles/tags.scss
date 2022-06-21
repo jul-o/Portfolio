@@ -14,6 +14,8 @@ body {
 		background-color: $primary--light;
 	}
 
+	overflow-x: hidden;
+
 	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -71,11 +73,10 @@ h6 {
 }
 
 button {
-	background-color: $primary;
+	background: none;
 	color: $secondary;
 	border: solid $secondary 2px;
 	[data-theme='light'] & {
-		background-color: $primary--light;
 		color: $secondary--light;
 		border: solid $secondary--light 2px;
 	}

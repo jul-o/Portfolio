@@ -13,21 +13,11 @@ $height: 3.5rem;
 	justify-content: center;
 	align-items: center;
 
-	transition: top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-
 	background-color: rgba($primary, 0.9);
 	border-bottom: solid 2px $primary-lightererer;
 	[data-theme='light'] & {
 		background-color: rgba($primary--light, 0.9);
 		border-bottom-color: $primary-lightererer--light;
-	}
-
-	&.navbar_scroll_down {
-		top: -$height;
-	}
-
-	&:not(.navbar_scroll_down) {
-		top: 0;
 	}
 
 	button {
@@ -38,7 +28,6 @@ $height: 3.5rem;
 		display: flex;
 		align-items: center;
 
-		background: none;
 		color: $light-grey;
 		[data-theme='light'] & {
 			color: $light-grey--light;
