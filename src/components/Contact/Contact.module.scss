@@ -68,6 +68,10 @@
 	&:hover {
 		padding-bottom: 0.5rem;
 	}
+
+	&:focus {
+		border: none;
+	}
 }
 
 .copiedAlert {
@@ -76,6 +80,8 @@
 	left: 0;
 	right: 0;
 	width: fit-content;
+
+	z-index: 3;
 
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
