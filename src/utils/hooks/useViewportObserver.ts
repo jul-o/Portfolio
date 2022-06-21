@@ -19,8 +19,8 @@ const useViewportObserver = (
 			},
 			{
 				root: null,
-				rootMargin: '20%',
-				threshold: 0.8,
+				rootMargin: '-40%',
+				threshold: 0,
 			}
 		);
 

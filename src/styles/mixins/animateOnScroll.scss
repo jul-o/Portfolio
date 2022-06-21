@@ -4,14 +4,14 @@ it is required that the root takes class .in_viewport to be animated
 */
 @mixin animateOnScroll($animated_class, $n) {
 	& > * {
-		transform: translateY(50vh);
+		transform: translateY(20vh);
 		opacity: 0;
 	}
 
 	&.#{$animated_class} {
 		@for $i from 1 through $n {
 			& *:nth-child(#{$i}) {
-				animation-duration: (2 * $i / 10) + 0.3s;
+				animation-duration: (1.5 * $i / 10) + 0.3s;
 			}
 		}
 
@@ -20,11 +20,12 @@ it is required that the root takes class .in_viewport to be animated
 			opacity: 1;
 
 			animation-name: slideIn;
-			animation-timing-function: ease-in;
+			// animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+			animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
 
 			@keyframes slideIn {
 				from {
-					transform: translateY(50vh);
+					transform: translateY(20vh);
 					opacity: 0;
 				}
 				to {
