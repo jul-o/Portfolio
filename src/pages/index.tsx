@@ -10,6 +10,12 @@ import DarkModeButton from 'components/DarkModeButton';
 const Page = () => {
 	return (
 		<>
+			<div id="background">
+				<div id="background-1" />
+				<div id="background-2" />
+				<div id="background-3" />
+			</div>
+
 			<Navbar />
 			<div id="root">
 				<Home />

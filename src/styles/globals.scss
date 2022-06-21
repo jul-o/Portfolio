@@ -14,3 +14,53 @@
 		padding-top: 3.5rem;
 	}
 }
+
+// #background {
+// 	position: absolute;
+// 	height: 100%;
+#background {
+	height: 0;
+	width: 0;
+	z-index: -10;
+
+	* {
+		position: absolute;
+		z-index: -9;
+	}
+	// TODO: probably gradient with main color less different from primary. secondary is a bad idea
+
+	#background-1 {
+		top: 10vw;
+		right: -30vw;
+		width: 50vw;
+		height: 50vw;
+		background: radial-gradient(closest-side, rgb(253, 2, 2), rgba(0, 0, 0, 0));
+		opacity: 0.5;
+	}
+
+	#background-2 {
+		top: -15vw;
+		right: -10vw;
+
+		width: 50vw;
+		height: 50vw;
+
+		background: radial-gradient(
+			closest-side,
+			rgb(217, 255, 0),
+			rgba(0, 0, 0, 0)
+		);
+		border-radius: 9999px;
+		opacity: 0.2;
+	}
+
+	#background-3 {
+		top: -20vw;
+		right: -40vw;
+
+		width: 120vw;
+		height: 100vw;
+		background: radial-gradient(closest-side, $secondary, rgba(0, 0, 0, 0));
+		opacity: 0.6;
+	}
+}

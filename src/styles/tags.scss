@@ -8,15 +8,19 @@ body {
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	font-family: 'Inter', sans-serif;
 
+	overflow-x: hidden;
+
+	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body {
+	position: relative;
+
 	background-color: $primary;
 	&[data-theme='light'],
 	[data-theme='light'] & {
 		background-color: $primary--light;
 	}
-
-	overflow-x: hidden;
-
-	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 // html {
