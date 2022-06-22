@@ -1,5 +1,5 @@
 import { ReactEventHandler, useState } from 'react';
-import Image from 'next/image';
+import Image from 'components/ImageWithSpinner';
 import Modal from 'components/Modal';
 import styles from '../Modals.module.scss';
 import paraglidingImage from 'styles/assets/paragliding.png';
@@ -23,13 +23,7 @@ const ParaglidingModal = ({ onClose }: Props) => {
 		<Modal onClose={onClose} header={<h1>Le parapente</h1>}>
 			<div className={styles.modal_body}>
 				<span className={styles.modal_image}>
-					{/* TODO: make my own spinner */}
-					{!isImageLoaded && <BounceLoader color="#e07a00" />}
-					<Image
-						src={paraglidingImage}
-						onLoadingComplete={onLoad}
-						placeholder="empty"
-					/>
+					<Image src={paraglidingImage} />
 				</span>
 				<div className={styles.text}>
 					<p>
