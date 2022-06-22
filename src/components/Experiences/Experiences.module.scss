@@ -1,6 +1,4 @@
-@import 'styles/palette';
 @import 'styles/mixins/animateOnScroll';
-$selector-item-height: 2.5rem;
 
 .root {
 	max-width: 95vw;
@@ -21,66 +19,5 @@ $selector-item-height: 2.5rem;
 
 	@media (min-width: 768px) {
 		flex-direction: row;
-	}
-}
-
-.experience_selector {
-	height: fit-content;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	border-left: solid 1px $medium-grey;
-	[data-theme='light'] & {
-		border-color: $medium-grey--light;
-	}
-
-	position: relative;
-
-	@media (min-width: 768px) {
-		margin-right: 4rem;
-	}
-
-	.button {
-		border: 0;
-		border-radius: 0;
-
-		justify-content: flex-start;
-
-		height: $selector-item-height;
-
-		white-space: nowrap;
-
-		&.selected,
-		&:hover {
-			color: $light-grey;
-			background-color: rgba($secondary, 0.4);
-			[data-theme='light'] & {
-				color: $light-grey--light;
-				background-color: rgba($secondary--light, 0.4);
-			}
-		}
-	}
-
-	@for $i from 0 through 1 {
-		.selected_margin--#{$i} {
-			height: $selector-item-height;
-			width: 0;
-			top: #{2.5 * $i}rem;
-			left: 0;
-
-			position: absolute;
-
-			border-left: solid 3px $secondary;
-			[data-theme='light'] & {
-				border-color: $secondary--light;
-			}
-
-			transition: top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-			@media (min-width: 768px) {
-				border-top: 0;
-			}
-		}
 	}
 }

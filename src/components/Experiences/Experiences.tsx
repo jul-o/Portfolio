@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import classNames from 'utils/classNames';
 import useViewportObserver from 'utils/hooks/useViewportObserver';
 import styles from './Experiences.module.scss';
+import ExperienceSelector from './ExperienceSelector';
 
 const Experiences = () => {
 	const [selectedIndex, setSelectedIndex] = useState(0);
@@ -19,23 +20,11 @@ const Experiences = () => {
 			ref={rootRef}>
 			<h1>Mes expériences de développeur</h1>
 			<div className={styles.experiences_wrapper}>
-				<div className={styles.experience_selector} id="experience-selector">
-					<div className={styles[`selected_margin--${selectedIndex}`]} />
-
-					{experiences.map((experience, index) => (
-						<button
-							className={classNames(
-								styles.button,
-								index === selectedIndex && styles.selected
-							)}
-							key={experience.title}
-							onClick={(e) => {
-								setSelectedIndex(index);
-							}}>
-							{experience.company}
-						</button>
-					))}
-				</div>
+				<ExperienceSelector
+					selectedIndex={selectedIndex}
+					setSelectedIndex={setSelectedIndex}
+					experiences={experiences}
+				/>
 				<div id="display-experience">
 					{experiences.map((experience, index) => (
 						<Experience
