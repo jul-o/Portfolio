@@ -12,8 +12,6 @@ const Page = () => {
 		<>
 			<div id="background">
 				<div id="background-1" />
-				<div id="background-2" />
-				<div id="background-3" />
 			</div>
 
 			<Navbar />

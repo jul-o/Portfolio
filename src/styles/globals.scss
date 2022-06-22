@@ -15,9 +15,6 @@
 	}
 }
 
-// #background {
-// 	position: absolute;
-// 	height: 100%;
 #background {
 	height: 0;
 	width: 0;
@@ -27,40 +24,43 @@
 		position: absolute;
 		z-index: -9;
 	}
-	// TODO: probably gradient with main color less different from primary. secondary is a bad idea
 
 	#background-1 {
-		top: 10vw;
-		right: -30vw;
-		width: 50vw;
-		height: 50vw;
-		background: radial-gradient(closest-side, rgb(253, 2, 2), rgba(0, 0, 0, 0));
-		opacity: 0.5;
-	}
-
-	#background-2 {
-		top: -15vw;
-		right: -10vw;
-
-		width: 50vw;
-		height: 50vw;
-
-		background: radial-gradient(
+		$gradient: radial-gradient(
 			closest-side,
-			rgb(217, 255, 0),
+			color.adjust($primary, $red: +100%),
 			rgba(0, 0, 0, 0)
 		);
-		border-radius: 9999px;
-		opacity: 0.2;
-	}
+		background: $gradient;
+		[data-theme='light'] & {
+			$gradient: radial-gradient(
+				closest-side,
+				color.adjust($primary--light, $green: -100%, $blue: -100%),
+				rgba(0, 0, 0, 0)
+			);
+			background: $gradient;
+		}
+		top: clamp(-500px, -40vw, -280px);
+		right: clamp(-500px, -100vw, -280px);
 
-	#background-3 {
-		top: -20vw;
-		right: -40vw;
+		width: clamp(700px, 700px + 50vw, 1700px);
+		height: clamp(800px, 120vw, 1500px);
 
-		width: 120vw;
-		height: 100vw;
-		background: radial-gradient(closest-side, $secondary, rgba(0, 0, 0, 0));
-		opacity: 0.6;
+		opacity: 0.8;
+
+		animation-name: gradientAppear;
+		animation-duration: 2s;
+		animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+		@keyframes gradientAppear {
+			from {
+				transform: scale(20%, 20%) translate(20%, -20%);
+				opacity: 0;
+			}
+			to {
+				transform: scale(100%, 100%) translate(0, 0);
+				opacity: 0.8;
+			}
+		}
 	}
 }
