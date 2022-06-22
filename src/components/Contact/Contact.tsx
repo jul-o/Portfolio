@@ -1,10 +1,7 @@
-import React from 'react';
-import useViewportObserver from 'utils/hooks/useViewportObserver';
 import { useState } from 'react';
 import { FaRegCopy } from 'react-icons/fa';
-import Links from './Links';
 import styles from './Contact.module.scss';
-import classNames from 'utils/classNames';
+import Links from './Links';
 
 const Contact = () => {
 	const updateTooltipState = (setter: Function) => {

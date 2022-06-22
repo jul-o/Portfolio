@@ -1,9 +1,9 @@
 import Experience from 'components/Experiences/Experience';
-import React, { useEffect, useState } from 'react';
-import styles from './Experiences.module.scss';
 import experiences from 'data_frontend/experiences.json';
+import React, { useState } from 'react';
 import classNames from 'utils/classNames';
 import useViewportObserver from 'utils/hooks/useViewportObserver';
+import styles from './Experiences.module.scss';
 
 const Experiences = () => {
 	const [selectedIndex, setSelectedIndex] = useState(0);

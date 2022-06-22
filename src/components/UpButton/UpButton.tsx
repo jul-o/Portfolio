@@ -1,7 +1,7 @@
-import styles from './UpButton.module.scss';
-import { FaArrowUp } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
+import { FaArrowUp } from 'react-icons/fa';
 import classNames from 'utils/classNames';
+import styles from './UpButton.module.scss';
 
 const UpButton = () => {
 	useEffect(() => {

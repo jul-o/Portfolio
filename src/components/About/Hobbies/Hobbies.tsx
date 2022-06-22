@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import styles from './Hobbies.module.scss';
 import { GiMountainClimbing } from 'react-icons/gi';
-import { RiSailboatLine } from 'react-icons/ri';
 import { MdOutlineParagliding } from 'react-icons/md';
+import { RiSailboatLine } from 'react-icons/ri';
 import classNames from 'utils/classNames';
+import styles from './Hobbies.module.scss';
 
 interface Props {
 	className?: string;

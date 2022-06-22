@@ -1,6 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
-import { BounceLoader } from 'react-spinners';
 
 interface Props {
 	src: StaticImageData;
@@ -16,18 +15,17 @@ const ImageWithSpinner = ({
 	height = 256,
 }: Props) => {
 	const [isLoaded, setIsLoaded] = useState(false);
+	console.log(src);
 
 	return (
 		<>
-			{/* TODO: homemade spinner */}
-			{!isLoaded && <BounceLoader color="#e07a00" />}
 			<Image
 				src={src}
 				width={width}
 				height={height}
 				className={className}
 				onLoadingComplete={() => setIsLoaded(true)}
-				placeholder="empty"
+				placeholder="blur"
 			/>
 		</>
 	);

@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import styles from './About.module.scss';
+import React, { useState } from 'react';
 import aboutMe from 'data_frontend/me.json';
-import Hobbies from './Hobbies';
-import Portrait from './Portrait';
-import ParaglidingModal from './Modals/ParaglidingModal';
-import WindsurfingModal from './Modals/WindsurfingModal';
-import ClibingModal from './Modals/ClimbingModal';
 import classNames from 'utils/classNames';
 import useViewportObserver from 'utils/hooks/useViewportObserver';
+import styles from './About.module.scss';
+import Hobbies from './Hobbies';
+import ClibingModal from './Modals/ClimbingModal';
+import ParaglidingModal from './Modals/ParaglidingModal';
+import WindsurfingModal from './Modals/WindsurfingModal';
+import Portrait from './Portrait';
 
 const About = () => {
 	const {

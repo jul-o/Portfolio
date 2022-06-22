@@ -1,8 +1,7 @@
-import styles from './DarkModeButton.module.scss';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import classNames from 'utils/classNames';
 import { DARK, LIGHT } from 'utils/themes';
+import styles from './DarkModeButton.module.scss';
 
 const DarkModeButton = () => {
 	const { theme, setTheme, systemTheme } = useTheme();

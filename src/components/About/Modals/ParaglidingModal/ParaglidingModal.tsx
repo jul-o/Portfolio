@@ -1,24 +1,13 @@
-import { ReactEventHandler, useState } from 'react';
-import Image from 'components/ImageWithSpinner';
+import Image from 'components/Image';
 import Modal from 'components/Modal';
-import styles from '../Modals.module.scss';
 import paraglidingImage from 'styles/assets/paragliding.png';
-import BounceLoader from 'react-spinners/BounceLoader';
-import { css } from '@emotion/react';
+import styles from '../Modals.module.scss';
 
 interface Props {
 	onClose: () => void;
 }
 
 const ParaglidingModal = ({ onClose }: Props) => {
-	const onLoad = () => {
-		console.log('loaded');
-		setIsImageLoaded(true);
-	};
-
-	console.log(paraglidingImage);
-	const [isImageLoaded, setIsImageLoaded] = useState(false);
-
 	return (
 		<Modal onClose={onClose} header={<h1>Le parapente</h1>}>
 			<div className={styles.modal_body}>
