@@ -1,20 +1,36 @@
+import { ReactEventHandler, useState } from 'react';
 import Image from 'next/image';
 import Modal from 'components/Modal';
 import styles from '../Modals.module.scss';
 import paraglidingImage from 'styles/assets/paragliding.png';
+import BounceLoader from 'react-spinners/BounceLoader';
+import { css } from '@emotion/react';
 
 interface Props {
 	onClose: () => void;
 }
 
 const ParaglidingModal = ({ onClose }: Props) => {
+	const onLoad = () => {
+		console.log('loaded');
+		setIsImageLoaded(true);
+	};
+
+	console.log(paraglidingImage);
+	const [isImageLoaded, setIsImageLoaded] = useState(false);
+
 	return (
 		<Modal onClose={onClose} header={<h1>Le parapente</h1>}>
 			<div className={styles.modal_body}>
 				<span className={styles.modal_image}>
-					<Image src={paraglidingImage} />
+					{/* TODO: make my own spinner */}
+					{!isImageLoaded && <BounceLoader color="#e07a00" />}
+					<Image
+						src={paraglidingImage}
+						onLoadingComplete={onLoad}
+						placeholder="empty"
+					/>
 				</span>
-				{/* TODO: fetch from file */}
 				<div className={styles.text}>
 					<p>
 						J'ai commencé à pratiquer le parapente au printemps 2018, et j'ai
