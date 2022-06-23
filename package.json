@@ -26,6 +26,7 @@
 		"react-dom": "18.1.0",
 		"react-icons": "^4.4.0",
 		"react-spinners": "^0.12.0",
+		"react-use": "^17.4.0",
 		"sass": "^1.52.2",
 		"sharp": "^0.30.6"
 	},

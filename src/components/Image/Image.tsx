@@ -15,7 +15,6 @@ const ImageWithSpinner = ({
 	height = 256,
 }: Props) => {
 	const [isLoaded, setIsLoaded] = useState(false);
-	console.log(src);
 
 	return (
 		<>

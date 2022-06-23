@@ -1,12 +1,26 @@
 import Experience from 'components/Experiences/Experience';
 import experiences from 'data_frontend/experiences.json';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'utils/classNames';
 import useViewportObserver from 'utils/hooks/useViewportObserver';
 import styles from './Experiences.module.scss';
+import { useLocalStorage } from 'react-use';
 
 const Experiences = () => {
-	const [selectedIndex, setSelectedIndex] = useState(0);
+	const [storageIndex, updateStorageIndex] = useLocalStorage(
+		'selected-index',
+		'0'
+	);
+	const [selectedIndex, setSelectedIndex] = useState<number>(0);
+
+	useEffect(() => {
+		setSelectedIndex(parseInt(storageIndex));
+	}, []);
+
+	useEffect(() => {
+		updateStorageIndex(selectedIndex.toString());
+		console.log(storageIndex);
+	}, [selectedIndex]);
 
 	const [isInViewport, setIsInViewport] = useState(false);
 	const rootRef = React.createRef<HTMLDivElement>();
