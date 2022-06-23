@@ -22,7 +22,7 @@ const Home = () => {
 								styles.animated
 							);
 						}}>
-						<img src="/wave.svg" width="48" height="48" />
+						<img src="/icons/wave.svg" width="48" height="48" />
 					</div>
 				</h2>
 				<h3 className={styles.job}>Développeur frontend.</h3>
