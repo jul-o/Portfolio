@@ -65,23 +65,11 @@
 	display: flex;
 	flex-direction: row;
 
-	> img {
-		display: inline;
-		width: 1.5rem;
-		height: 1.5rem;
-		margin-right: 0.4rem;
-
-		&.mongodb {
-			margin-right: 0;
-		}
-	}
-
 	> span {
-		font-weight: bold;
 		display: flex;
 		align-items: center;
 
-		&:not(:last-child) {
+		&:not(:last-child) > span {
 			margin-right: 0.4rem;
 
 			&::after {
@@ -89,32 +77,47 @@
 			}
 		}
 
-		&.python {
-			color: #f2c73eff;
+		> img {
+			display: inline;
+			width: 1.5rem;
+			height: 1.5rem;
+			margin-right: 0.4rem;
+
+			&.mongodb {
+				margin-right: 0;
+			}
 		}
 
-		&.jee {
-			color: #e53127ff;
-		}
+		> span {
+			font-weight: bold;
 
-		&.mysql {
-			color: #00618aff;
-		}
+			&.python {
+				color: #f2c73eff;
+			}
 
-		&.react {
-			color: #61dbfbff;
-		}
+			&.jee {
+				color: #e53127ff;
+			}
 
-		&.express {
-			color: #4f4f4f;
-		}
+			&.mysql {
+				color: #00618aff;
+			}
 
-		&.mongodb {
-			color: #4a9e47;
-		}
+			&.react {
+				color: #61dbfbff;
+			}
 
-		&.jest {
-			color: #bc3a13;
+			&.express {
+				color: #4f4f4f;
+			}
+
+			&.mongodb {
+				color: #4a9e47;
+			}
+
+			&.jest {
+				color: #bc3a13;
+			}
 		}
 	}
 }

@@ -3,15 +3,6 @@ import classNames from 'utils/classNames';
 import styles from './Experience.module.scss';
 import styled from '@emotion/styled';
 
-const TechnologySpan = styled.span`
-	&::before {
-		// background: url(/icons/react-logo.svg);
-		// width:
-
-		content: url(/icons/react-logo.svg);
-	}
-`;
-
 interface Props {
 	isShown: boolean;
 	title: string;
@@ -41,14 +32,14 @@ const Experience = ({
 			</div>
 			<div id="technologies" className={styles.technologies}>
 				{technologies.map(({ name, percentage, color }) => (
-					<>
+					<span key={name}>
 						<img
 							src={`/icons/${color}-logo.svg`}
 							alt=""
 							className={color && styles[color]}
 						/>
 						<span className={color && styles[color]}>{name}</span>
-					</>
+					</span>
 				))}
 			</div>
 			<div id="tldr" className={styles.tldr}>
