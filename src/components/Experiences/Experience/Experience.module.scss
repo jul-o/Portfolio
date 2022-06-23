@@ -22,9 +22,8 @@
 
 .dates {
 	font-style: italic;
-	color: $medium-grey;
-	[data-theme='light'] & {
-		color: $medium-grey--light;
+	@include themed {
+		color: t('medium-grey');
 	}
 }
 
@@ -35,17 +34,15 @@
 .tldr h3 {
 	margin-bottom: 0;
 	margin-top: 0;
-	color: $light-grey;
-	[data-theme='light'] & {
-		color: $light-grey--light;
+	@include themed {
+		color: t('light-grey');
 	}
 }
 
 .tldr li {
 	font-weight: 600;
-	color: $light-grey;
-	[data-theme='light'] & {
-		color: $light-grey--light;
+	@include themed {
+		color: t('light-grey');
 	}
 }
 

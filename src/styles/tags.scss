@@ -16,16 +16,10 @@ body {
 body {
 	position: relative;
 
-	background-color: $primary;
-	&[data-theme='light'],
-	[data-theme='light'] & {
-		background-color: $primary--light;
+	@include themed {
+		background-color: t('primary');
 	}
 }
-
-// html {
-// 	scroll-behavior: smooth;
-// }
 
 h1,
 h2,
@@ -35,9 +29,8 @@ h5,
 h6,
 p,
 li {
-	color: $light-grey;
-	[data-theme='light'] & {
-		color: $light-grey--light;
+	@include themed {
+		color: t('light-grey');
 	}
 }
 
@@ -78,11 +71,9 @@ h6 {
 
 button {
 	background: none;
-	color: $secondary;
-	border: solid $secondary 2px;
-	[data-theme='light'] & {
-		color: $secondary--light;
-		border: solid $secondary--light 2px;
+	@include themed {
+		color: t('secondary');
+		border: solid t('secondary') 2px;
 	}
 
 	cursor: pointer;
@@ -100,11 +91,9 @@ button {
 	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 	&:hover {
-		color: $light-grey;
-		border-color: $light-grey;
-		[data-theme='light'] & {
-			color: $light-grey--light;
-			border-color: $light-grey--light;
+		@include themed {
+			color: t('light-grey');
+			border-color: t('light-grey');
 		}
 	}
 
