@@ -12,9 +12,8 @@
 			height: 4rem;
 			width: 0;
 			content: '';
-			border-left: solid $light-grey 1px;
-			[data-theme='light'] & {
-				border-color: $light-grey--light;
+			@include themed {
+				border-left: solid t('light-grey') 1px;
 			}
 		}
 	}

@@ -25,31 +25,20 @@
 }
 
 .button {
-	border: solid $secondary 2px;
-	color: $secondary;
-	background: linear-gradient(to right, $secondary 50%, $primary 50%);
-	background-size: 200% 100%;
-	background-position: right bottom;
+	@include themed {
+		border: solid t('secondary') 2px;
+		color: t('secondary');
 
-	[data-theme='light'] & {
-		border: solid $secondary--light 2px;
-		color: $secondary--light;
-		background: linear-gradient(
-			to right,
-			$secondary--light 50%,
-			$primary--light 50%
-		);
+		background: linear-gradient(to right, t('secondary') 50%, t('primary') 50%);
 		background-size: 200% 100%;
 		background-position: right bottom;
 	}
 
 	&:hover {
 		background-position: left bottom;
-		color: $light-grey;
-		border-color: $light-grey;
-		[data-theme='light'] & {
-			color: $light-grey--light;
-			border-color: $light-grey--light;
+		@include themed {
+			color: t('light-grey');
+			border-color: t('light-grey');
 		}
 	}
 }
@@ -60,10 +49,6 @@
 	margin-left: 0.5rem;
 
 	background: none;
-	[data-theme='light'] & {
-		background: none;
-		border: 0;
-	}
 
 	&:hover {
 		padding-bottom: 0.5rem;
@@ -86,13 +71,12 @@
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
 
-	color: $light-grey;
-	background-color: $dark-grey;
-	border: solid black 1px;
-	[data-theme='light'] & {
-		color: $light-grey--light;
-		background-color: $dark-grey--light;
+	@include themed {
+		color: t('light-grey');
+		background-color: t('dark-grey');
 	}
+
+	border: solid black 1px;
 }
 
 .links {

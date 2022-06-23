@@ -27,9 +27,8 @@ $slide-in-duration: 1s;
 	font-weight: normal;
 	margin-bottom: 0;
 
-	color: $primary-lightererer;
-	[data-theme='light'] & {
-		color: $primary-lightererer--light;
+	@include themed {
+		color: t('primary-lighterer');
 	}
 
 	.wave {
@@ -47,9 +46,8 @@ $slide-in-duration: 1s;
 .job {
 	margin-top: 0;
 
-	color: $medium-grey;
-	[data-theme='light'] & {
-		color: $medium-grey--light;
+	@include themed {
+		color: t('medium-grey');
 	}
 
 	animation: slideIn $wave-duration + $slide-in-duration

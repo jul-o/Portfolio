@@ -30,9 +30,8 @@ $selector-item-height: 2.5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	border-left: solid 1px $medium-grey;
-	[data-theme='light'] & {
-		border-color: $medium-grey--light;
+	@include themed {
+		border-left: solid t('medium-grey') 1px;
 	}
 
 	position: relative;
@@ -53,11 +52,9 @@ $selector-item-height: 2.5rem;
 
 		&.selected,
 		&:hover {
-			color: $light-grey;
-			background-color: rgba($secondary, 0.4);
-			[data-theme='light'] & {
-				color: $light-grey--light;
-				background-color: rgba($secondary--light, 0.4);
+			@include themed {
+				color: t('light-grey');
+				background-color: rgba(t('secondary'), 0.4);
 			}
 		}
 	}
@@ -71,9 +68,8 @@ $selector-item-height: 2.5rem;
 
 			position: absolute;
 
-			border-left: solid 3px $secondary;
-			[data-theme='light'] & {
-				border-color: $secondary--light;
+			@include themed {
+				border-left: solid 3px t('secondary');
 			}
 
 			transition: top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);

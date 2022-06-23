@@ -31,19 +31,25 @@
 	animation-duration: 4s;
 	animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 
-	$gradient: radial-gradient(
+	$gradient--dark: radial-gradient(
 		closest-side,
 		color.adjust($primary, $red: +100%),
 		rgba(0, 0, 0, 0)
 	);
-	background: $gradient;
-	[data-theme='light'] & {
-		$gradient: radial-gradient(
-			closest-side,
-			color.adjust($primary--light, $green: -100%, $blue: -100%),
-			rgba(0, 0, 0, 0)
-		);
-		background: $gradient;
+
+	$gradient--light: radial-gradient(
+		closest-side,
+		color.adjust($primary--light, $green: -100%, $blue: -100%),
+		rgba(0, 0, 0, 0)
+	);
+
+	// background: $gradient;
+	@include themed {
+		@if t('theme') == 'dark' {
+			background: $gradient--dark;
+		} @else {
+			background: $gradient--light;
+		}
 	}
 
 	@keyframes gradientAppear {

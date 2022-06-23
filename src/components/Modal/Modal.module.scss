@@ -13,9 +13,8 @@ $global-border-radius: 0.5rem;
 	justify-content: center;
 	align-items: center;
 	z-index: 1;
-	background-color: color.adjust($dark-grey, $alpha: -0.4);
-	[data-theme='light'] & {
-		background-color: color.adjust($dark-grey--light, $alpha: -0.4);
+	@include themed {
+		background-color: color.adjust(t('dark-grey'), $alpha: -0.4);
 	}
 }
 
@@ -24,9 +23,8 @@ $global-border-radius: 0.5rem;
 	display: inline-block;
 	overflow: auto;
 	max-height: 80%;
-	background-color: $primary;
-	[data-theme='light'] & {
-		background-color: $primary--light;
+	@include themed {
+		background-color: t('primary');
 	}
 
 	@media (min-width: 768px) {
@@ -42,9 +40,8 @@ $global-border-radius: 0.5rem;
 
 .header,
 .footer {
-	background-color: $primary-light;
-	[data-theme='light'] & {
-		background-color: $primary-lighterer--light;
+	@include themed {
+		background-color: t('primary-light');
 	}
 }
 
@@ -70,28 +67,22 @@ $global-border-radius: 0.5rem;
 		height: 1.5rem;
 		margin-left: 1rem;
 
-		border: solid $light-grey 2px;
-		background-color: $dark-grey;
-		color: $light-grey;
-		[data-theme='light'] & {
-			border-color: $light-grey--light;
-			background-color: $dark-grey--light;
-			color: $light-grey--light;
+		@include themed {
+			border: solid t('light-grey') 2px;
+			background-color: t('dark-grey');
+			color: t('light-grey');
 		}
 
 		&:hover {
-			border: solid $secondary 2px;
-			color: $secondary;
-			[data-theme='light'] & {
-				border-color: $secondary--light;
-				color: $secondary--light;
+			@include themed {
+				border-color: t('secondary');
+				color: t('secondary');
 			}
 		}
 	}
 }
 
 .footer {
-	// padding-bottom: 1rem;
 	border-bottom-left-radius: $global-border-radius;
 	border-bottom-right-radius: $global-border-radius;
 }
