@@ -61,6 +61,7 @@
 .technologies {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 
 	> span {
 		display: flex;
@@ -75,7 +76,7 @@
 		}
 
 		> img {
-			display: inline;
+			display: inline-block;
 			width: 1.5rem;
 			height: 1.5rem;
 			margin-right: 0.4rem;
