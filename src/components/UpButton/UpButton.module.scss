@@ -8,9 +8,8 @@ $bottom-position: 1rem;
 	right: 1rem;
 	width: 3rem;
 
-	background-color: rgba($primary, 0.8);
-	[data-theme='light'] & {
-		background-color: rgba($primary--light, 0.8);
+	@include themed {
+		background-color: rgba(t('primary'), 0.8);
 	}
 
 	&.top {

@@ -17,7 +17,9 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		background-color: scale-color($color: $primary-lighter, $alpha: -50%);
+		@include themed {
+			background-color: scale-color($color: t('primary-lighter'), $alpha: -50%);
+		}
 		top: 0;
 		left: 0;
 		display: block;
@@ -46,7 +48,10 @@
 		left: 10px;
 
 		border-radius: 9999px;
-		border: solid $primary-lighterer 3px;
+		@include themed {
+			border: solid t('primary-lighterer') 3px;
+		}
+
 		transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 	}
 

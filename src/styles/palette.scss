@@ -20,5 +20,64 @@ $dark-grey--light: #e1e5e6;
 $medium-grey--light: #96a5a9;
 $light-grey--light: #28373b;
 
-$dark: 'dark';
-$light: 'light';
+// -----------------------------------------------------------------------------
+
+$themes: (
+	'dark': (
+		'primary': #00252f,
+		'primary-light': #003c4d,
+		'primary-lighter': #004f66,
+		'primary-lighterer': #007799,
+		'primary-lightererer': #00c6ff,
+
+		'secondary': #e07a00,
+		'dark-grey': #28373b,
+		'medium-grey': #96a5a9,
+		'light-grey': #e1e5e6,
+		'theme': 'dark',
+	),
+	'light': (
+		'primary': #e9f7fbff,
+		'primary-light': #a7def1ff,
+		'primary-lighter': #67c8e4ff,
+		'primary-lighterer': #229fc3ff,
+		'primary-lightererer': #176a82ff,
+
+		'secondary': #e07a00,
+		'dark-grey': #e1e5e6,
+		'medium-grey': #96a5a9,
+		'light-grey': #28373b,
+		'theme': 'light',
+	),
+);
+
+@mixin themed() {
+	// pour chaque thème défini dans la variable $themes
+	@each $theme, $map in $themes {
+		// défini un nouveau matcher .theme--nomdutheme le-matcheur-courant
+		[data-theme='#{$theme}'] & {
+			// defini une variable globale contenant un hash
+			// de toutes les valeurs courantes du theme
+			$theme-map: () !global;
+			@each $key, $submap in $map {
+				$value: map-get(map-get($themes, $theme), '#{$key}');
+				$theme-map: map-merge(
+					$theme-map,
+					(
+						$key: $value,
+					)
+				) !global;
+			}
+			// execute le contenu original du mixin
+			@content;
+			// supprime la variable globale
+			$theme-map: null !global;
+		}
+	}
+}
+
+// Nouvelle fonction t qui va aller lire la valeur
+// de la clé dans le hash temporaire défini par le mixin
+@function t($key) {
+	@return map-get($theme-map, $key);
+}
