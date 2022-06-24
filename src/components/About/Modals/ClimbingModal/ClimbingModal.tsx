@@ -1,17 +1,32 @@
 import Modal from 'components/Modal';
+import styles from '../Modals.module.scss';
+import Image from 'components/Image';
+import text from 'data_frontend/climbing.json';
 
 interface Props {
 	onClose: () => void;
 }
 
-const ClibingModal = ({ onClose }: Props) => {
+const ClimbingModal = ({ onClose }: Props) => {
 	return (
-		<Modal onClose={onClose} header={<h1>L'escalade</h1>}>
-			<div>
-				<p>La grimpe</p>
+		<Modal onClose={onClose} header="L'escalade et l'alpinisme">
+			<div className={styles.modal_body}>
+				<span className={styles.modal_image}>
+					<Image
+						width={965}
+						height={724}
+						src="/files/climbing.jpg"
+						alt="Course d'arêtes dans la Vanoise"
+					/>
+				</span>
+				<div className={styles.text}>
+					{text.map((p) => (
+						<p key={p}>{p}</p>
+					))}
+				</div>
 			</div>
 		</Modal>
 	);
 };
 
-export default ClibingModal;
+export default ClimbingModal;

@@ -2,11 +2,12 @@ import Image, { StaticImageData } from 'next/image';
 import { useState } from 'react';
 
 interface Props {
-	src: StaticImageData;
+	src: StaticImageData | string;
 	className?: string;
 	width?: number;
 	height?: number;
 	blur?: boolean;
+	alt?: string;
 }
 
 const ImageWithSpinner = ({
@@ -14,7 +15,8 @@ const ImageWithSpinner = ({
 	className,
 	width,
 	height,
-	blur = false,
+	blur = true,
+	alt = '',
 }: Props) => {
 	const [isLoaded, setIsLoaded] = useState(false);
 
@@ -27,6 +29,7 @@ const ImageWithSpinner = ({
 				className={className}
 				onLoadingComplete={() => setIsLoaded(true)}
 				placeholder={blur ? 'blur' : 'empty'}
+				alt={alt}
 			/>
 		</>
 	);
