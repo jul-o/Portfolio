@@ -34,7 +34,7 @@ const Modal = ({ onClose, header, children, footer, style }: Props) => {
 				}}>
 				{header && (
 					<div className={styles.header}>
-						{header}
+						<h1>{header}</h1>
 						<button className={styles.button_close} onClick={onClose}>
 							<AiOutlineClose />
 						</button>
