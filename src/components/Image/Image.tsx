@@ -6,13 +6,15 @@ interface Props {
 	className?: string;
 	width?: number;
 	height?: number;
+	blur?: boolean;
 }
 
 const ImageWithSpinner = ({
 	src,
 	className,
-	width = 256,
-	height = 256,
+	width,
+	height,
+	blur = false,
 }: Props) => {
 	const [isLoaded, setIsLoaded] = useState(false);
 
@@ -24,7 +26,7 @@ const ImageWithSpinner = ({
 				height={height}
 				className={className}
 				onLoadingComplete={() => setIsLoaded(true)}
-				placeholder="blur"
+				placeholder={blur ? 'blur' : 'empty'}
 			/>
 		</>
 	);

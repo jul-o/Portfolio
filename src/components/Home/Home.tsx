@@ -1,4 +1,3 @@
-import classNames from 'utils/classNames';
 import styles from './Home.module.scss';
 import Wave from './Wave';
 

@@ -1,6 +1,6 @@
 import Image from 'components/Image';
 import Modal from 'components/Modal';
-import paraglidingImage from 'styles/assets/paragliding.png';
+import paraglidingImage from 'styles/assets/paragliding.jpg';
 import styles from '../Modals.module.scss';
 
 interface Props {
