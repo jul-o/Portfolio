@@ -44,18 +44,14 @@
 }
 
 .copy {
-	@extend .button;
-	border: 0;
 	margin-left: 0.5rem;
 
-	background: none;
+	@include themed {
+		border: none;
+	}
 
 	&:hover {
 		padding-bottom: 0.5rem;
-	}
-
-	&:focus {
-		border: none;
 	}
 }
 
