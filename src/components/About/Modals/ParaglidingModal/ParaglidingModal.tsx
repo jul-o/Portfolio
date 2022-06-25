@@ -1,6 +1,5 @@
-import Image from 'components/Image';
+import Image from 'next/image';
 import Modal from 'components/Modal';
-import paraglidingImage from 'styles/assets/paragliding.jpg';
 import styles from '../Modals.module.scss';
 import text from 'data_frontend/paragliding.json';
 import image from 'styles/assets/paragliding.jpg';
@@ -15,11 +14,9 @@ const ParaglidingModal = ({ onClose }: Props) => {
 			<div className={styles.modal_body}>
 				<span className={styles.modal_image}>
 					<Image
-						width={1442}
-						height={1072}
 						src={image}
 						alt="Parapente au-dessus de La Blanche (massif des Écrins)"
-						blur={true}
+						placeholder="blur"
 					/>
 				</span>
 				<div className={styles.text}>

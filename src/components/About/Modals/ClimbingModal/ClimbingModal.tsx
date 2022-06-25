@@ -1,6 +1,6 @@
 import Modal from 'components/Modal';
 import styles from '../Modals.module.scss';
-import Image from 'components/Image';
+import Image from 'next/image';
 import text from 'data_frontend/climbing.json';
 import image from 'styles/assets/climbing.jpg';
 
@@ -14,11 +14,9 @@ const ClimbingModal = ({ onClose }: Props) => {
 			<div className={styles.modal_body}>
 				<span className={styles.modal_image}>
 					<Image
-						width={965}
-						height={724}
 						src={image}
 						alt="Course d'arêtes dans la Vanoise"
-						blur={true}
+						placeholder="blur"
 					/>
 				</span>
 				<div className={styles.text}>
