@@ -3,6 +3,7 @@ import Modal from 'components/Modal';
 import paraglidingImage from 'styles/assets/paragliding.jpg';
 import styles from '../Modals.module.scss';
 import text from 'data_frontend/paragliding.json';
+import image from 'styles/assets/paragliding.jpg';
 
 interface Props {
 	onClose: () => void;
@@ -13,7 +14,7 @@ const ParaglidingModal = ({ onClose }: Props) => {
 		<Modal onClose={onClose} header="Le parapente">
 			<div className={styles.modal_body}>
 				<span className={styles.modal_image}>
-					<Image width={1442} height={1072} src="/files/paragliding.jpg" />
+					<Image width={1442} height={1072} src={image} blur={true} />
 				</span>
 				<div className={styles.text}>
 					{text.map((p) => (

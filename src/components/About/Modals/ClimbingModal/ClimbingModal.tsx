@@ -2,6 +2,7 @@ import Modal from 'components/Modal';
 import styles from '../Modals.module.scss';
 import Image from 'components/Image';
 import text from 'data_frontend/climbing.json';
+import image from 'styles/assets/climbing.jpg';
 
 interface Props {
 	onClose: () => void;
@@ -15,8 +16,9 @@ const ClimbingModal = ({ onClose }: Props) => {
 					<Image
 						width={965}
 						height={724}
-						src="/files/climbing.jpg"
+						src={image}
 						alt="Course d'arêtes dans la Vanoise"
+						blur={true}
 					/>
 				</span>
 				<div className={styles.text}>

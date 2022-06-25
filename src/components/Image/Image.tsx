@@ -15,7 +15,7 @@ const ImageWithSpinner = ({
 	className,
 	width,
 	height,
-	blur = true,
+	blur = false,
 	alt = '',
 }: Props) => {
 	const [isLoaded, setIsLoaded] = useState(false);
