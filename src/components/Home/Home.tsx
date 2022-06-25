@@ -1,6 +1,17 @@
 import styles from './Home.module.scss';
 import Wave from './Wave';
 
+// @keyframes slideIn {
+// 	0% {
+// 		transform: translateX(200vw);
+// 	}
+// 	50% {
+// 		transform: translateX(200vw);
+// 	}
+// 	100% {
+// 		transform: translateX(0);
+// 	}
+
 const Home = () => {
 	return (
 		<div id="home" className={styles.root}>

@@ -39,18 +39,18 @@ $slide-in-duration: 1s;
 		color: t('medium-grey');
 	}
 
-	animation: slideIn $wave-duration + $slide-in-duration
-		cubic-bezier(0.165, 0.84, 0.44, 1);
+	// animation: slideIn $wave-duration + $slide-in-duration
+	// 	cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-@keyframes slideIn {
-	0% {
-		transform: translateX(200vw);
-	}
-	50% {
-		transform: translateX(200vw);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
+// @keyframes slideIn {
+// 	0% {
+// 		transform: translateX(200vw);
+// 	}
+// 	50% {
+// 		transform: translateX(200vw);
+// 	}
+// 	100% {
+// 		transform: translateX(0);
+// 	}
+// }
