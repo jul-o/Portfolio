@@ -18,8 +18,8 @@ const ParaglidingModal = ({ onClose }: Props) => {
 						width={1442}
 						height={1072}
 						src={image}
-						blur={true}
 						alt="Parapente au-dessus de La Blanche (massif des Écrins)"
+						blur={true}
 					/>
 				</span>
 				<div className={styles.text}>

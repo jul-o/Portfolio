@@ -18,6 +18,7 @@ const WindsurfingModal = ({ onClose }: Props) => {
 						height={1079}
 						src={image}
 						alt="Planche à voile à Mèze avec l'EVUG"
+						blur={true}
 					/>
 				</span>
 				<div className={styles.text}>
