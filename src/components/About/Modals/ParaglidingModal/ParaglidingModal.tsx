@@ -14,7 +14,13 @@ const ParaglidingModal = ({ onClose }: Props) => {
 		<Modal onClose={onClose} header="Le parapente">
 			<div className={styles.modal_body}>
 				<span className={styles.modal_image}>
-					<Image width={1442} height={1072} src={image} blur={true} />
+					<Image
+						width={1442}
+						height={1072}
+						src={image}
+						blur={true}
+						alt="Parapente au-dessus de La Blanche (massif des Écrins)"
+					/>
 				</span>
 				<div className={styles.text}>
 					{text.map((p) => (

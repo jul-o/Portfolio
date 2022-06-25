@@ -14,8 +14,8 @@ const WindsurfingModal = ({ onClose }: Props) => {
 			<div className={styles.modal_body}>
 				<span className={styles.modal_image}>
 					<Image
-						width={1142}
-						height={1142}
+						width={1430}
+						height={1079}
 						src={image}
 						alt="Planche à voile à Mèze avec l'EVUG"
 					/>
