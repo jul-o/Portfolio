@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
-import React from 'react';
+import { motion, TargetAndTransition } from 'framer-motion';
+import React, { Ref } from 'react';
 import styles from './Wave.module.scss';
 
 const Wave = () => {
-	const refBoundaries = React.createRef<HTMLDivElement>();
+	const refBoundaries: Ref<HTMLDivElement> = React.createRef<HTMLDivElement>();
 
-	const animation = {
+	const animation: TargetAndTransition = {
 		rotate: [0, 20, -15, 15, 0],
 		transition: {
 			ease: 'easeInOut',

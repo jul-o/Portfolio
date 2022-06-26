@@ -1,18 +1,17 @@
 import styles from './Home.module.scss';
 import Wave from './Wave';
-
-// @keyframes slideIn {
-// 	0% {
-// 		transform: translateX(200vw);
-// 	}
-// 	50% {
-// 		transform: translateX(200vw);
-// 	}
-// 	100% {
-// 		transform: translateX(0);
-// 	}
+import { motion, TargetAndTransition } from 'framer-motion';
 
 const Home = () => {
+	const animation: TargetAndTransition = {
+		x: ['100vw', '0vw'],
+		transition: {
+			ease: 'easeOut',
+			duration: 1,
+			delay: 1,
+		},
+	};
+
 	return (
 		<div id="home" className={styles.root}>
 			<div className={styles.title}>
@@ -20,7 +19,12 @@ const Home = () => {
 					<div>Bonjour, moi c'est Jules</div>
 					<Wave />
 				</h2>
-				<h3 className={styles.job}>Développeur frontend.</h3>
+				<motion.h3
+					animate={animation}
+					initial={{ x: '100vw' }}
+					className={styles.job}>
+					Développeur frontend.
+				</motion.h3>
 			</div>
 		</div>
 	);
