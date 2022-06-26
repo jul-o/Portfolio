@@ -36,7 +36,7 @@ const Navbar = () => {
 			)}>
 			<button
 				onClick={() => {
-					scrollTo('#home');
+					scrollTo('#about');
 				}}>
 				<span>Jules Sang</span>
 			</button>

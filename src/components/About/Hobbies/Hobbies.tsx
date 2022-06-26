@@ -1,3 +1,4 @@
+import { Variants, motion } from 'framer-motion';
 import { GiMountainClimbing } from 'react-icons/gi';
 import { MdOutlineParagliding } from 'react-icons/md';
 import { RiSailboatLine } from 'react-icons/ri';
@@ -9,6 +10,7 @@ interface Props {
 	openParagliding: () => void;
 	openClimbing: () => void;
 	openWindsurfing: () => void;
+	variants?: Variants;
 }
 
 const Hobbies = ({
@@ -16,20 +18,26 @@ const Hobbies = ({
 	openParagliding,
 	openClimbing,
 	openWindsurfing,
+	variants,
 }: Props) => {
 	return (
 		<div className={classNames(styles.hobbies, className)}>
-			<h2 className={styles.hobbies_title}>Mes passions</h2>
+			<motion.h2 variants={variants} className={styles.hobbies_title}>
+				Mes passions
+			</motion.h2>
 			<div className={styles.buttons}>
-				<button onClick={openParagliding} className={styles.buttonParagliding}>
+				<motion.button
+					variants={variants}
+					onClick={openParagliding}
+					className={styles.buttonParagliding}>
 					<MdOutlineParagliding />
-				</button>
-				<button onClick={openClimbing}>
+				</motion.button>
+				<motion.button variants={variants} onClick={openClimbing}>
 					<GiMountainClimbing />
-				</button>
-				<button onClick={openWindsurfing}>
+				</motion.button>
+				<motion.button variants={variants} onClick={openWindsurfing}>
 					<RiSailboatLine />
-				</button>
+				</motion.button>
 			</div>
 		</div>
 	);

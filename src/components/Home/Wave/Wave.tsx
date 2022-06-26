@@ -10,7 +10,7 @@ const Wave = () => {
 		transition: {
 			ease: 'easeInOut',
 			duration: 1,
-			loop: Infinity,
+			repeat: Infinity,
 			repeatDelay: 2,
 		},
 	};

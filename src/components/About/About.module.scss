@@ -8,13 +8,12 @@
 	@media (min-width: 768px) {
 		max-width: 70vw;
 	}
-
-	@include animateOnScroll('in_viewport', 2);
 }
 
 .text {
 	display: flex;
 	flex-direction: column;
+	column-count: 2;
 }
 
 .columns {
