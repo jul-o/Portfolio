@@ -3,24 +3,6 @@
 
 $height: 3.5rem;
 
-@keyframes backgroundAppear--dark {
-	from {
-		background-color: rgba(map-get(map-get($themes, 'dark'), 'primary'), 0);
-	}
-	to {
-		background-color: rgba(map-get(map-get($themes, 'dark'), 'primary'), 0.9);
-	}
-}
-
-@keyframes backgroundAppear--light {
-	from {
-		background-color: rgba(map-get(map-get($themes, 'light'), 'primary'), 0);
-	}
-	to {
-		background-color: rgba(map-get(map-get($themes, 'light'), 'primary'), 0.9);
-	}
-}
-
 .navbar {
 	position: fixed;
 	width: 100%;
@@ -30,14 +12,6 @@ $height: 3.5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-	// animation-name: backgroundAppear;
-	@include themed {
-		animation-name: backgroundAppear--#{t('theme')};
-	}
-
-	animation-duration: 4s;
-	animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 	@include themed {
 		background-color: rgba(t('primary'), 0.9);
@@ -64,7 +38,6 @@ $height: 3.5rem;
 			@include themed {
 				color: t('secondary');
 			}
-			animation: forwards 0.5s ease-in;
 		}
 
 		span {

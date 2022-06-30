@@ -5,6 +5,8 @@ import classNames from 'utils/classNames';
 import useViewportObserver from 'utils/hooks/useViewportObserver';
 import styles from './Experiences.module.scss';
 import { useLocalStorage } from 'react-use';
+import { rootVariants, childrenVariants } from 'utils/slideInVariants';
+import { motion, Variants } from 'framer-motion';
 
 const Experiences = () => {
 	const [storageIndex, updateStorageIndex] = useLocalStorage(
@@ -27,46 +29,62 @@ const Experiences = () => {
 	useViewportObserver(setIsInViewport, rootRef);
 
 	return (
-		<div
-			id="experiences"
-			className={classNames(styles.root, isInViewport && styles.in_viewport)}
-			ref={rootRef}>
-			<h1>Mes expériences de développeur</h1>
-			<div className={styles.experiences_wrapper}>
-				<div className={styles.experience_selector} id="experience-selector">
-					<div className={styles[`selected_margin--${selectedIndex}`]} />
-
-					{experiences.map((experience, index) => (
-						<button
-							className={classNames(
-								styles.button,
-								index === selectedIndex && styles.selected
-							)}
-							key={experience.title}
-							onClick={(e) => {
-								setSelectedIndex(index);
-							}}>
-							{experience.company}
-						</button>
-					))}
-				</div>
-				<div id="display-experience">
-					{experiences.map((experience, index) => (
-						<Experience
-							{...experience}
-							isShown={index === selectedIndex}
-							body={
-								<div>
-									{experience.body.map((item, index) => (
-										<p key={index}>{item}</p>
-									))}
-								</div>
-							}
-							key={experience.title}
+		<div id="experiences" className={styles.root} ref={rootRef}>
+			<motion.div
+				variants={rootVariants}
+				animate={isInViewport ? 'inViewport' : 'notInViewport'}
+				initial={'notInViewport'}>
+				<motion.h1 variants={childrenVariants}>
+					Mes expériences de développeur
+				</motion.h1>
+				<div className={styles.experiences_wrapper}>
+					<motion.div
+						variants={childrenVariants}
+						className={styles.experience_selector}
+						id="experience-selector">
+						<motion.div
+							variants={childrenVariants}
+							className={styles[`selected_margin--${selectedIndex}`]}
 						/>
-					))}
+
+						{experiences.map((experience, index) => (
+							<motion.button
+								variants={childrenVariants}
+								className={classNames(
+									styles.button,
+									index === selectedIndex && styles.selected
+								)}
+								key={experience.title}
+								onClick={(e) => {
+									setSelectedIndex(index);
+								}}>
+								{experience.company}
+							</motion.button>
+						))}
+					</motion.div>
+					<div id="display-experience">
+						{experiences.map((experience, index) => (
+							<Experience
+								variants={childrenVariants}
+								{...experience}
+								isShown={index === selectedIndex}
+								isExperiencesInViewport={isInViewport}
+								body={
+									<div>
+										{experience.body.map((item, index) => (
+											// TODO: do not give DOM, only the text. let Experience handle the dom
+											<motion.p variants={childrenVariants} key={index}>
+												{item}
+											</motion.p>
+										))}
+									</div>
+								}
+								key={experience.title}
+							/>
+						))}
+					</div>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	);
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import aboutMe from 'data_frontend/me.json';
 import classNames from 'utils/classNames';
 import useViewportObserver from 'utils/hooks/useViewportObserver';
@@ -8,6 +8,9 @@ import ClibingModal from './Modals/ClimbingModal';
 import ParaglidingModal from './Modals/ParaglidingModal';
 import WindsurfingModal from './Modals/WindsurfingModal';
 import Portrait from './Portrait';
+import { motion, Variants } from 'framer-motion';
+import { rootVariants, childrenVariants } from 'utils/slideInVariants';
+import useLogic from './hooks';
 
 const About = () => {
 	const {
@@ -23,80 +26,43 @@ const About = () => {
 	} = useLogic();
 
 	return (
-		<div
-			id="about"
-			className={classNames(styles.root, isInViewport && styles.in_viewport)}
-			ref={rootRef}>
-			<h1 className={styles.title}>Parlons un peu de moi</h1>
-			<div className={styles.columns}>
-				<div className={styles.column}>
-					<div className={styles.text}>
-						{aboutMe.map((item, index) => (
-							<p key={index}>{item}</p>
-						))}
+		<div id="about" className={styles.root} ref={rootRef}>
+			<motion.div
+				variants={rootVariants}
+				animate={isInViewport ? 'inViewport' : 'notInViewport'}
+				initial={'notInViewport'}>
+				<motion.h1 variants={childrenVariants} className={styles.title}>
+					Parlons un peu de moi
+				</motion.h1>
+				<div className={styles.columns}>
+					<div className={styles.column}>
+						<div className={styles.text}>
+							{aboutMe.map((item, index) => (
+								<motion.p variants={childrenVariants} key={index}>
+									{item}
+								</motion.p>
+							))}
+						</div>
+					</div>
+					<div className={styles.column}>
+						<motion.div variants={childrenVariants}>
+							<Portrait />
+						</motion.div>
+						<Hobbies
+							variants={childrenVariants}
+							className={styles.hobbies}
+							openParagliding={openParagliding}
+							openClimbing={openClimbing}
+							openWindsurfing={openWindsurfing}
+						/>
 					</div>
 				</div>
-				<div className={styles.column}>
-					<Portrait />
-					<Hobbies
-						className={styles.hobbies}
-						openParagliding={openParagliding}
-						openClimbing={openClimbing}
-						openWindsurfing={openWindsurfing}
-					/>
-				</div>
-			</div>
-			{paragliding && <ParaglidingModal onClose={closeModal} />}
-			{climbing && <ClibingModal onClose={closeModal} />}
-			{windsurfing && <WindsurfingModal onClose={closeModal} />}
+				{paragliding && <ParaglidingModal onClose={closeModal} />}
+				{climbing && <ClibingModal onClose={closeModal} />}
+				{windsurfing && <WindsurfingModal onClose={closeModal} />}
+			</motion.div>
 		</div>
 	);
-};
-
-const useLogic = () => {
-	const [paragliding, setParagliding] = useState(false);
-	const [climbing, setClimbing] = useState(false);
-	const [windsurfing, setWindsurfing] = useState(false);
-
-	const openParagliding = () => {
-		setClimbing(false);
-		setWindsurfing(false);
-		setParagliding(true);
-	};
-
-	const openClimbing = () => {
-		setParagliding(false);
-		setWindsurfing(false);
-		setClimbing(true);
-	};
-
-	const openWindsurfing = () => {
-		setParagliding(false);
-		setClimbing(false);
-		setWindsurfing(true);
-	};
-
-	const closeModal = () => {
-		setParagliding(false);
-		setClimbing(false);
-		setWindsurfing(false);
-	};
-
-	const rootRef = React.createRef<HTMLDivElement>();
-	const [isInViewport, setIsInViewport] = useState(false);
-	useViewportObserver(setIsInViewport, rootRef);
-
-	return {
-		paragliding,
-		climbing,
-		windsurfing,
-		openParagliding,
-		openClimbing,
-		openWindsurfing,
-		closeModal,
-		rootRef,
-		isInViewport,
-	};
 };
 
 export default About;

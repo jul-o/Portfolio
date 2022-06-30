@@ -1,10 +1,13 @@
-import { ReactElement, useEffect } from 'react';
+import { motion, Variants } from 'framer-motion';
+import { ReactElement, useEffect, useState } from 'react';
 import classNames from 'utils/classNames';
+// import { rootVariants } from 'utils/slideInVariants';
 import styles from './Experience.module.scss';
-import styled from '@emotion/styled';
+import { rootVariants } from 'utils/slideInVariants';
 
 interface Props {
-	isShown: boolean;
+	isShown?: boolean;
+	isExperiencesInViewport?: boolean;
 	title: string;
 	dates: string;
 	technologies: Array<{
@@ -14,6 +17,7 @@ interface Props {
 	}>;
 	tldr?: Array<string>;
 	body?: ReactElement;
+	variants?: Variants;
 }
 
 const Experience = ({
@@ -22,32 +26,66 @@ const Experience = ({
 	technologies,
 	tldr,
 	body,
-	isShown,
+	isShown = true,
+	isExperiencesInViewport = true,
+	variants,
 }: Props) => {
+	const experienceVariants: Variants = {
+		notInViewport: ({ isExperiencesInViewport, isShown }) => ({
+			...rootVariants.notInViewport,
+			// disappear instantly when switching experiences
+			...(isExperiencesInViewport ||
+				(!isShown && {
+					display: 'none',
+					transition: {},
+				})),
+		}),
+		inViewport: {
+			...rootVariants.inViewport,
+			// reappear before the slide in, in case of switching experiences
+			display: 'inherit',
+			transition: {
+				...rootVariants.inViewport.transition,
+				staggerChildren: 0.03,
+			},
+		},
+	};
+
 	return (
-		<div className={classNames(styles.root, isShown && styles.is_shown)}>
+		<motion.div
+			className={styles.root}
+			animate={
+				isShown && isExperiencesInViewport ? 'inViewport' : 'notInViewport'
+			}
+			variants={experienceVariants}
+			custom={{ isExperiencesInViewport }}
+			initial={'notInViewport'}>
 			<div className={styles.titles}>
-				<h2>{title}</h2>
-				<p className={styles.dates}>{dates}</p>
+				<motion.h2 variants={variants}>{title}</motion.h2>
+				<motion.p variants={variants} className={styles.dates}>
+					{dates}
+				</motion.p>
 			</div>
 			<div id="technologies" className={styles.technologies}>
 				{technologies.map(({ name, percentage, color }) => (
-					<span key={name}>
+					<motion.span variants={variants} key={name}>
 						<img
 							src={`/icons/${color}-logo.svg`}
 							alt=""
 							className={color && styles[color]}
 						/>
 						<span className={color && styles[color]}>{name}</span>
-					</span>
+					</motion.span>
 				))}
 			</div>
 			<div id="tldr" className={styles.tldr}>
-				<h3>TL;DR :</h3>
-				<ul>{tldr && tldr.map((item) => <li key={item}>{item}</li>)}</ul>
+				<motion.h3 variants={variants}>TL;DR :</motion.h3>
+				<motion.ul variants={variants}>
+					{tldr && tldr.map((item) => <li key={item}>{item}</li>)}
+				</motion.ul>
 			</div>
 			<div className={styles.body}>{body}</div>
-		</div>
+		</motion.div>
 	);
 };
 

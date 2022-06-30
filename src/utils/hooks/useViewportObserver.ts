@@ -1,3 +1,4 @@
+import { type } from 'os';
 import { useEffect } from 'react';
 
 /**
@@ -17,17 +18,20 @@ const useViewportObserver = (
 			([entry]) => {
 				setIsInViewport(entry.isIntersecting);
 				if (entry.isIntersecting) {
-					observer.disconnect();
+					// Only trigger the observer once
+					// observer.disconnect();
 				}
 			},
 			{
-				root: root ? root : null,
-				rootMargin: rootMargin ? rootMargin : '-40%',
+				root: root || null,
+				rootMargin: rootMargin || '-40%',
 				threshold: treshold ? treshold : 0,
 			}
 		);
 
-		observer.observe(rootRef.current);
+		if (rootRef.current !== null) {
+			observer.observe(rootRef.current);
+		}
 	}, []);
 };
 

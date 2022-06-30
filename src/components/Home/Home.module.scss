@@ -1,13 +1,14 @@
 @import 'styles/palette';
 
-$wave-duration: 1s;
-$slide-in-duration: 1s;
-
 .root {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
+	* {
+		z-index: 1;
+	}
 }
 
 .title {
@@ -32,25 +33,24 @@ $slide-in-duration: 1s;
 	}
 }
 
-.job {
-	margin-top: 0;
+.jobDraggableWrapper {
+	width: fit-content;
+	.job {
+		margin-top: 0;
+		// width: fit-content;
 
-	@include themed {
-		color: t('medium-grey');
+		@include themed {
+			color: t('medium-grey');
+		}
 	}
-
-	animation: slideIn $wave-duration + $slide-in-duration
-		cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-@keyframes slideIn {
-	0% {
-		transform: translateX(200vw);
-	}
-	50% {
-		transform: translateX(200vw);
-	}
-	100% {
-		transform: translateX(0);
-	}
+.boundaries {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+
+	z-index: -1;
 }
