@@ -9,6 +9,8 @@ import ParaglidingModal from './Modals/ParaglidingModal';
 import WindsurfingModal from './Modals/WindsurfingModal';
 import Portrait from './Portrait';
 import { motion, Variants } from 'framer-motion';
+import { rootVariants, childrenVariants } from 'utils/slideInVariants';
+import useLogic from './hooks';
 
 const About = () => {
 	const {
@@ -21,35 +23,33 @@ const About = () => {
 		closeModal,
 		rootRef,
 		isInViewport,
-		variants,
 	} = useLogic();
 
 	return (
-		<div id="about" className={styles.root}>
+		<div id="about" className={styles.root} ref={rootRef}>
 			<motion.div
-				variants={variants}
+				variants={rootVariants}
 				animate={isInViewport ? 'inViewport' : 'notInViewport'}
-				initial={'notInViewport'}
-				ref={rootRef}>
-				<motion.h1 variants={variants} className={styles.title}>
+				initial={'notInViewport'}>
+				<motion.h1 variants={childrenVariants} className={styles.title}>
 					Parlons un peu de moi
 				</motion.h1>
 				<div className={styles.columns}>
 					<div className={styles.column}>
 						<div className={styles.text}>
 							{aboutMe.map((item, index) => (
-								<motion.p variants={variants} key={index}>
+								<motion.p variants={childrenVariants} key={index}>
 									{item}
 								</motion.p>
 							))}
 						</div>
 					</div>
 					<div className={styles.column}>
-						<motion.div variants={variants}>
+						<motion.div variants={childrenVariants}>
 							<Portrait />
 						</motion.div>
 						<Hobbies
-							variants={variants}
+							variants={childrenVariants}
 							className={styles.hobbies}
 							openParagliding={openParagliding}
 							openClimbing={openClimbing}
@@ -63,80 +63,6 @@ const About = () => {
 			</motion.div>
 		</div>
 	);
-};
-
-const useLogic: Function = (): {
-	paragliding: boolean;
-	climbing: boolean;
-	windsurfing: boolean;
-	openParagliding: Function;
-	openClimbing: Function;
-	openWindsurfing: Function;
-	closeModal: Function;
-	rootRef: React.RefObject<HTMLDivElement>;
-	isInViewport: boolean;
-	variants: Variants;
-} => {
-	const [paragliding, setParagliding] = useState(false);
-	const [climbing, setClimbing] = useState(false);
-	const [windsurfing, setWindsurfing] = useState(false);
-
-	const openParagliding = () => {
-		setClimbing(false);
-		setWindsurfing(false);
-		setParagliding(true);
-	};
-
-	const openClimbing = () => {
-		setParagliding(false);
-		setWindsurfing(false);
-		setClimbing(true);
-	};
-
-	const openWindsurfing = () => {
-		setParagliding(false);
-		setClimbing(false);
-		setWindsurfing(true);
-	};
-
-	const closeModal = () => {
-		setParagliding(false);
-		setClimbing(false);
-		setWindsurfing(false);
-	};
-
-	const rootRef = React.createRef<HTMLDivElement>();
-	const [isInViewport, setIsInViewport] = useState(false);
-	useViewportObserver(setIsInViewport, rootRef);
-
-	const variants: Variants = {
-		notInViewport: {
-			opacity: 0,
-			x: '20vw',
-		},
-		inViewport: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				when: 'beforeChildren',
-				bounce: 0,
-				staggerChildren: 0.07,
-			},
-		},
-	};
-
-	return {
-		paragliding,
-		climbing,
-		windsurfing,
-		openParagliding,
-		openClimbing,
-		openWindsurfing,
-		closeModal,
-		rootRef,
-		isInViewport,
-		variants,
-	};
 };
 
 export default About;

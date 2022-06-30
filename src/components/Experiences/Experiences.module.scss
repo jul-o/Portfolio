@@ -9,7 +9,7 @@ $selector-item-height: 2.5rem;
 		max-width: 85vw;
 	}
 
-	@include animateOnScroll('in_viewport', 2);
+	// @include animateOnScroll('in_viewport', 2);
 }
 
 .experiences_wrapper {
