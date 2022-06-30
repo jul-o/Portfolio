@@ -47,7 +47,8 @@ const Experience = ({
 		<motion.div
 			className={styles.root}
 			animate={isShown ? 'inViewport' : 'notInViewport'}
-			variants={rootVariants}>
+			variants={rootVariants}
+			initial={'notInViewport'}>
 			<div className={styles.titles}>
 				<motion.h2 variants={variants}>{title}</motion.h2>
 				<motion.p variants={variants} className={styles.dates}>
