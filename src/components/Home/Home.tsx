@@ -1,6 +1,7 @@
 import styles from './Home.module.scss';
 import Wave from './Wave';
 import { motion, TargetAndTransition } from 'framer-motion';
+import React, { Ref } from 'react';
 
 const Home = () => {
 	const animation: TargetAndTransition = {
@@ -12,21 +13,38 @@ const Home = () => {
 		},
 	};
 
+	const refBoundaries: Ref<HTMLDivElement> = React.createRef<HTMLDivElement>();
+
 	return (
-		<div id="home" className={styles.root}>
-			<div className={styles.title}>
-				<h2 className={styles.iam}>
-					<div>Bonjour, moi c'est Jules</div>
-					<Wave />
-				</h2>
-				<motion.h3
-					animate={animation}
-					initial={{ x: '100vw' }}
-					className={styles.job}>
-					Développeur frontend.
-				</motion.h3>
+		<>
+			<div className={styles.boundaries} ref={refBoundaries} />
+			<div id="home" className={styles.root}>
+				<div className={styles.title}>
+					<h2 className={styles.iam}>
+						<motion.div
+							drag
+							whileDrag={{ scale: 1.5 }}
+							dragConstraints={refBoundaries}
+							dragTransition={{ bounceStiffness: 500 }}>
+							Bonjour, moi c'est Jules
+						</motion.div>
+						<Wave dragBoundaries={refBoundaries} />
+					</h2>
+					<motion.div
+						drag
+						whileDrag={{ scale: 1.5 }}
+						dragConstraints={refBoundaries}
+						dragTransition={{ bounceStiffness: 500 }}>
+						<motion.h3
+							className={styles.job}
+							animate={animation}
+							initial={{ x: '100vw' }}>
+							Développeur frontend.
+						</motion.h3>
+					</motion.div>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
