@@ -67,7 +67,8 @@ const Experiences = () => {
 							<Experience
 								variants={childrenVariants}
 								{...experience}
-								isShown={index === selectedIndex && isInViewport}
+								isShown={index === selectedIndex}
+								isExperiencesInViewport={isInViewport}
 								body={
 									<div>
 										{experience.body.map((item, index) => (

@@ -1,11 +1,13 @@
 import { motion, Variants } from 'framer-motion';
-import { ReactElement, useEffect } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import classNames from 'utils/classNames';
 // import { rootVariants } from 'utils/slideInVariants';
 import styles from './Experience.module.scss';
+import { rootVariants } from 'utils/slideInVariants';
 
 interface Props {
-	isShown: boolean;
+	isShown?: boolean;
+	isExperiencesInViewport?: boolean;
 	title: string;
 	dates: string;
 	technologies: Array<{
@@ -24,20 +26,26 @@ const Experience = ({
 	technologies,
 	tldr,
 	body,
-	isShown,
+	isShown = true,
+	isExperiencesInViewport = true,
 	variants,
 }: Props) => {
-	const rootVariants: Variants = {
-		notInViewport: {
-			display: 'none',
-			opacity: 0,
-		},
+	const experienceVariants: Variants = {
+		notInViewport: ({ isExperiencesInViewport, isShown }) => ({
+			...rootVariants.notInViewport,
+			// disappear instantly when switching experiences
+			...(isExperiencesInViewport ||
+				(!isShown && {
+					display: 'none',
+					transition: {},
+				})),
+		}),
 		inViewport: {
+			...rootVariants.inViewport,
+			// reappear before the slide in, in case of switching experiences
 			display: 'inherit',
-			opacity: 1,
 			transition: {
-				duration: 0,
-				when: 'beforeChildren',
+				...rootVariants.inViewport.transition,
 				staggerChildren: 0.03,
 			},
 		},
@@ -46,8 +54,11 @@ const Experience = ({
 	return (
 		<motion.div
 			className={styles.root}
-			animate={isShown ? 'inViewport' : 'notInViewport'}
-			variants={rootVariants}
+			animate={
+				isShown && isExperiencesInViewport ? 'inViewport' : 'notInViewport'
+			}
+			variants={experienceVariants}
+			custom={{ isExperiencesInViewport }}
 			initial={'notInViewport'}>
 			<div className={styles.titles}>
 				<motion.h2 variants={variants}>{title}</motion.h2>

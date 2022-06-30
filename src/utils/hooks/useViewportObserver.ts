@@ -18,12 +18,13 @@ const useViewportObserver = (
 			([entry]) => {
 				setIsInViewport(entry.isIntersecting);
 				if (entry.isIntersecting) {
+					// Only trigger the observer once
 					// observer.disconnect();
 				}
 			},
 			{
-				root: root ? root : null,
-				rootMargin: rootMargin ? rootMargin : '-40%',
+				root: root || null,
+				rootMargin: rootMargin || '-40%',
 				threshold: treshold ? treshold : 0,
 			}
 		);

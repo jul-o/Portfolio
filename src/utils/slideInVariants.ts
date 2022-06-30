@@ -1,6 +1,10 @@
-import { Variants } from 'framer-motion';
+import { TargetAndTransition, Variant, Variants } from 'framer-motion';
 
-export const rootVariants: Variants = {
+declare type VariantsWithTransitions = {
+	[key: string]: TargetAndTransition;
+};
+
+export const rootVariants: VariantsWithTransitions = {
 	notInViewport: {
 		opacity: 0,
 		transition: {
@@ -19,7 +23,7 @@ export const rootVariants: Variants = {
 	},
 };
 
-export const childrenVariants: Variants = {
+export const childrenVariants: VariantsWithTransitions = {
 	notInViewport: {
 		opacity: 0,
 		x: '50vw',

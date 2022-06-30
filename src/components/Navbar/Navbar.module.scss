@@ -13,9 +13,6 @@ $height: 3.5rem;
 	justify-content: center;
 	align-items: center;
 
-	animation-duration: 4s;
-	animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-
 	@include themed {
 		background-color: rgba(t('primary'), 0.9);
 		border-bottom: solid 2px t('primary-lighterer');
@@ -41,7 +38,6 @@ $height: 3.5rem;
 			@include themed {
 				color: t('secondary');
 			}
-			animation: forwards 0.5s ease-in;
 		}
 
 		span {
