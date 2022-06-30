@@ -31,6 +31,7 @@ const Home = () => {
 						<Wave dragBoundaries={refBoundaries} />
 					</h2>
 					<motion.div
+						className={styles.jobDraggableWrapper}
 						drag
 						whileDrag={{ scale: 1.5 }}
 						dragConstraints={refBoundaries}

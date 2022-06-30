@@ -33,11 +33,15 @@
 	}
 }
 
-.job {
-	margin-top: 0;
+.jobDraggableWrapper {
+	width: fit-content;
+	.job {
+		margin-top: 0;
+		// width: fit-content;
 
-	@include themed {
-		color: t('medium-grey');
+		@include themed {
+			color: t('medium-grey');
+		}
 	}
 }
 
