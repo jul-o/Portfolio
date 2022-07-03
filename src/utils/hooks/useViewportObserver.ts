@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { useEffect } from 'react';
 
 /**
@@ -19,7 +18,7 @@ const useViewportObserver = (
 				setIsInViewport(entry.isIntersecting);
 				if (entry.isIntersecting) {
 					// Only trigger the observer once
-					// observer.disconnect();
+					observer.disconnect();
 				}
 			},
 			{
