@@ -20,12 +20,13 @@ const Page = () => {
 	};
 	return (
 		<>
-			<motion.div
-				animate={backgroundAnimation}
-				initial={{ opacity: 0 }}
-				id="background"
-			/>
 			<div id="root">
+				<motion.div
+					animate={backgroundAnimation}
+					initial={{ opacity: 0 }}
+					id="background"
+				/>
+
 				<Navbar />
 				<Home className="section" />
 				<About className="section" />
