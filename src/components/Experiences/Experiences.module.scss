@@ -22,19 +22,14 @@ $selector-item-height: 2.5rem;
 }
 
 .experience_selector {
-	height: fit-content;
-
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	@include themed {
-		border-left: solid t('medium-grey') 1px;
-	}
+	justify-content: flex-start;
 
 	position: relative;
 
 	@media (min-width: 768px) {
-		margin-right: 4rem;
+		margin-right: 2rem;
 	}
 
 	.button {
@@ -47,11 +42,20 @@ $selector-item-height: 2.5rem;
 
 		white-space: nowrap;
 
+		@include themed {
+			border-left: solid t('medium-grey') 1px;
+		}
+
 		&.selected,
 		&:hover {
 			@include themed {
-				color: t('light-grey');
 				background-color: rgba(t('secondary'), 0.4);
+			}
+		}
+
+		&.selected {
+			@include themed {
+				color: t('light-grey');
 			}
 		}
 	}
