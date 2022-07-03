@@ -2,8 +2,9 @@ import styles from './Home.module.scss';
 import Wave from './Wave';
 import { motion, TargetAndTransition } from 'framer-motion';
 import React, { Ref } from 'react';
+import classNames from 'utils/classNames';
 
-const Home = () => {
+const Home = ({ className }) => {
 	const animation: TargetAndTransition = {
 		x: ['100vw', '0vw'],
 		transition: {
@@ -18,7 +19,7 @@ const Home = () => {
 	return (
 		<>
 			<div className={styles.boundaries} ref={refBoundaries} />
-			<div id="home" className={styles.root}>
+			<div id="home" className={classNames(className, styles.root)}>
 				<div className={styles.title}>
 					<h2 className={styles.iam}>
 						<motion.div

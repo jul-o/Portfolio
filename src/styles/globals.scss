@@ -6,13 +6,24 @@
 }
 
 #root {
-	& > * {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	> .section {
 		/* max-width: 95vw; */
 		min-height: 100vh;
 		margin-left: auto;
 		margin-right: auto;
 		padding-top: 3.5rem;
+		scroll-snap-align: center;
 	}
+
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 100vh;
+	scroll-snap-type: y mandatory;
+	scroll-snap-stop: always;
 }
 
 #background {

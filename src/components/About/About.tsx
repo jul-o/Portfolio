@@ -12,7 +12,7 @@ import { motion, Variants } from 'framer-motion';
 import { rootVariants, childrenVariants } from 'utils/slideInVariants';
 import useLogic from './hooks';
 
-const About = () => {
+const About = ({ className }) => {
 	const {
 		paragliding,
 		climbing,
@@ -26,7 +26,10 @@ const About = () => {
 	} = useLogic();
 
 	return (
-		<div id="about" className={styles.root} ref={rootRef}>
+		<div
+			id="about"
+			className={classNames(styles.root, className)}
+			ref={rootRef}>
 			<motion.div
 				variants={rootVariants}
 				animate={isInViewport ? 'inViewport' : 'notInViewport'}

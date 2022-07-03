@@ -8,7 +8,7 @@ import { useLocalStorage } from 'react-use';
 import { rootVariants, childrenVariants } from 'utils/slideInVariants';
 import { motion, Variants } from 'framer-motion';
 
-const Experiences = () => {
+const Experiences = ({ className }) => {
 	const [storageIndex, updateStorageIndex] = useLocalStorage(
 		'selected-index',
 		'0'
@@ -29,7 +29,10 @@ const Experiences = () => {
 	useViewportObserver(setIsInViewport, rootRef);
 
 	return (
-		<div id="experiences" className={styles.root} ref={rootRef}>
+		<div
+			id="experiences"
+			className={classNames(styles.root, className)}
+			ref={rootRef}>
 			<motion.div
 				variants={rootVariants}
 				animate={isInViewport ? 'inViewport' : 'notInViewport'}

@@ -25,12 +25,12 @@ const Page = () => {
 				initial={{ opacity: 0 }}
 				id="background"
 			/>
-			<Navbar />
 			<div id="root">
-				<Home />
-				<About />
-				<Experiences />
-				<Contact />
+				<Navbar />
+				<Home className="section" />
+				<About className="section" />
+				<Experiences className="section" />
+				<Contact className="section" />
 			</div>
 			<DarkModeButton />
 			<UpButton />
