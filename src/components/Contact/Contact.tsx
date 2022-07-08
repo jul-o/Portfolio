@@ -76,8 +76,6 @@ const Contact = () => {
 					</span>
 				)}
 			</motion.div>
-			{/* TODO: separate from contacts */}
-			<Links className={styles.links} />
 		</div>
 	);
 };
