@@ -1,5 +1,6 @@
 import About from 'components/About';
 import Contact from 'components/Contact';
+import Links from 'components/Contact/Links';
 import DarkModeButton from 'components/DarkModeButton';
 import Experiences from 'components/Experiences';
 import Home from 'components/Home';
@@ -32,6 +33,7 @@ const Page = () => {
 				<Experiences />
 				<Contact />
 			</div>
+			<Links />
 			<DarkModeButton />
 			<UpButton />
 		</>
