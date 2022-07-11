@@ -10,16 +10,23 @@
 }
 
 .text {
-	display: flex;
-	flex-direction: column;
-	column-count: 2;
+	@media (min-width: 1201px) {
+		column-count: 2;
+
+		>p {
+			break-inside: avoid;
+			display: inline-block;
+		}
+	}
 }
 
 .columns {
 	display: flex;
+
 	@media (min-width: 768px) {
 		flex-direction: row;
 	}
+
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
