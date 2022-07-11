@@ -14,7 +14,6 @@ $selector-item-height: 2.5rem;
 	flex-direction: column;
 	justify-content: flex-start;
 	width: 100%;
-	min-height: 100vh;
 
 	@media (min-width: 768px) {
 		flex-direction: row;
