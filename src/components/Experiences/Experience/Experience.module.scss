@@ -2,6 +2,7 @@
 
 .dates {
 	font-style: italic;
+
 	@include themed {
 		color: t('medium-grey');
 	}
@@ -14,6 +15,7 @@
 .tldr h3 {
 	margin-bottom: 0;
 	margin-top: 0;
+
 	@include themed {
 		color: t('light-grey');
 	}
@@ -21,6 +23,7 @@
 
 .tldr li {
 	font-weight: 600;
+
 	@include themed {
 		color: t('light-grey');
 	}
@@ -43,11 +46,11 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 
-	> span {
+	>span {
 		display: flex;
 		align-items: center;
 
-		&:not(:last-child) > span {
+		&:not(:last-child)>span {
 			margin-right: 0.4rem;
 
 			&::after {
@@ -55,7 +58,7 @@
 			}
 		}
 
-		> img {
+		>img {
 			display: inline-block;
 			width: 1.5rem;
 			height: 1.5rem;
@@ -66,7 +69,7 @@
 			}
 		}
 
-		> span {
+		>span {
 			font-weight: bold;
 
 			&.python {
@@ -96,6 +99,17 @@
 			&.jest {
 				color: #bc3a13;
 			}
+		}
+	}
+}
+
+.body {
+	@media (min-width: 1201px) {
+		column-count: 2;
+
+		>p {
+			break-inside: avoid;
+			display: inline-block;
 		}
 	}
 }

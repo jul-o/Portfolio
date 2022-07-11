@@ -1,7 +1,6 @@
 import { motion, Variants } from 'framer-motion';
 import { ReactElement, useEffect, useState } from 'react';
 import classNames from 'utils/classNames';
-// import { rootVariants } from 'utils/slideInVariants';
 import styles from './Experience.module.scss';
 import { rootVariants } from 'utils/slideInVariants';
 

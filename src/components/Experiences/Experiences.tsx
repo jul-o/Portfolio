@@ -70,14 +70,14 @@ const Experiences = () => {
 								isShown={index === selectedIndex}
 								isExperiencesInViewport={isInViewport}
 								body={
-									<div>
+									<>
 										{experience.body.map((item, index) => (
 											// TODO: do not give DOM, only the text. let Experience handle the dom
 											<motion.p variants={childrenVariants} key={index}>
 												{item}
 											</motion.p>
 										))}
-									</div>
+									</>
 								}
 								key={experience.title}
 							/>
