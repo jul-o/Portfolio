@@ -1,4 +1,4 @@
-import Modal from 'components/Modal';
+import Modal from 'components/reusable/Modal';
 import styles from '../Modals.module.scss';
 import Image from 'next/image';
 import text from 'data_frontend/climbing.json';
