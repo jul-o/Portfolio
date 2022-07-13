@@ -21,8 +21,11 @@
 	overflow-x: hidden;
 	overflow-y: scroll;
 	height: 100vh;
-	scroll-snap-type: y mandatory;
-	scroll-snap-stop: always;
+
+	@media (min-width: 768px) {
+		scroll-snap-type: y mandatory;
+		scroll-snap-stop: always;
+	}
 }
 
 #background {
