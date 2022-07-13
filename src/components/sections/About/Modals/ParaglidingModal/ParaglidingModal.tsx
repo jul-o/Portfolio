@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'components/reusable/Image';
 import Modal from 'components/reusable/Modal';
 import styles from '../Modals.module.scss';
 import text from 'data_frontend/paragliding.json';
