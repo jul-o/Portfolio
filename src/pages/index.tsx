@@ -1,9 +1,9 @@
-import About from 'components/About';
-import Contact from 'components/Contact';
-import Links from 'components/Contact/Links';
+import About from 'components/sections/About';
+import Contact from 'components/sections/Contact';
+import Links from 'components/sections/Contact/Links';
 import DarkModeButton from 'components/DarkModeButton';
-import Experiences from 'components/Experiences';
-import Home from 'components/Home';
+import Experiences from 'components/sections/Experiences';
+import Home from 'components/sections/Home';
 import Navbar from 'components/Navbar';
 import UpButton from 'components/UpButton';
 import { motion, TargetAndTransition } from 'framer-motion';

@@ -1,4 +1,4 @@
-import Experience from 'components/Experiences/Experience';
+import Experience from 'components/sections/Experiences/Experience';
 import experiences from 'data_frontend/experiences.json';
 import React, { useEffect, useState } from 'react';
 import classNames from 'utils/classNames';
