@@ -21,17 +21,18 @@ const Page = () => {
 	};
 	return (
 		<>
-			<motion.div
-				animate={backgroundAnimation}
-				initial={{ opacity: 0 }}
-				id="background"
-			/>
-			<Navbar />
 			<div id="root">
-				<Home />
-				<About />
-				<Experiences />
-				<Contact />
+				<motion.div
+					animate={backgroundAnimation}
+					initial={{ opacity: 0 }}
+					id="background"
+				/>
+
+				<Navbar />
+				<Home className="section" />
+				<About className="section" />
+				<Experiences className="section" />
+				<Contact className="section" />
 			</div>
 			<Links />
 			<DarkModeButton />

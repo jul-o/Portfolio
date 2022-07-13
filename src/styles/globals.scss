@@ -6,12 +6,25 @@
 }
 
 #root {
-	& > * {
+	> .section {
 		/* max-width: 95vw; */
 		min-height: 100vh;
 		margin-left: auto;
 		margin-right: auto;
 		padding-top: 3.5rem;
+		scroll-snap-align: start;
+	}
+
+	//TODO: remove scroll snap when height > 100vh
+	position: relative;
+
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 100vh;
+
+	@media (min-width: 768px) {
+		scroll-snap-type: y mandatory;
+		scroll-snap-stop: always;
 	}
 }
 

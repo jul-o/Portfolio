@@ -6,8 +6,9 @@ import Links from './Links';
 import { rootVariants, childrenVariants } from 'utils/slideInVariants';
 import useViewportObserver from 'utils/hooks/useViewportObserver';
 import React from 'react';
+import classNames from 'utils/classNames';
 
-const Contact = () => {
+const Contact = ({ className }) => {
 	const updateTooltipState = (setter: Function) => {
 		setCopiedEmail(false);
 		setCopiedPhone(false);
@@ -25,7 +26,10 @@ const Contact = () => {
 	useViewportObserver(setIsInViewport, rootRef);
 
 	return (
-		<div id="contact" className={styles.root} ref={rootRef}>
+		<div
+			id="contact"
+			className={classNames(className, styles.root)}
+			ref={rootRef}>
 			<motion.div
 				variants={rootVariants}
 				animate={isInViewport ? 'inViewport' : 'notInViewport'}
