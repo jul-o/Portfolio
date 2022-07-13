@@ -1,6 +1,6 @@
 import Modal from 'components/reusable/Modal';
+import Image from 'components/reusable/Image';
 import styles from '../Modals.module.scss';
-import Image from 'next/image';
 import text from 'data_frontend/climbing.json';
 import image from 'styles/assets/climbing.jpg';
 
