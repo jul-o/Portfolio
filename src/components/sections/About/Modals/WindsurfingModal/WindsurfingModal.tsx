@@ -1,21 +1,21 @@
-import Modal from 'components/Modal';
+import Modal from 'components/reusable/Modal';
 import styles from '../Modals.module.scss';
 import Image from 'next/image';
-import text from 'data_frontend/climbing.json';
-import image from 'styles/assets/climbing.jpg';
+import text from 'data_frontend/windsurfing.json';
+import image from 'styles/assets/windsurfing.jpg';
 
 interface Props {
 	onClose: () => void;
 }
 
-const ClimbingModal = ({ onClose }: Props) => {
+const WindsurfingModal = ({ onClose }: Props) => {
 	return (
-		<Modal onClose={onClose} header="L'escalade et l'alpinisme">
+		<Modal onClose={onClose} header="La planche à voile">
 			<div className={styles.modal_body}>
 				<span className={styles.modal_image}>
 					<Image
 						src={image}
-						alt="Course d'arêtes dans la Vanoise"
+						alt="Planche à voile à Mèze avec l'EVUG"
 						placeholder="blur"
 					/>
 				</span>
@@ -29,4 +29,4 @@ const ClimbingModal = ({ onClose }: Props) => {
 	);
 };
 
-export default ClimbingModal;
+export default WindsurfingModal;

@@ -1,11 +1,11 @@
-import About from 'components/About';
-import Contact from 'components/Contact';
-import Links from 'components/Contact/Links';
-import DarkModeButton from 'components/DarkModeButton';
-import Experiences from 'components/Experiences';
-import Home from 'components/Home';
-import Navbar from 'components/Navbar';
-import UpButton from 'components/UpButton';
+import About from 'components/sections/About';
+import Contact from 'components/sections/Contact';
+import Links from 'components/sections/Contact/Links';
+import DarkModeButton from 'components/reusable/DarkModeButton';
+import Experiences from 'components/sections/Experiences';
+import Home from 'components/sections/Home';
+import Navbar from 'components/reusable/Navbar';
+import UpButton from 'components/reusable/UpButton';
 import { motion, TargetAndTransition } from 'framer-motion';
 
 const Page = () => {
@@ -33,8 +33,8 @@ const Page = () => {
 				<About className="section" />
 				<Experiences className="section" />
 				<Contact className="section" />
+				<Links />
 			</div>
-			<Links />
 			<DarkModeButton />
 			<UpButton />
 		</>
