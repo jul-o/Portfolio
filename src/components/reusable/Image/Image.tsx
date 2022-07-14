@@ -22,6 +22,11 @@ const Image = (props: Props) => {
 
 	return (
 		<div className={styles.root}>
+			<span className={styles.spinner}>
+				<ScaleLoader
+					color={palette[theme === 'light' ? 'light' : 'dark']['light-grey']}
+				/>
+			</span>
 			<NextImage
 				{...props}
 				style={{
@@ -31,13 +36,6 @@ const Image = (props: Props) => {
 					setLoaded(true);
 				}}
 			/>
-			{!loaded && (
-				<span className={styles.spinner}>
-					<ScaleLoader
-						color={palette[theme === 'light' ? 'light' : 'dark']['light-grey']}
-					/>
-				</span>
-			)}
 		</div>
 	);
 };
