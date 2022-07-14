@@ -5,14 +5,17 @@ import { ScaleLoader } from 'react-spinners';
 import { useTheme } from 'next-themes';
 import palette from 'styles/palette';
 
+type PlaceHolder = 'empty' | 'blur';
+
 interface Props {
 	src: string | StaticImageData;
+	placeholder?: PlaceHolder;
 	[x: string]: any;
 }
 
 const Image = (props: Props) => {
-	const [loaded, setLoaded] = useState(false);
 	const { theme } = useTheme();
+	const placeholder: PlaceHolder = props.placeholder || 'blur';
 
 	const [mounted, setMounted] = useState(false);
 
@@ -27,15 +30,8 @@ const Image = (props: Props) => {
 					color={palette[theme === 'light' ? 'light' : 'dark']['light-grey']}
 				/>
 			</span>
-			<NextImage
-				{...props}
-				style={{
-					opacity: loaded ? 1 : 0,
-				}}
-				onLoadingComplete={() => {
-					setLoaded(true);
-				}}
-			/>
+			{/* blur placeholder if it works on the user's browser, else spinner */}
+			<NextImage {...props} placeholder={placeholder} />
 		</div>
 	);
 };

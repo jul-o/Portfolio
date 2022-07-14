@@ -7,7 +7,7 @@ const Portrait = () => {
 	return (
 		<figure tabIndex={0} className={classNames(styles.imageWrapper)}>
 			<div className={styles.imageBorder} />
-			<Image src={myPic} className={styles.image} />
+			<Image src={myPic} className={styles.image} placeholder="empty" />
 		</figure>
 	);
 };
