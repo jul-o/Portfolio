@@ -1,4 +1,5 @@
 @import 'styles/palette';
+@import 'styles/mixins/animate-column-rule';
 
 .dates {
 	font-style: italic;
@@ -46,11 +47,11 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 
-	>span {
+	> span {
 		display: flex;
 		align-items: center;
 
-		&:not(:last-child)>span {
+		&:not(:last-child) > span {
 			margin-right: 0.4rem;
 
 			&::after {
@@ -58,7 +59,7 @@
 			}
 		}
 
-		>img {
+		> img {
 			display: inline-block;
 			width: 1.5rem;
 			height: 1.5rem;
@@ -69,7 +70,7 @@
 			}
 		}
 
-		>span {
+		> span {
 			font-weight: bold;
 
 			&.python {
@@ -105,9 +106,9 @@
 
 .body {
 	@media (min-width: 1201px) {
-		column-count: 2;
+		@include two-columns;
 
-		>p {
+		> p {
 			break-inside: avoid;
 			display: inline-block;
 		}
