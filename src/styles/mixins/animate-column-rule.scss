@@ -1,0 +1,21 @@
+@import 'styles/palette';
+
+@mixin two-columns {
+	column-count: 2;
+	@include themed {
+		column-rule: solid 1px t('light-gray');
+		animation: column-frames 1.5s ease-in-out;
+
+		@keyframes column-frames {
+			0% {
+				column-rule: solid 1px #fff0;
+			}
+			50% {
+				column-rule: solid 1px #fff0;
+			}
+			100% {
+				column-rule: solid 1px t('light-gray');
+			}
+		}
+	}
+}

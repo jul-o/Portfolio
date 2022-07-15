@@ -1,4 +1,5 @@
 @import 'styles/palette';
+@import 'styles/mixins/animate-column-rule';
 
 .root {
 	max-width: 95vw;
@@ -11,9 +12,9 @@
 
 .text {
 	@media (min-width: 1201px) {
-		column-count: 2;
+		@include two-columns;
 
-		>p {
+		> p {
 			break-inside: avoid;
 			display: inline-block;
 		}
