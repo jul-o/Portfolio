@@ -39,7 +39,11 @@ const About = ({ className }) => {
 				</motion.h1>
 				<div className={styles.columns}>
 					<div className={styles.column}>
-						<div className={styles.text}>
+						<div
+							className={classNames(
+								styles.text,
+								isInViewport && styles.in_viewport
+							)}>
 							{aboutMe.map((item, index) => (
 								<motion.p variants={childrenVariants} key={index}>
 									{item}
