@@ -10,7 +10,7 @@
 	}
 }
 
-.text {
+.text.in_viewport {
 	@media (min-width: 1201px) {
 		@include two-columns;
 	}
