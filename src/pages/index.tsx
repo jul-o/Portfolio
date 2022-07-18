@@ -1,6 +1,6 @@
 import About from 'components/sections/About';
 import Contact from 'components/sections/Contact';
-import Links from 'components/sections/Contact/Links';
+import Links from 'components/sections/Links';
 import DarkModeButton from 'components/reusable/DarkModeButton';
 import Experiences from 'components/sections/Experiences';
 import Home from 'components/sections/Home';

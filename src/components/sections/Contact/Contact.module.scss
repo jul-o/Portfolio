@@ -38,8 +38,9 @@
 .copiedAlert {
 	position: fixed;
 	bottom: 1rem;
-	left: 0;
-	right: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
 	width: fit-content;
 
 	z-index: 3;
@@ -49,7 +50,7 @@
 
 	@include themed {
 		color: t('light-grey');
-		background-color: t('dark-grey');
+		background-color: rgba(t('dark-grey'), 0.8);
 	}
 
 	border: solid black 1px;
