@@ -10,14 +10,9 @@
 	}
 }
 
-.text {
+.text.in_viewport {
 	@media (min-width: 1201px) {
 		@include two-columns;
-
-		> p {
-			break-inside: avoid;
-			display: inline-block;
-		}
 	}
 }
 
