@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $primary: #00252f;
 $primary-light: #003c4d;
 $primary-lighter: #004f66;
@@ -52,12 +54,11 @@ $themes: (
 );
 
 @mixin themed() {
-	// pour chaque thème défini dans la variable $themes
+	// for each theme defined in $themes
 	@each $theme, $map in $themes {
-		// défini un nouveau matcher .theme--nomdutheme le-matcheur-courant
+		// define a new matcher
 		[data-theme='#{$theme}'] & {
-			// defini une variable globale contenant un hash
-			// de toutes les valeurs courantes du theme
+			// define a global variable containing a hash of all current values of the theme
 			$theme-map: () !global;
 			@each $key, $submap in $map {
 				$value: map-get(map-get($themes, $theme), '#{$key}');
@@ -68,16 +69,16 @@ $themes: (
 					)
 				) !global;
 			}
-			// execute le contenu original du mixin
+			@debug $theme-map;
+			// execute mixin's original content
 			@content;
-			// supprime la variable globale
+			// delete $theme-map;
 			$theme-map: null !global;
 		}
 	}
 }
 
-// Nouvelle fonction t qui va aller lire la valeur
-// de la clé dans le hash temporaire défini par le mixin
+// New function t that will read the value of the key in the temporary hash defined by the mixin
 @function t($key) {
 	@return map-get($theme-map, $key);
 }

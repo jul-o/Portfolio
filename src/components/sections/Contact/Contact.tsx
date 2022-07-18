@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FaRegCopy } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import styles from './Contact.module.scss';
-import Links from './Links';
+import Links from 'components/sections/Links';
 import { rootVariants, childrenVariants } from 'utils/slideInVariants';
 import useViewportObserver from 'utils/hooks/useViewportObserver';
 import React from 'react';
