@@ -41,13 +41,17 @@
 
 	$gradient--dark: radial-gradient(
 		closest-side,
-		color.adjust($primary, $red: +100%),
+		adjust-color(map-get(map-get($themes, 'dark'), 'primary'), $red: +100%),
 		rgba(0, 0, 0, 0)
 	);
 
 	$gradient--light: radial-gradient(
 		closest-side,
-		color.adjust($primary--light, $green: -100%, $blue: -100%),
+		adjust-color(
+			map-get(map-get($themes, 'light'), 'primary'),
+			$green: -100%,
+			$blue: -100%
+		),
 		rgba(0, 0, 0, 0)
 	);
 
