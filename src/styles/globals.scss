@@ -42,7 +42,8 @@
 	$gradient--dark: radial-gradient(
 		closest-side,
 		adjust-color(map-get(map-get($themes, 'dark'), 'primary'), $red: +100%),
-		rgba(0, 0, 0, 0)
+		// rgba(0, 0, 0, 0)
+		map-get(map-get($themes, 'dark'), 'primary')
 	);
 
 	$gradient--light: radial-gradient(
@@ -52,7 +53,7 @@
 			$green: -100%,
 			$blue: -100%
 		),
-		rgba(0, 0, 0, 0)
+		map-get(map-get($themes, 'light'), 'primary')
 	);
 
 	@include themed {
