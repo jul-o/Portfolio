@@ -6,24 +6,24 @@
 }
 
 #root {
-	> .section {
-		/* max-width: 95vw; */
-		min-height: 100vh;
-		margin-left: auto;
-		margin-right: auto;
-		padding-top: 3.5rem;
-		scroll-snap-align: start;
-	}
-
-	position: relative;
-
 	overflow-x: hidden;
 	overflow-y: scroll;
 	height: 100vh;
 
 	@media (min-width: 768px) {
 		scroll-snap-type: y mandatory;
-		scroll-snap-stop: always;
+	}
+
+	> #content {
+		position: relative;
+		> .section {
+			/* max-width: 95vw; */
+			min-height: 100vh;
+			margin-left: auto;
+			margin-right: auto;
+			padding-top: 3.5rem;
+			scroll-snap-align: start;
+		}
 	}
 }
 
@@ -41,14 +41,18 @@
 
 	$gradient--dark: radial-gradient(
 		closest-side,
-		color.adjust($primary, $red: +100%),
-		rgba(0, 0, 0, 0)
+		adjust-color(map-get(map-get($themes, 'dark'), 'primary'), $red: +100%),
+		map-get(map-get($themes, 'dark'), 'primary')
 	);
 
 	$gradient--light: radial-gradient(
 		closest-side,
-		color.adjust($primary--light, $green: -100%, $blue: -100%),
-		rgba(0, 0, 0, 0)
+		adjust-color(
+			map-get(map-get($themes, 'light'), 'primary'),
+			$green: -100%,
+			$blue: -100%
+		),
+		map-get(map-get($themes, 'light'), 'primary')
 	);
 
 	@include themed {

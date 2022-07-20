@@ -15,7 +15,7 @@ $height: 3.5rem;
 
 	@include themed {
 		background-color: rgba(t('primary'), 0.9);
-		border-bottom: solid 2px t('primary-lighterer');
+		border-bottom: solid 2px t('secondary');
 	}
 
 	button {

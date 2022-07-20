@@ -13,30 +13,14 @@
 	width: 256px;
 	height: 256px;
 
-	&:after {
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		@include themed {
-			background-color: scale-color($color: t('primary-lighter'), $alpha: -50%);
-		}
-		top: 0;
-		left: 0;
-		display: block;
-		content: '';
-		border-radius: 9999px;
-		transition: background-color 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-	}
-
 	&:hover,
 	&:focus {
-		&:after {
-			background: none;
+		.imageBorder {
+			transform: scale(1);
 		}
 
-		.imageBorder {
-			top: 0;
-			left: 0;
+		.image {
+			filter: grayscale(0%);
 		}
 	}
 
@@ -44,12 +28,11 @@
 		position: absolute;
 		width: 256px;
 		height: 256px;
-		top: 10px;
-		left: 10px;
+		transform: scale(1.05);
 
 		border-radius: 9999px;
 		@include themed {
-			border: solid t('primary-lighterer') 3px;
+			border: solid t('secondary') 3px;
 		}
 
 		transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -57,5 +40,6 @@
 
 	.image {
 		border-radius: 9999px;
+		filter: grayscale(100%);
 	}
 }
