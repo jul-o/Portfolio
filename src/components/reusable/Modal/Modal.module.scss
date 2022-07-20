@@ -41,7 +41,7 @@ $global-border-radius: 0.5rem;
 .header,
 .footer {
 	@include themed {
-		background-color: t('primary-light');
+		background-color: t('primary');
 	}
 }
 

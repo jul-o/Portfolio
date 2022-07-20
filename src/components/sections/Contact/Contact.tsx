@@ -79,6 +79,7 @@ const Contact = ({ className }) => {
 						Numéro de téléphone copié dans le presse-papier !
 					</span>
 				)}
+				<Links />
 			</motion.div>
 		</div>
 	);

@@ -18,6 +18,10 @@
 		.imageBorder {
 			transform: scale(1);
 		}
+
+		.image {
+			filter: grayscale(0%);
+		}
 	}
 
 	.imageBorder {
@@ -37,10 +41,5 @@
 	.image {
 		border-radius: 9999px;
 		filter: grayscale(100%);
-
-		&:hover,
-		&:focus {
-			filter: grayscale(0%);
-		}
 	}
 }
