@@ -25,6 +25,7 @@ $global-border-radius: 0.5rem;
 	max-height: 80%;
 	@include themed {
 		background-color: t('primary');
+		border: solid 2px t('secondary');
 	}
 
 	@media (min-width: 768px) {
@@ -51,13 +52,16 @@ $global-border-radius: 0.5rem;
 }
 
 .header {
-	// padding-top: 1rem;
 	border-top-left-radius: $global-border-radius;
 	border-top-right-radius: $global-border-radius;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+
+	@include themed {
+		border-bottom: solid 2px t('secondary');
+	}
 
 	h1 {
 		font-size: 1.5rem;
