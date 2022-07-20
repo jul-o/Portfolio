@@ -23,6 +23,7 @@ $global-border-radius: 0.5rem;
 	display: inline-block;
 	overflow: auto;
 	max-height: 80%;
+
 	@include themed {
 		background-color: t('primary');
 		border: solid 2px t('secondary');

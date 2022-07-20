@@ -1,7 +1,8 @@
 import { ReactNode, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import { createPortal } from 'react-dom';
 import styles from './Modal.module.scss';
 import { AiOutlineClose } from 'react-icons/ai';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Props {
 	onClose: () => void;
@@ -24,26 +25,46 @@ const Modal = ({ onClose, header, children, footer, style }: Props) => {
 		};
 	}, []);
 
-	return ReactDOM.createPortal(
-		<div className={styles.root} onClick={onClose} style={style}>
-			<div
-				className={styles.modal}
-				onClick={(e) => {
-					// prevent root's onClick from closing the modal
-					e.stopPropagation();
-				}}>
-				{header && (
-					<div className={styles.header}>
-						<h1>{header}</h1>
-						<button className={styles.button_close} onClick={onClose}>
-							<AiOutlineClose />
-						</button>
-					</div>
-				)}
-				<div className={styles.body}>{children}</div>
-				{footer && <div className={styles.footer}>{footer}</div>}
-			</div>
-		</div>,
+	const rootAnimation = {
+		transform: ['scale(0, 0.01)', 'scale(1, 0.01)', 'scale(1, 1)'],
+	};
+	const rootDuration = 0.4;
+
+	const modalAnimation = {
+		opacity: ['0', '1'],
+		scale: ['0.8', '1'],
+	};
+	const modalDuration = 0.5;
+
+	return createPortal(
+		<AnimatePresence>
+			<motion.div
+				animate={rootAnimation}
+				transition={{ duration: rootDuration }}
+				className={styles.root}
+				onClick={onClose}
+				style={style}>
+				<motion.div
+					animate={modalAnimation}
+					transition={{ duration: modalDuration, delay: rootDuration }}
+					className={styles.modal}
+					onClick={(e) => {
+						// prevent root's onClick from closing the modal
+						e.stopPropagation();
+					}}>
+					{header && (
+						<div className={styles.header}>
+							<h1>{header}</h1>
+							<button className={styles.button_close} onClick={onClose}>
+								<AiOutlineClose />
+							</button>
+						</div>
+					)}
+					<div className={styles.body}>{children}</div>
+					{footer && <div className={styles.footer}>{footer}</div>}
+				</motion.div>
+			</motion.div>
+		</AnimatePresence>,
 		document.body
 	);
 };
