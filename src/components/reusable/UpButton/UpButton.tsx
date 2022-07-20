@@ -6,25 +6,21 @@ import styles from './UpButton.module.scss';
 const UpButton = () => {
 	useEffect(() => {
 		// onscroll
-		window.addEventListener('scroll', onScroll);
+		const root = getRoot();
+		root.addEventListener('scroll', () => {
+			onScroll(updateIsScrollTop);
+		});
 
+		// remove listener on unmount
 		return () => {
-			window.removeEventListener('scroll', onScroll);
+			root.removeEventListener('scroll', onScroll);
 		};
 	}, []);
 
 	const [isScrollTop, setIsScrollTop] = useState(true);
 	const updateIsScrollTop = useUpdateIsScrollTop(setIsScrollTop);
 
-	useEffect(() => updateIsScrollTop(window.scrollY), []);
-
-	const onScroll = () => {
-		updateIsScrollTop(window.scrollY);
-	};
-
-	const scrollTop = () => {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
-	};
+	useEffect(() => updateIsScrollTop(getRoot().scrollTop), []);
 
 	return (
 		<button
@@ -38,6 +34,20 @@ const UpButton = () => {
 const useUpdateIsScrollTop = (setIsScrollTop: Function) => {
 	// not === 0 because the value is .6666667 on firefox android
 	return (y: number) => setIsScrollTop(y < 1);
+};
+
+const getRoot = (): Element | null => {
+	return typeof document !== 'undefined'
+		? document.querySelector('#root')
+		: null;
+};
+
+const onScroll = (updateIsScrollTop) => {
+	updateIsScrollTop(getRoot().scrollTop);
+};
+
+const scrollTop = () => {
+	getRoot().scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 export default UpButton;
