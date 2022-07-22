@@ -1,12 +1,14 @@
 import { motion, TargetAndTransition } from 'framer-motion';
 import React, { Ref, RefObject } from 'react';
+import classNames from 'utils/classNames';
 import styles from './Wave.module.scss';
 
 interface Props {
+	className?: string;
 	dragBoundaries?: RefObject<HTMLDivElement>;
 }
 
-const Wave = ({ dragBoundaries }: Props) => {
+const Wave = ({ className, dragBoundaries }: Props) => {
 	// const refBoundaries: Ref<HTMLDivElement> = React.createRef<HTMLDivElement>();
 
 	const animation: TargetAndTransition = {
@@ -21,7 +23,7 @@ const Wave = ({ dragBoundaries }: Props) => {
 
 	return (
 		<motion.div
-			className={styles.wave}
+			className={classNames(className, styles.wave)}
 			animate={animation}
 			drag
 			whileDrag={{ scale: 1.5 }}

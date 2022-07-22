@@ -4,15 +4,9 @@
 $global-border-radius: 0.5rem;
 
 .root {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
 	@include themed {
 		background-color: color.adjust(t('light-grey'), $alpha: -0.4);
 	}

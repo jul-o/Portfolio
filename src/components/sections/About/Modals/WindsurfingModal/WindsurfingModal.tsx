@@ -10,7 +10,10 @@ interface Props {
 
 const WindsurfingModal = ({ onClose }: Props) => {
 	return (
-		<Modal onClose={onClose} header="La planche à voile">
+		<Modal
+			className={styles.root}
+			onClose={onClose}
+			header="La planche à voile">
 			<div className={styles.modal_body}>
 				<span className={styles.modal_image}>
 					<Image

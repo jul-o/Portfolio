@@ -4,7 +4,7 @@ import classNames from 'utils/classNames';
 import useViewportObserver from 'utils/hooks/useViewportObserver';
 import styles from './About.module.scss';
 import Hobbies from './Hobbies';
-import ClibingModal from './Modals/ClimbingModal';
+import ClimbingModal from './Modals/ClimbingModal';
 import ParaglidingModal from './Modals/ParaglidingModal';
 import WindsurfingModal from './Modals/WindsurfingModal';
 import Portrait from './Portrait';
@@ -53,7 +53,7 @@ const About = ({ className }) => {
 					</div>
 					<div className={styles.column}>
 						<motion.div variants={childrenVariants}>
-							<Portrait />
+							<Portrait className={styles.portrait} />
 						</motion.div>
 						<Hobbies
 							variants={childrenVariants}
@@ -65,7 +65,7 @@ const About = ({ className }) => {
 					</div>
 				</div>
 				{paragliding && <ParaglidingModal onClose={closeModal} />}
-				{climbing && <ClibingModal onClose={closeModal} />}
+				{climbing && <ClimbingModal onClose={closeModal} />}
 				{windsurfing && <WindsurfingModal onClose={closeModal} />}
 			</motion.div>
 		</div>

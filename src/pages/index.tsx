@@ -6,6 +6,9 @@ import Home from 'components/sections/Home';
 import Navbar from 'components/reusable/Navbar';
 import UpButton from 'components/reusable/UpButton';
 import { motion, TargetAndTransition } from 'framer-motion';
+import styles from 'styles/index.module.scss';
+import classNames from 'utils/classNames';
+import experiences from 'data_frontend/experiences.json';
 
 const Page = () => {
 	const backgroundAnimation: TargetAndTransition = {
@@ -29,16 +32,16 @@ const Page = () => {
 						id="background"
 					/>
 
-					<Navbar />
+					<Navbar className={styles.navbar} />
 					<Home className="section" />
-					<About className="section" />
-					<Experiences className="section" />
+					<About className={classNames('section', styles.about)} />
+					<Experiences className={classNames('section', styles.experiences)} />
 					<Contact className="section" />
 				</div>
 			</div>
 
-			<DarkModeButton />
-			<UpButton />
+			<DarkModeButton className={styles.darkModeButton} />
+			<UpButton className={styles.upButton} />
 		</>
 	);
 };

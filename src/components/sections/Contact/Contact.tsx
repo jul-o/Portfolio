@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FaRegCopy } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import styles from './Contact.module.scss';
-import Links from 'components/sections/Links';
+import Links from 'components/sections/Contact/Links';
 import { rootVariants, childrenVariants } from 'utils/slideInVariants';
 import useViewportObserver from 'utils/hooks/useViewportObserver';
 import React from 'react';
@@ -79,8 +79,8 @@ const Contact = ({ className }) => {
 						Numéro de téléphone copié dans le presse-papier !
 					</span>
 				)}
-				<Links />
 			</motion.div>
+			<Links className={styles.links} />
 		</div>
 	);
 };

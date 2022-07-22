@@ -1,14 +1,7 @@
 @use 'sass:color';
 @import 'styles/palette';
 
-$height: 3.5rem;
-
 .navbar {
-	position: fixed;
-	width: 100%;
-	height: $height;
-	z-index: 1;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;

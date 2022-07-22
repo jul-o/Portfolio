@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import styles from './Modal.module.scss';
 import { AiOutlineClose } from 'react-icons/ai';
 import { motion, AnimatePresence } from 'framer-motion';
+import classNames from 'utils/classNames';
 
 interface Props {
 	onClose: () => void;
@@ -10,9 +11,17 @@ interface Props {
 	children: ReactNode;
 	footer?: ReactNode;
 	style?: React.CSSProperties;
+	className?: string;
 }
 
-const Modal = ({ onClose, header, children, footer, style }: Props) => {
+const Modal = ({
+	onClose,
+	header,
+	children,
+	footer,
+	style,
+	className,
+}: Props) => {
 	useEffect(() => {
 		// const html = document.getElementsByTagName('html');
 		const html = document.querySelector('html');
@@ -41,7 +50,7 @@ const Modal = ({ onClose, header, children, footer, style }: Props) => {
 			<motion.div
 				animate={rootAnimation}
 				transition={{ duration: rootDuration }}
-				className={styles.root}
+				className={classNames(className, styles.root)}
 				onClick={onClose}
 				style={style}>
 				<motion.div

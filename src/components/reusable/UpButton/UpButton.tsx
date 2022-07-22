@@ -3,7 +3,11 @@ import { FaArrowUp } from 'react-icons/fa';
 import classNames from 'utils/classNames';
 import styles from './UpButton.module.scss';
 
-const UpButton = () => {
+interface Props {
+	className?: string;
+}
+
+const UpButton = ({ className }: Props) => {
 	useEffect(() => {
 		// onscroll
 		const root = getRoot();
@@ -24,7 +28,7 @@ const UpButton = () => {
 
 	return (
 		<button
-			className={classNames(styles.root, isScrollTop && styles.top)}
+			className={classNames(className, styles.root, isScrollTop && styles.top)}
 			onClick={scrollTop}>
 			<FaArrowUp />
 		</button>

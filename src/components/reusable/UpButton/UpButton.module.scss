@@ -1,13 +1,6 @@
 @import 'styles/palette';
 $height: 2.5rem;
-$bottom-position: 1rem;
-
 .root {
-	position: fixed;
-	bottom: $bottom-position;
-	right: 1rem;
-	width: 3rem;
-
 	@include themed {
 		background-color: rgba(t('primary'), 0.8);
 	}

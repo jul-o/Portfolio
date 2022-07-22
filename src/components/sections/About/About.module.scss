@@ -2,12 +2,7 @@
 @import 'styles/mixins/animate-column-rule';
 
 .root {
-	max-width: 95vw;
 	position: relative;
-
-	@media (min-width: 768px) {
-		max-width: 70vw;
-	}
 }
 
 .text.in_viewport {
@@ -39,4 +34,9 @@
 
 .hobbies {
 	margin-top: 1rem;
+}
+
+.portrait {
+	margin-left: 3rem;
+	margin-right: 3rem;
 }

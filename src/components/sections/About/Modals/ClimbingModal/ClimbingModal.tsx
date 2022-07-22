@@ -10,7 +10,10 @@ interface Props {
 
 const ClimbingModal = ({ onClose }: Props) => {
 	return (
-		<Modal onClose={onClose} header="L'escalade et l'alpinisme">
+		<Modal
+			className={styles.root}
+			onClose={onClose}
+			header="L'escalade et l'alpinisme">
 			<div className={styles.modal_body}>
 				<span className={styles.modal_image}>
 					<Image
