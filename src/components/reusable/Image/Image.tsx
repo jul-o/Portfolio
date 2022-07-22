@@ -10,12 +10,18 @@ type PlaceHolder = 'empty' | 'blur';
 interface Props {
 	src: string | StaticImageData;
 	placeholder?: PlaceHolder;
+	displaySpinner?: boolean;
 	[x: string]: any;
 }
 
-const Image = (props: Props) => {
+const Image = ({
+	src,
+	placeholder = 'blur',
+	displaySpinner = true,
+	...additionalProps
+}: Props) => {
 	const { theme } = useTheme();
-	const placeholder: PlaceHolder = props.placeholder || 'blur';
+	// const placeholder: PlaceHolder = props.placeholder || 'blur';
 
 	const [mounted, setMounted] = useState(false);
 
@@ -25,13 +31,15 @@ const Image = (props: Props) => {
 
 	return (
 		<div className={styles.root}>
-			<span className={styles.spinner}>
-				<ScaleLoader
-					color={palette[theme === 'light' ? 'light' : 'dark']['light-grey']}
-				/>
-			</span>
+			{displaySpinner && (
+				<span className={styles.spinner}>
+					<ScaleLoader
+						color={palette[theme === 'light' ? 'light' : 'dark']['light-grey']}
+					/>
+				</span>
+			)}
 			{/* blur placeholder if it works on the user's browser, else spinner */}
-			<NextImage {...props} placeholder={placeholder} />
+			<NextImage src={src} {...additionalProps} placeholder={placeholder} />
 		</div>
 	);
 };

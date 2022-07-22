@@ -2,6 +2,7 @@ import { motion, TargetAndTransition } from 'framer-motion';
 import React, { Ref, RefObject } from 'react';
 import classNames from 'utils/classNames';
 import styles from './Wave.module.scss';
+import Image from 'components/reusable/Image';
 
 interface Props {
 	className?: string;
@@ -29,7 +30,15 @@ const Wave = ({ className, dragBoundaries }: Props) => {
 			whileDrag={{ scale: 1.5 }}
 			dragConstraints={dragBoundaries}
 			dragTransition={{ bounceStiffness: 500 }}>
-			<img src="/icons/wave.svg" width="48" height="48" draggable="false" />
+			<Image
+				src="/icons/wave.svg"
+				alt="Wave icon"
+				placeholder="empty"
+				width="48"
+				height="48"
+				displaySpinner={false}
+				draggable="false"
+			/>
 		</motion.span>
 	);
 };
