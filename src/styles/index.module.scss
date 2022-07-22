@@ -12,3 +12,11 @@ $navbar-height: 3.5rem;
 	height: $navbar-height;
 	z-index: 1;
 }
+
+$up-button-bottom-position: 1rem;
+.upButton {
+	position: fixed;
+	bottom: $up-button-bottom-position;
+	right: 1rem;
+	width: 3rem;
+}

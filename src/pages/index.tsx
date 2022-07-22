@@ -39,7 +39,7 @@ const Page = () => {
 			</div>
 
 			<DarkModeButton className={styles.darkModeButton} />
-			<UpButton />
+			<UpButton className={styles.upButton} />
 		</>
 	);
 };
