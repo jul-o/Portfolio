@@ -1,7 +1,14 @@
-$bottom-position: 2rem + 2.5rem;
-
+$dark-mode-button-bottom-position: 2rem + 2.5rem;
 .darkModeButton {
 	position: fixed;
-	bottom: $bottom-position;
+	bottom: $dark-mode-button-bottom-position;
 	right: 1rem;
+}
+
+$navbar-height: 3.5rem;
+.navbar {
+	position: fixed;
+	width: 100%;
+	height: $navbar-height;
+	z-index: 1;
 }

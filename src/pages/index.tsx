@@ -30,7 +30,7 @@ const Page = () => {
 						id="background"
 					/>
 
-					<Navbar />
+					<Navbar className={styles.navbar} />
 					<Home className="section" />
 					<About className="section" />
 					<Experiences className="section" />
