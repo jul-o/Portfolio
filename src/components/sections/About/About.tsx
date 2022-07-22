@@ -53,7 +53,7 @@ const About = ({ className }) => {
 					</div>
 					<div className={styles.column}>
 						<motion.div variants={childrenVariants}>
-							<Portrait />
+							<Portrait className={styles.portrait} />
 						</motion.div>
 						<Hobbies
 							variants={childrenVariants}

@@ -3,9 +3,13 @@ import myPic from 'styles/assets/me.png';
 import classNames from 'utils/classNames';
 import styles from './Portrait.module.scss';
 
-const Portrait = () => {
+interface Props {
+	className?: string;
+}
+
+const Portrait = ({ className }: Props) => {
 	return (
-		<figure tabIndex={0} className={classNames(styles.imageWrapper)}>
+		<figure tabIndex={0} className={classNames(className, styles.imageWrapper)}>
 			<div className={styles.imageBorder} />
 			<Image src={myPic} className={styles.image} placeholder="empty" />
 		</figure>
