@@ -64,7 +64,7 @@ const Experience = ({
 					{dates}
 				</motion.p>
 			</div>
-			<div id="technologies" className={styles.technologies}>
+			<div className={styles.technologies}>
 				{technologies.map(({ name, percentage, color }) => (
 					<motion.span variants={variants} key={name}>
 						<img
@@ -76,7 +76,7 @@ const Experience = ({
 					</motion.span>
 				))}
 			</div>
-			<div id="tldr" className={styles.tldr}>
+			<div className={styles.tldr}>
 				<motion.h3 variants={variants}>TL;DR :</motion.h3>
 				<motion.ul variants={variants}>
 					{tldr && tldr.map((item) => <li key={item}>{item}</li>)}

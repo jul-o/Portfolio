@@ -71,3 +71,35 @@
 		width: fit-content;
 	}
 }
+
+.contactLink {
+	@include themed {
+		color: t('secondary');
+		border: solid t('secondary') 2px;
+	}
+
+	cursor: pointer;
+
+	height: 2.5rem;
+	border-radius: 0.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 1rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+	&:hover {
+		@include themed {
+			color: t('light-grey');
+			border-color: t('light-grey');
+		}
+	}
+
+	&:focus {
+		@extend .contactLink;
+	}
+}

@@ -37,11 +37,13 @@ const Contact = ({ className }) => {
 				<motion.h1 variants={childrenVariants}>Envie de discuter ?</motion.h1>
 				<div className={styles.contacts}>
 					<div id="email" className={styles.contact}>
-						<a href="mailto:jules.sang@grenoble-inp.org">
-							<motion.button variants={childrenVariants}>
-								jules.sang@grenoble-inp.org
-							</motion.button>
-						</a>
+						<motion.a
+							href="mailto:jules.sang@grenoble-inp.org"
+							target="_blank"
+							className={styles.contactLink}
+							variants={childrenVariants}>
+							jules.sang@grenoble-inp.org
+						</motion.a>
 						<motion.button
 							variants={childrenVariants}
 							className={styles.copy}
@@ -53,11 +55,13 @@ const Contact = ({ className }) => {
 						</motion.button>
 					</div>
 					<div id="phone" className={styles.contact}>
-						<a href="tel:+33 6 51 77 14 97">
-							<motion.button variants={childrenVariants}>
-								06 51 77 14 97
-							</motion.button>
-						</a>
+						<motion.a
+							href="tel:+33 6 51 77 14 97"
+							className={styles.contactLink}
+							target="_blank"
+							variants={childrenVariants}>
+							06 51 77 14 97
+						</motion.a>
 						<motion.button
 							variants={childrenVariants}
 							className={styles.copy}
