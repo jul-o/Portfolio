@@ -7,6 +7,7 @@ import Navbar from 'components/reusable/Navbar';
 import UpButton from 'components/reusable/UpButton';
 import { motion, TargetAndTransition } from 'framer-motion';
 import styles from 'styles/index.module.scss';
+import classNames from 'utils/classNames';
 
 const Page = () => {
 	const backgroundAnimation: TargetAndTransition = {
@@ -32,7 +33,7 @@ const Page = () => {
 
 					<Navbar className={styles.navbar} />
 					<Home className="section" />
-					<About className="section" />
+					<About className={classNames('section', styles.about)} />
 					<Experiences className="section" />
 					<Contact className="section" />
 				</div>

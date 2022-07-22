@@ -20,3 +20,10 @@ $up-button-bottom-position: 1rem;
 	right: 1rem;
 	width: 3rem;
 }
+
+.about {
+	max-width: 95vw;
+	@media (min-width: 768px) {
+		max-width: 70vw;
+	}
+}
