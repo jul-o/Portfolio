@@ -18,7 +18,7 @@ const WindsurfingModal = ({ onClose }: Props) => {
 				<span className={styles.modal_image}>
 					<Image
 						src={image}
-						alt="Planche à voile à Mèze avec l'EVUG"
+						alt="Planche à voile à Mèze avec l'UWIND"
 						placeholder="blur"
 					/>
 				</span>
