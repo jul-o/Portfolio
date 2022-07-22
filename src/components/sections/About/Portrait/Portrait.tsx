@@ -11,7 +11,12 @@ const Portrait = ({ className }: Props) => {
 	return (
 		<figure tabIndex={0} className={classNames(className, styles.imageWrapper)}>
 			<div className={styles.imageBorder} />
-			<Image src={myPic} className={styles.image} placeholder="empty" />
+			<Image
+				src={myPic}
+				alt="Photo de moi, beau gosse, chauve, en hoodie et avec des lunettes"
+				className={styles.image}
+				placeholder="empty"
+			/>
 		</figure>
 	);
 };
