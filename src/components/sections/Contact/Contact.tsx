@@ -56,7 +56,7 @@ const Contact = ({ className }) => {
 					</div>
 					<div id="phone" className={styles.contact}>
 						<motion.a
-							href="tel:+33 6 51 77 14 97"
+							href="tel:+33651771497"
 							className={styles.contactLink}
 							target="_blank"
 							variants={childrenVariants}>

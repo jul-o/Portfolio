@@ -11,22 +11,26 @@ interface Props {
 const Links = ({ className }: Props) => {
 	return (
 		<div className={classNames(className, styles.root)}>
-			<a href="/files/resume.pdf" target="_blank">
-				<button>
+			<a href="/files/resume.pdf" className={styles.link} target="_blank">
+				<span>
 					<HiOutlineDocument />
-				</button>
+				</span>
 			</a>
-			<a href="https://github.com/jul-o" target="_blank">
-				<button>
+			<a
+				href="https://github.com/jul-o"
+				className={styles.link}
+				target="_blank">
+				<span>
 					<AiOutlineGithub />
-				</button>
+				</span>
 			</a>
 			<a
 				href="https://www.linkedin.com/in/jules-sang-bb632913b"
+				className={styles.link}
 				target="_blank">
-				<button>
+				<span>
 					<FaLinkedin />
-				</button>
+				</span>
 			</a>
 		</div>
 	);
