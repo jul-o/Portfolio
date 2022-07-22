@@ -1,0 +1,7 @@
+$bottom-position: 2rem + 2.5rem;
+
+.darkModeButton {
+	position: fixed;
+	bottom: $bottom-position;
+	right: 1rem;
+}

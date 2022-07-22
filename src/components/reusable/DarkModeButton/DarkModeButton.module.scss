@@ -2,10 +2,6 @@
 $bottom-position: 2rem + 2.5rem;
 
 .root {
-	position: fixed;
-	bottom: $bottom-position;
-	right: 1rem;
-
 	width: 3rem;
 
 	@include themed {

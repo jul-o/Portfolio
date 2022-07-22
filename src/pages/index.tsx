@@ -6,6 +6,7 @@ import Home from 'components/sections/Home';
 import Navbar from 'components/reusable/Navbar';
 import UpButton from 'components/reusable/UpButton';
 import { motion, TargetAndTransition } from 'framer-motion';
+import styles from 'styles/index.module.scss';
 
 const Page = () => {
 	const backgroundAnimation: TargetAndTransition = {
@@ -37,7 +38,7 @@ const Page = () => {
 				</div>
 			</div>
 
-			<DarkModeButton />
+			<DarkModeButton className={styles.darkModeButton} />
 			<UpButton />
 		</>
 	);

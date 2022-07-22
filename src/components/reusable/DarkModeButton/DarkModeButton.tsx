@@ -1,9 +1,14 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import classNames from 'utils/classNames';
 import { DARK, LIGHT } from 'utils/themes';
 import styles from './DarkModeButton.module.scss';
 
-const DarkModeButton = () => {
+interface Props {
+	className?: string;
+}
+
+const DarkModeButton = ({ className }: Props) => {
 	const { theme, setTheme, systemTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
 
@@ -21,7 +26,9 @@ const DarkModeButton = () => {
 	if (!mounted) return null;
 
 	return (
-		<button className={styles.root} onClick={toggleTheme}>
+		<button
+			className={classNames(className, styles.root)}
+			onClick={toggleTheme}>
 			<span>{theme === DARK ? '💡' : '🌘'}</span>
 		</button>
 	);
