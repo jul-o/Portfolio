@@ -21,13 +21,41 @@
 		}
 	}
 
-	button {
-		border: 0;
-		background: none;
-		font-size: 1.5rem;
+	.link {
+		transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+		&:not(:last-child) {
+			padding-bottom: 0.5rem;
+		}
 
 		&:hover {
-			padding-bottom: 0.5rem;
+			transform: translateY(-0.5rem);
+		}
+
+		> span {
+			@include themed {
+				color: t('secondary');
+			}
+
+			cursor: pointer;
+
+			height: 2.5rem;
+			padding-left: 1rem;
+			padding-right: 1rem;
+
+			font-size: 2rem;
+
+			transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+			&:hover {
+				@include themed {
+					color: t('light-grey');
+				}
+			}
+
+			&:focus {
+				@extend .link;
+			}
 		}
 	}
 }

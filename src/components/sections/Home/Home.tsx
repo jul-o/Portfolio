@@ -22,13 +22,13 @@ const Home = ({ className }) => {
 			<div id="home" className={classNames(className, styles.root)}>
 				<div className={styles.title}>
 					<h2 className={styles.iam}>
-						<motion.div
+						<motion.span
 							drag
 							whileDrag={{ scale: 1.5 }}
 							dragConstraints={refBoundaries}
 							dragTransition={{ bounceStiffness: 500 }}>
 							Bonjour, moi c'est Jules
-						</motion.div>
+						</motion.span>
 						<Wave className={styles.wave} dragBoundaries={refBoundaries} />
 					</h2>
 					<motion.div

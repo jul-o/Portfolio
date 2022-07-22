@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { ThemeProvider } from 'next-themes';
 import 'styles/globals.scss';
 import 'styles/tags.scss';
@@ -16,9 +17,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 	);
 
 	return (
-		<ThemeProvider>
-			<Component {...pageProps} />
-		</ThemeProvider>
+		<>
+			<Head>
+				<title>Jules Sang</title>
+			</Head>
+
+			<ThemeProvider>
+				<Component {...pageProps} />
+			</ThemeProvider>
+		</>
 	);
 }
 
