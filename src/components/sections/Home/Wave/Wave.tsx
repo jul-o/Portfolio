@@ -22,7 +22,7 @@ const Wave = ({ className, dragBoundaries }: Props) => {
 	};
 
 	return (
-		<motion.div
+		<motion.span
 			className={classNames(className, styles.wave)}
 			animate={animation}
 			drag
@@ -30,7 +30,7 @@ const Wave = ({ className, dragBoundaries }: Props) => {
 			dragConstraints={dragBoundaries}
 			dragTransition={{ bounceStiffness: 500 }}>
 			<img src="/icons/wave.svg" width="48" height="48" draggable="false" />
-		</motion.div>
+		</motion.span>
 	);
 };
 
