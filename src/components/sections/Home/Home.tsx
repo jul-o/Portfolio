@@ -29,7 +29,7 @@ const Home = ({ className }) => {
 							dragTransition={{ bounceStiffness: 500 }}>
 							Bonjour, moi c'est Jules
 						</motion.div>
-						<Wave dragBoundaries={refBoundaries} />
+						<Wave className={styles.wave} dragBoundaries={refBoundaries} />
 					</h2>
 					<motion.div
 						className={styles.jobDraggableWrapper}
