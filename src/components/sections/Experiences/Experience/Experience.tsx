@@ -52,7 +52,6 @@ const Experience = ({
 
 	return (
 		<motion.div
-			className={styles.root}
 			animate={
 				isShown && isExperiencesInViewport ? 'inViewport' : 'notInViewport'
 			}
