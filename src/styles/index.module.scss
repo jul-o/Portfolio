@@ -21,7 +21,8 @@ $up-button-bottom-position: 1rem;
 	width: 3rem;
 }
 
-.about {
+.about,
+.experiences {
 	max-width: 95vw;
 	@media (min-width: 768px) {
 		max-width: 70vw;

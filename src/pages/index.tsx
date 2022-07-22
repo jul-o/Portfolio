@@ -8,6 +8,7 @@ import UpButton from 'components/reusable/UpButton';
 import { motion, TargetAndTransition } from 'framer-motion';
 import styles from 'styles/index.module.scss';
 import classNames from 'utils/classNames';
+import experiences from 'data_frontend/experiences.json';
 
 const Page = () => {
 	const backgroundAnimation: TargetAndTransition = {
@@ -34,7 +35,7 @@ const Page = () => {
 					<Navbar className={styles.navbar} />
 					<Home className="section" />
 					<About className={classNames('section', styles.about)} />
-					<Experiences className="section" />
+					<Experiences className={classNames('section', styles.experiences)} />
 					<Contact className="section" />
 				</div>
 			</div>
