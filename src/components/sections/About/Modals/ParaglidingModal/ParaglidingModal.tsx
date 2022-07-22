@@ -10,7 +10,7 @@ interface Props {
 
 const ParaglidingModal = ({ onClose }: Props) => {
 	return (
-		<Modal onClose={onClose} header="Le parapente">
+		<Modal className={styles.root} onClose={onClose} header="Le parapente">
 			<div className={styles.modal_body}>
 				<span className={styles.modal_image}>
 					<Image
