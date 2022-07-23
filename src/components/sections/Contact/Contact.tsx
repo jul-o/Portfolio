@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FaRegCopy } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import styles from './Contact.module.scss';
 import Links from 'components/sections/Contact/Links';
@@ -7,6 +6,8 @@ import { rootVariants, childrenVariants } from 'utils/slideInVariants';
 import useViewportObserver from 'utils/hooks/useViewportObserver';
 import React from 'react';
 import classNames from 'utils/classNames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
 const Contact = ({ className }) => {
 	const updateTooltipState = (setter: Function) => {
@@ -51,7 +52,7 @@ const Contact = ({ className }) => {
 								navigator.clipboard.writeText('jules.sang@grenoble-inp.org');
 								updateTooltipState(setCopiedEmail);
 							}}>
-							<FaRegCopy />
+							<FontAwesomeIcon icon={faCopy} />
 						</motion.button>
 					</div>
 					<div id="phone" className={styles.contact}>
@@ -69,7 +70,7 @@ const Contact = ({ className }) => {
 								navigator.clipboard.writeText('+33 6 51 77 14 97');
 								updateTooltipState(setCopiedPhone);
 							}}>
-							<FaRegCopy />
+							<FontAwesomeIcon icon={faCopy} />
 						</motion.button>
 					</div>
 				</div>

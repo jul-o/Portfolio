@@ -1,3 +1,11 @@
+$up-button-bottom-position: 1rem;
+.upButton {
+	position: fixed;
+	bottom: $up-button-bottom-position;
+	right: 1rem;
+	width: 3rem;
+}
+
 $dark-mode-button-bottom-position: 2rem + 2.5rem;
 .darkModeButton {
 	position: fixed;
@@ -11,14 +19,6 @@ $navbar-height: 3.5rem;
 	width: 100%;
 	height: $navbar-height;
 	z-index: 1;
-}
-
-$up-button-bottom-position: 1rem;
-.upButton {
-	position: fixed;
-	bottom: $up-button-bottom-position;
-	right: 1rem;
-	width: 3rem;
 }
 
 .about,

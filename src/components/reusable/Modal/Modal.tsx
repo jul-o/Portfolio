@@ -1,9 +1,10 @@
 import { ReactNode, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './Modal.module.scss';
-import { AiOutlineClose } from 'react-icons/ai';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import classNames from 'utils/classNames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface Props {
 	onClose: () => void;
@@ -65,7 +66,7 @@ const Modal = ({
 						<div className={styles.header}>
 							<h1>{header}</h1>
 							<button className={styles.button_close} onClick={onClose}>
-								<AiOutlineClose />
+								<FontAwesomeIcon icon={faXmark} />
 							</button>
 						</div>
 					)}
