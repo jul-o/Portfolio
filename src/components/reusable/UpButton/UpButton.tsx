@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { FaArrowUp } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'utils/classNames';
 import styles from './UpButton.module.scss';
 
@@ -30,7 +31,7 @@ const UpButton = ({ className }: Props) => {
 		<button
 			className={classNames(className, styles.root, isScrollTop && styles.top)}
 			onClick={scrollTop}>
-			<FaArrowUp />
+			<FontAwesomeIcon icon={faArrowUp} />
 		</button>
 	);
 };

@@ -2,6 +2,9 @@ import Head from 'next/head';
 import { ThemeProvider } from 'next-themes';
 import 'styles/globals.scss';
 import 'styles/tags.scss';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false;
 
 import type { AppProps } from 'next/app';
 

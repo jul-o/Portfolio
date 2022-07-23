@@ -1,8 +1,10 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'utils/classNames';
 import { DARK, LIGHT } from 'utils/themes';
 import styles from './DarkModeButton.module.scss';
+import { faLightbulb, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
 	className?: string;
@@ -29,7 +31,7 @@ const DarkModeButton = ({ className }: Props) => {
 		<button
 			className={classNames(className, styles.root)}
 			onClick={toggleTheme}>
-			<span>{theme === DARK ? '💡' : '🌘'}</span>
+			<FontAwesomeIcon icon={theme === DARK ? faLightbulb : faMoon} />
 		</button>
 	);
 };
