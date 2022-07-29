@@ -32,6 +32,7 @@ const Contact = ({ className }) => {
 			className={classNames(className, styles.root)}
 			ref={rootRef}>
 			<motion.div
+				className={styles.contactInfo}
 				variants={rootVariants}
 				animate={isInViewport ? 'inViewport' : 'notInViewport'}
 				initial={'notInViewport'}>
