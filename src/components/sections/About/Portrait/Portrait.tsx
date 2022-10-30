@@ -15,6 +15,9 @@ const Portrait = ({ className }: Props) => {
 				src={myPic}
 				alt="Photo de moi, beau gosse, chauve, en hoodie et avec des lunettes"
 				className={styles.image}
+				rootClassName={styles.imageRoot}
+				width={256}
+				height={256}
 				placeholder="empty"
 			/>
 		</figure>
