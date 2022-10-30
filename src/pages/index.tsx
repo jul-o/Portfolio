@@ -8,7 +8,6 @@ import UpButton from 'components/reusable/UpButton';
 import { motion, TargetAndTransition } from 'framer-motion';
 import styles from 'styles/index.module.scss';
 import classNames from 'utils/classNames';
-import experiences from 'data_frontend/experiences.json';
 
 const Page = () => {
 	const backgroundAnimation: TargetAndTransition = {

@@ -20,7 +20,6 @@ $global-border-radius: 0.5rem;
 
 	@include themed {
 		background-color: t('primary');
-		border: solid 2px t('secondary');
 	}
 
 	@media (min-width: 768px) {
