@@ -1,111 +1,123 @@
-@import 'styles/palette';
-@import 'styles/mixins/animate-column-rule';
+@import "styles/palette";
+@import "styles/mixins/animate-column-rule";
 
 .dates {
-	font-style: italic;
+  font-style: italic;
 
-	@include themed {
-		color: t('medium-grey');
-	}
+  @include themed {
+    color: t("medium-grey");
+  }
 }
 
 .titles h2 {
-	font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .tldr h3 {
-	margin-bottom: 0;
-	margin-top: 0;
+  margin-bottom: 0;
+  margin-top: 0;
 
-	@include themed {
-		color: t('light-grey');
-	}
+  @include themed {
+    color: t("light-grey");
+  }
 }
 
 .tldr li {
-	font-weight: 600;
+  font-weight: 600;
 
-	@include themed {
-		color: t('light-grey');
-	}
+  @include themed {
+    color: t("light-grey");
+  }
 }
 
 .tldr,
 .technology {
-	h3 {
-		font-size: 1rem;
-	}
+  h3 {
+    font-size: 1rem;
+  }
 }
 
 .tldr,
 .technologies {
-	padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .technologies {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-	> span {
-		display: flex;
-		align-items: center;
+  > span {
+    display: flex;
+    align-items: center;
 
-		&:not(:last-child) > span {
-			margin-right: 0.4rem;
+    &:not(:last-child) > span {
+      margin-right: 1rem;
+    }
 
-			&::after {
-				content: ',';
-			}
-		}
+    > img {
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0.4rem;
 
-		> img {
-			display: inline-block;
-			width: 1.5rem;
-			height: 1.5rem;
-			margin-right: 0.4rem;
+      &.mongodb {
+        margin-right: 0;
+      }
+    }
 
-			&.mongodb {
-				margin-right: 0;
-			}
-		}
+    > span {
+      font-weight: bold;
 
-		> span {
-			font-weight: bold;
+      &.python {
+        color: #f2c73eff;
+      }
 
-			&.python {
-				color: #f2c73eff;
-			}
+      &.jee {
+        color: #e53127ff;
+      }
 
-			&.jee {
-				color: #e53127ff;
-			}
+      &.mysql {
+        color: #00618aff;
+      }
 
-			&.mysql {
-				color: #00618aff;
-			}
+      &.react {
+        color: #61dbfbff;
+      }
 
-			&.react {
-				color: #61dbfbff;
-			}
+      &.express {
+        color: #4f4f4f;
+      }
 
-			&.express {
-				color: #4f4f4f;
-			}
+      &.mongodb {
+        color: #4a9e47;
+      }
 
-			&.mongodb {
-				color: #4a9e47;
-			}
+      &.jest {
+        color: #bc3a13;
+      }
 
-			&.jest {
-				color: #bc3a13;
-			}
-		}
-	}
+      &.typescript {
+        color: #3178c6;
+      }
+
+      &.cypress {
+        color: #a4e5cc;
+      }
+
+      &.mui {
+        color: #00b0ff;
+      }
+
+      &.figma {
+        color: #f24e1e;
+      }
+    }
+  }
 }
 
 .body {
-	@media (min-width: 1201px) {
-		@include two-columns;
-	}
+  @media (min-width: 1201px) {
+    @include two-columns;
+  }
 }

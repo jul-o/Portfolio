@@ -1,42 +1,112 @@
 [
-	{
-		"title": "Développeur logiciel en alternance - GE Grenoble",
-		"company": "General Electric",
-		"dates": "01/2019 - 09/2021",
-		"technologies": [
-			{ "name": "Python", "percentage": 90, "color": "python" },
-			{ "name": "Java EE", "percentage": 80, "color": "jee" },
-			{ "name": "MySQL", "percentage": 45, "color": "mysql" }
-		],
-		"tldr": [
-			"Conception et développement d'une suite d'outils d'analyse de tests hydrauliques",
-			"Migration de l'ensemble de la base de code de l'équipe de SVN vers Git"
-		],
-		"body": [
-			"Dans le cadre de la conception de turbines hydroélectriques, j'ai rejoint une équipe d'une dizaine développeurs, avec pour mission la conception et le développement d'une suite d'outils d'analyse des résultats de tests effectués sur des modèles à échelle réduite de turbines.",
-			"Ces outils sont développés en Python avec en backend un environnement Java EE/MySQL.",
-			"Nous avions régulièrement des réunions avec les ingénieurs hydrauliciens, afin de concevoir et corriger les fonctionnalités de la suite d'outils.",
-			"J'ai également eu pour mission de planifier et mettre en œuvre la migration de l'ensemble de la base de code de l'équipe de SVN vers Git, avec maintien de l'historique de modifications."
-		]
-	},
-	{
-		"title": "Développeur fullstack en alternance - IBM Montpellier",
-		"company": "IBM",
-		"dates": "08/2018 - 12/2018",
-		"technologies": [
-			{ "name": "ReactJS", "percentage": 90, "color": "react" },
-			{ "name": "ExpressJS", "percentage": 80, "color": "express" },
-			{ "name": "MongoDB", "percentage": 60, "color": "mongodb" },
-			{ "name": "Jest", "percentage": 30, "color": "jest" }
-		],
-		"tldr": [
-			"Conception et développement d'applications web de démo",
-			"Intégration des technologies d'IA et de blockchain d'IBM dans les applications web"
-		],
-		"body": [
-			"Pendant les 6 premiers mois de mon alternance à l'ENSIMAG, j'ai travaillé chez IBM en tant que développeur fullstack.",
-			"Je me suis d'abord formé à diverses technologies orientées développement web (ReactJS, ExpressJS, MongoDB, etc.) avant d'avoir pour mission de développer plusieurs applications de démonstration des technologies IBM.",
-			"J'ai donc été amené à intégrer les technologies d'IA et de blockchain d'IBM, à l'aide d'APIs."
-		]
-	}
+  {
+    "title": "Développeur lead frontend",
+    "company": "Hopia",
+    "dates": "09/2022 - 03/2023",
+    "technologies": [
+      {
+        "name": "ReactJS",
+        "percentage": 100,
+        "color": "react"
+      },
+      {
+        "name": "Typescript",
+        "percentage": 80,
+        "color": "typescript"
+      },
+      {
+        "name": "Cypress",
+        "percentage": 40,
+        "color": "cypress",
+        "iconFiletype": "jpeg"
+      },
+      {
+        "name": "Material UI",
+        "percentage": 70,
+        "color": "mui"
+      },
+      {
+        "name": "Figma",
+        "percentage": 30,
+        "color": "figma"
+      }
+    ],
+    "tldr": [
+      "Développement d'un logiciel de gestion de planning pour les hôpitaux",
+      "Gestion de l'équipe front"
+    ],
+    "body": [
+      "J'ai rejoint Hopia dans le cadre d'un CDD, ayant pour but de structurer le pôle front de l'entreprise, supprimer des bugs, et développer des fonctionnalités sur le logiciel.",
+      "En plus du développement, j'ai été chargé du recrutement et de la formation des membres du pôle, de veille technologique, et de participer au design d'évolutions du logiciel.",
+      "Tâches notables réalisées : Lancement de la migration vers Typescript, migration de Webpack vers Vite, mise en place de tests, et de bonnes pratiques pour l'écriture de tests, mise en place de bonnes pratiques de code, réflexions quant à la possibilité de passer en monorepo"
+    ]
+  },
+  {
+    "title": "Développeur logiciel en alternance - GE Grenoble",
+    "company": "General Electric",
+    "dates": "01/2019 - 09/2021",
+    "technologies": [
+      {
+        "name": "Python",
+        "percentage": 90,
+        "color": "python"
+      },
+      {
+        "name": "Java EE",
+        "percentage": 80,
+        "color": "jee"
+      },
+      {
+        "name": "MySQL",
+        "percentage": 45,
+        "color": "mysql"
+      }
+    ],
+    "tldr": [
+      "Conception et développement d'une suite d'outils d'analyse de tests hydrauliques",
+      "Migration de l'ensemble de la base de code de l'équipe de SVN vers Git"
+    ],
+    "body": [
+      "Dans le cadre de la conception de turbines hydroélectriques, j'ai rejoint une équipe d'une dizaine développeurs, avec pour mission la conception et le développement d'une suite d'outils d'analyse des résultats de tests effectués sur des modèles à échelle réduite de turbines.",
+      "Ces outils sont développés en Python avec en backend un environnement Java EE/MySQL.",
+      "Nous avions régulièrement des réunions avec les ingénieurs hydrauliciens, afin de concevoir et corriger les fonctionnalités de la suite d'outils.",
+      "J'ai également eu pour mission de planifier et mettre en œuvre la migration de l'ensemble de la base de code de l'équipe de SVN vers Git, avec maintien de l'historique de modifications."
+    ]
+  },
+  {
+    "title": "Développeur fullstack en alternance - IBM Montpellier",
+    "company": "IBM",
+    "dates": "08/2018 - 12/2018",
+    "technologies": [
+      {
+        "name": "ReactJS",
+        "percentage": 90,
+        "color": "react"
+      },
+      {
+        "name": "ExpressJS",
+        "percentage": 80,
+        "color": "express"
+      },
+      {
+        "name": "MongoDB",
+        "percentage": 60,
+        "color": "mongodb"
+      },
+      {
+        "name": "Jest",
+        "percentage": 30,
+        "color": "jest"
+      }
+    ],
+    "tldr": [
+      "Conception et développement d'applications web de démo",
+      "Intégration des technologies d'IA et de blockchain d'IBM dans les applications web"
+    ],
+    "body": [
+      "Pendant les 6 premiers mois de mon alternance à l'ENSIMAG, j'ai travaillé chez IBM en tant que développeur fullstack.",
+      "Je me suis d'abord formé à diverses technologies orientées développement web (ReactJS, ExpressJS, MongoDB, etc.) avant d'avoir pour mission de développer plusieurs applications de démonstration des technologies IBM.",
+      "J'ai donc été amené à intégrer les technologies d'IA et de blockchain d'IBM, à l'aide d'APIs."
+    ]
+  }
 ]
