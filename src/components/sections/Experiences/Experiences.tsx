@@ -77,12 +77,28 @@ const Experiences = ({ className }) => {
                 isExperiencesInViewport={isInViewport}
                 body={
                   <>
-                    {experience.body.map((item, index) => (
+                    {experience.body.map((item, index) =>
                       // TODO: do not give DOM, only the text. let Experience handle the dom
-                      <motion.p variants={childrenVariants} key={index}>
-                        {item}
-                      </motion.p>
-                    ))}
+                      typeof item === "string" ? (
+                        <motion.p variants={childrenVariants} key={index}>
+                          {item}
+                        </motion.p>
+                      ) : (
+                        <>
+                          <motion.span
+                            variants={childrenVariants}
+                            className={styles.ul_title}
+                          >
+                            {item[0]}
+                          </motion.span>
+                          <motion.ul variants={childrenVariants} key={index}>
+                            {item.slice(1).map((bullet) => (
+                              <li>{bullet}</li>
+                            ))}
+                          </motion.ul>
+                        </>
+                      )
+                    )}
                   </>
                 }
                 key={experience.title}

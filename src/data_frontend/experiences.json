@@ -36,9 +36,16 @@
       "Gestion de l'équipe front"
     ],
     "body": [
-      "J'ai rejoint Hopia dans le cadre d'un CDD, ayant pour but de structurer le pôle front de l'entreprise, supprimer des bugs, et développer des fonctionnalités sur le logiciel.",
+      "J'ai rejoint Hopia dans le cadre d'un CDD, ayant pour but de structurer le pôle frontend de l'entreprise, supprimer des bugs, et développer des fonctionnalités sur le logiciel.",
       "En plus du développement, j'ai été chargé du recrutement et de la formation des membres du pôle, de veille technologique, et de participer au design d'évolutions du logiciel.",
-      "Tâches notables réalisées : Lancement de la migration vers Typescript, migration de Webpack vers Vite, mise en place de tests, et de bonnes pratiques pour l'écriture de tests, mise en place de bonnes pratiques de code, réflexions quant à la possibilité de passer en monorepo"
+      [
+        "Tâches notables réalisées :",
+        "Lancement de la migration vers Typescript",
+        "Migration de Webpack vers Vite",
+        "Mise en place de tests, et de bonnes pratiques pour l'écriture de tests",
+        "Mise en place de bonnes pratiques de code",
+        "Réflexions quant à la possibilité de passer en monorepo"
+      ]
     ]
   },
   {
