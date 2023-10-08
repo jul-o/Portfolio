@@ -72,6 +72,7 @@ const Experiences = ({ className }) => {
             {experiences.map((experience, index) => (
               <Experience
                 variants={childrenVariants}
+                key={experience.dates}
                 {...experience}
                 isShown={index === selectedIndex}
                 isExperiencesInViewport={isInViewport}
@@ -101,7 +102,6 @@ const Experiences = ({ className }) => {
                     )}
                   </>
                 }
-                key={experience.title}
               />
             ))}
           </div>

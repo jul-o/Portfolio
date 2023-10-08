@@ -1,29 +1,24 @@
 {
-	"hosting": {
-		"public": "src/public",
-		"ignore": [
-			"firebase.json",
-			"**/.*",
-			"**/node_modules/**",
-			"design",
-			"package-lock.json"
-		],
-		"rewrites": [
-			{
-				"source": "**",
-				"function": "nextjsFunc"
-			}
-		]
-	},
-	"functions": {
-		"source": ".",
-		"runtime": "nodejs14"
-	},
-	"ignore": [
-		"firebase.json",
-		"**/.*",
-		"**/node_modules/**",
-		"design",
-		"package-lock.json"
-	]
+  "hosting": {
+    "public": "src/public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "design",
+      "package-lock.json"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "nextjsFunc"
+      }
+    ]
+  },
+  "functions": {
+    "source": ".",
+    "runtime": "nodejs14",
+    "ignore": ["**/node_modules/**", "design", ".next"],
+    "ignore-old": ["**/.*", "firebase.json", "package-lock.json"]
+  }
 }
