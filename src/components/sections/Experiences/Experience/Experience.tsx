@@ -3,6 +3,7 @@ import { ReactElement, useEffect, useState } from "react";
 import classNames from "utils/classNames";
 import styles from "./Experience.module.scss";
 import { rootVariants } from "utils/slideInVariants";
+import Image from "next/image";
 
 interface Props {
   isShown?: boolean;
@@ -68,20 +69,19 @@ const Experience = ({
       </div>
       <div className={styles.technologies}>
         {technologies.map(({ name, color, iconFiletype }) => (
-          <motion.span variants={variants} key={name}>
+          <motion.span
+            className={color && styles[color]}
+            variants={variants}
+            key={name}
+          >
             <img
+              className={styles.logo}
               src={`/icons/${color}-logo.${
                 iconFiletype !== undefined ? iconFiletype : "svg"
               }`}
-              // src={
-              //   require(`/styles/assets/icons/${color}-logo.${
-              //     iconFiletype !== undefined ? iconFiletype : "svg"
-              //   }`).default.src
-              // }
               alt=""
-              className={color && styles[color]}
             />
-            <span className={color && styles[color]}>{name}</span>
+            <span>{name}</span>
           </motion.span>
         ))}
       </div>
