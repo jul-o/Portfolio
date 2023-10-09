@@ -51,8 +51,6 @@ const Experience = ({
     },
   };
 
-  console.log(require("/styles/assets/icons/typescript-logo.svg"));
-
   return (
     <motion.div
       animate={
@@ -72,11 +70,14 @@ const Experience = ({
         {technologies.map(({ name, color, iconFiletype }) => (
           <motion.span variants={variants} key={name}>
             <img
-              src={
-                require(`/styles/assets/icons/${color}-logo.${
-                  iconFiletype !== undefined ? iconFiletype : "svg"
-                }`).default.src
-              }
+              src={`/icons/${color}-logo.${
+                iconFiletype !== undefined ? iconFiletype : "svg"
+              }`}
+              // src={
+              //   require(`/styles/assets/icons/${color}-logo.${
+              //     iconFiletype !== undefined ? iconFiletype : "svg"
+              //   }`).default.src
+              // }
               alt=""
               className={color && styles[color]}
             />
