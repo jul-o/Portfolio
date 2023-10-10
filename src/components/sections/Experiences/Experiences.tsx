@@ -79,25 +79,28 @@ const Experiences = ({ className }) => {
                 body={
                   <>
                     {experience.body.map((item, index) =>
-                      // TODO: do not give DOM, only the text. let Experience handle the dom
                       typeof item === "string" ? (
                         <motion.p variants={childrenVariants} key={index}>
                           {item}
                         </motion.p>
                       ) : (
-                        <>
-                          <motion.span
+                        <motion.div
+                          className={styles.ul}
+                          variants={childrenVariants}
+                          key={index}
+                        >
+                          <motion.h2
                             variants={childrenVariants}
                             className={styles.ul_title}
                           >
                             {item[0]}
-                          </motion.span>
-                          <motion.ul variants={childrenVariants} key={index}>
+                          </motion.h2>
+                          <motion.ul variants={childrenVariants}>
                             {item.slice(1).map((bullet) => (
                               <li>{bullet}</li>
                             ))}
                           </motion.ul>
-                        </>
+                        </motion.div>
                       )
                     )}
                   </>

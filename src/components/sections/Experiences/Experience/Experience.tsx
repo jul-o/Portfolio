@@ -15,6 +15,7 @@ interface Props {
     percentage: number;
     iconFiletype?: string;
     color?: string;
+    link: string;
   }>;
   tldr?: Array<string>;
   body?: ReactElement;
@@ -68,21 +69,23 @@ const Experience = ({
         </motion.p>
       </div>
       <div className={styles.technologies}>
-        {technologies.map(({ name, color, iconFiletype }) => (
-          <motion.span
-            className={color && styles[color]}
-            variants={variants}
-            key={name}
-          >
-            <img
-              className={styles.logo}
-              src={`/icons/${color}-logo.${
-                iconFiletype !== undefined ? iconFiletype : "svg"
-              }`}
-              alt=""
-            />
-            <span>{name}</span>
-          </motion.span>
+        {technologies.map(({ name, color, iconFiletype, link }) => (
+          <a href={link} target="_blank" className={styles.technology_link}>
+            <motion.span
+              className={classNames(styles.technology, color && styles[color])}
+              variants={variants}
+              key={name}
+            >
+              <img
+                className={styles.logo}
+                src={`/icons/${color}-logo.${
+                  iconFiletype !== undefined ? iconFiletype : "svg"
+                }`}
+                alt=""
+              />
+              <span>{name}</span>
+            </motion.span>
+          </a>
         ))}
       </div>
       <div className={styles.tldr}>

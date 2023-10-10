@@ -7,28 +7,33 @@
       {
         "name": "ReactJS",
         "percentage": 100,
-        "color": "react"
+        "color": "react",
+        "link": "https://react.dev"
       },
       {
         "name": "Typescript",
         "percentage": 80,
-        "color": "typescript"
+        "color": "typescript",
+        "link": "https://www.typescriptlang.org/"
       },
       {
         "name": "Cypress",
         "percentage": 40,
         "color": "cypress",
-        "iconFiletype": "jpeg"
+        "iconFiletype": "jpeg",
+        "link": "https://www.cypress.io/"
       },
       {
         "name": "Material UI",
         "percentage": 70,
-        "color": "mui"
+        "color": "mui",
+        "link": "https://mui.com/"
       },
       {
         "name": "Figma",
         "percentage": 30,
-        "color": "figma"
+        "color": "figma",
+        "link": "https://www.figma.com/"
       }
     ],
     "tldr": [
@@ -56,17 +61,20 @@
       {
         "name": "Python",
         "percentage": 90,
-        "color": "python"
+        "color": "python",
+        "link": "https://www.python.org/"
       },
       {
         "name": "Java EE",
         "percentage": 80,
-        "color": "jee"
+        "color": "jee",
+        "link": "https://www.oracle.com/fr/java/technologies/java-ee-glance.html"
       },
       {
         "name": "MySQL",
         "percentage": 45,
-        "color": "mysql"
+        "color": "mysql",
+        "link": "https://www.mysql.com/"
       }
     ],
     "tldr": [
@@ -88,22 +96,26 @@
       {
         "name": "ReactJS",
         "percentage": 90,
-        "color": "react"
+        "color": "react",
+        "link": "https://react.dev"
       },
       {
         "name": "ExpressJS",
         "percentage": 80,
-        "color": "express"
+        "color": "express",
+        "link": "https://expressjs.com/"
       },
       {
         "name": "MongoDB",
         "percentage": 60,
-        "color": "mongodb"
+        "color": "mongodb",
+        "link": "https://www.mongodb.com/"
       },
       {
         "name": "Jest",
         "percentage": 30,
-        "color": "jest"
+        "color": "jest",
+        "link": "https://jestjs.io/"
       }
     ],
     "tldr": [
