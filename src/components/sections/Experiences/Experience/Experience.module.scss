@@ -62,57 +62,46 @@
       }
 
       &.python {
-        color: #f2c73eff;
         border: 2px solid #f2c73eff;
       }
 
       &.jee {
-        color: #e5312796;
-        border: 2px solid #e5312796;
+        border: 2px solid #e53127;
       }
 
       &.mysql {
-        color: #00618aff;
         border: 2px solid #00618aff;
       }
 
       &.react {
-        color: #61dbfbff;
         border: 2px solid #61dbfbff;
       }
 
       &.express {
-        color: #4f4f4f;
         border: 2px solid #4f4f4f;
       }
 
       &.mongodb {
-        color: #4a9e47;
         border: 2px solid #4a9e47;
       }
 
       &.jest {
-        color: #bc3a13;
         border: 2px solid #bc3a13;
       }
 
       &.typescript {
-        color: #3178c6;
         border: 2px solid #3178c6;
       }
 
       &.cypress {
-        color: #a4e5cc;
         border: 2px solid #a4e5cc;
       }
 
       &.mui {
-        color: #00b0ff;
         border: 2px solid #00b0ff;
       }
 
       &.figma {
-        color: #f24e1e;
         border: 2px solid #f24e1e;
       }
 
@@ -124,7 +113,6 @@
         border-radius: 50%;
         padding: 0.1rem;
         @include themed {
-          // background-color: t("light-grey");
           background-color: map-get(map-get($themes, "light"), "primary");
         }
       }
