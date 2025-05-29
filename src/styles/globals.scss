@@ -12,6 +12,8 @@
 
 	@media (min-width: 768px) {
 		scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+    scroll-padding: 50px;
 	}
 
 	> #content {
@@ -23,6 +25,7 @@
 			margin-right: auto;
 			padding-top: 3.5rem;
 			scroll-snap-align: start;
+      scroll-snap-stop: always;
 		}
 	}
 }

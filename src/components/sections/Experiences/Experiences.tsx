@@ -97,7 +97,7 @@ const Experiences = ({ className }) => {
                           </motion.h2>
                           <motion.ul variants={childrenVariants}>
                             {item.slice(1).map((bullet) => (
-                              <li>{bullet}</li>
+                              <li key={bullet}>{bullet}</li>
                             ))}
                           </motion.ul>
                         </motion.div>

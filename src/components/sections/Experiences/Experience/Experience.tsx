@@ -70,7 +70,7 @@ const Experience = ({
       </div>
       <div className={styles.technologies}>
         {technologies.map(({ name, color, iconFiletype, link }) => (
-          <a href={link} target="_blank" className={styles.technology_link}>
+          <a key={name} href={link} target="_blank" className={styles.technology_link}>
             <motion.span
               className={classNames(styles.technology, color && styles[color])}
               variants={variants}
@@ -78,9 +78,8 @@ const Experience = ({
             >
               <img
                 className={styles.logo}
-                src={`/icons/${color}-logo.${
-                  iconFiletype !== undefined ? iconFiletype : "svg"
-                }`}
+                src={`/icons/${color}-logo.${iconFiletype !== undefined ? iconFiletype : "svg"
+                  }`}
                 alt=""
               />
               <span>{name}</span>
