@@ -21,6 +21,7 @@ body {
 
 	@include themed {
 		background-color: t('primary');
+    transition: none;
 	}
 }
 
