@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { } from 'react';
 import aboutMe from 'data_frontend/me.json';
 import classNames from 'utils/classNames';
-import useViewportObserver from 'utils/hooks/useViewportObserver';
 import styles from './About.module.scss';
 import Hobbies from './Hobbies';
 import ClimbingModal from './Modals/ClimbingModal';
 import ParaglidingModal from './Modals/ParaglidingModal';
 import WindsurfingModal from './Modals/WindsurfingModal';
 import Portrait from './Portrait';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { rootVariants, childrenVariants } from 'utils/slideInVariants';
 import useLogic from './hooks';
 

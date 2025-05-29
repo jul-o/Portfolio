@@ -2,6 +2,7 @@
 
 @mixin two-columns {
 	column-count: 2;
+  column-gap: 4rem;
 	@include themed {
 		column-rule: solid 1px t('light-gray');
 		animation: column-frames 1.5s ease-in-out;
