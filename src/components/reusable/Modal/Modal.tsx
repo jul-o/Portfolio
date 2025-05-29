@@ -35,6 +35,12 @@ const Modal = ({
     };
   }, []);
 
+  useEffect(() => {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "Escape") onClose();
+    })
+  }, [])
+
   const rootAnimation = {
     transform: ['scale(0, 0.01)', 'scale(1, 0.01)', 'scale(1, 1)'],
   };
@@ -44,7 +50,7 @@ const Modal = ({
     opacity: ['0', '1'],
     scale: ['0.8', '1'],
   };
-  const modalDuration = 0.2;
+  const modalDuration = 0.3;
 
   return createPortal(
     <AnimatePresence>
